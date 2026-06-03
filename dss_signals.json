@@ -1,0 +1,62 @@
+{
+  "timestamp": "2026-06-04T02:22:42.990370",
+  "total": 2,
+  "signals": [
+    {
+      "pair": "NEIROUSDT",
+      "market": "crypto",
+      "dir": "SHORT",
+      "score": 82.85,
+      "struct": "valid_bearish",
+      "struct_reason": "Bearish: LH+LL",
+      "trend": "bearish",
+      "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+      "mom_reason": "Momentum score: 53",
+      "vol_reason": "Volatility: high (exp=8.48)",
+      "liq_reason": "Liquidity resting: inside_range",
+      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+      "sq_reason": "Squeeze: False, Energy: 0.00",
+      "risk": {
+        "entry": 7.638e-05,
+        "sl": 7.920142857142857e-05,
+        "tp": 7.214785714285715e-05,
+        "risk": 2.8214285714285684e-06,
+        "reward": 4.232142857142846e-06,
+        "rr": 1.4999999999999976,
+        "pos_factor": 0.4,
+        "sl_reason": "Above liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50"
+      },
+      "ts": "2026-06-04T02:22:36.774533"
+    },
+    {
+      "pair": "DOGSUSDT",
+      "market": "crypto",
+      "dir": "LONG",
+      "score": 73.9231986421738,
+      "struct": "valid_bearish",
+      "struct_reason": "Bearish: LH+LL",
+      "trend": "bullish",
+      "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+      "mom_reason": "Momentum score: 74",
+      "vol_reason": "Volatility: high (exp=6.88)",
+      "liq_reason": "Liquidity resting: inside_range",
+      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+      "sq_reason": "Squeeze: True, Energy: 0.47",
+      "risk": {
+        "entry": 4.821e-05,
+        "sl": 4.647142857142857e-05,
+        "tp": 5.0817857142857144e-05,
+        "risk": 1.7385714285714286e-06,
+        "reward": 2.607857142857143e-06,
+        "rr": 1.5,
+        "pos_factor": 0.5,
+        "sl_reason": "Below liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50"
+      },
+      "ts": "2026-06-04T02:22:36.764270"
+    }
+  ]
+}

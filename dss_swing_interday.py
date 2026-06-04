@@ -4,9 +4,7 @@ DSS SWING INTERDAY - CRYPTO ONLY
 Decision Support System - Manual Trading Only
 Termux Ready - Single File - No Heavy Libraries
 
-STABLE v7.5 - TELEGRAM FORMAT FIX
-- Small price coins: 8 decimal places
-- Normal price coins: 4 decimal places
+STABLE v7.5 - GIT BRANCH FIX
 """
 
 import os
@@ -38,8 +36,8 @@ TELEGRAM_FREE_CHAT_ID = "-1003624661217"
 TELEGRAM_VIP_TOKEN = "8440657002:AAEqJIJziZ37HVRKOd0e3TcXyEAb3PclrwQ"
 TELEGRAM_VIP_CHAT_ID = "-1003765702878"
 GITHUB_TOKEN = ""
-GITHUB_REPO = "liankacur-cell/dss-signal-feed"
-GITHUB_BRANCH = "main"
+GITHUB_REPO = ""
+GITHUB_BRANCH = ""
 
 # ============================================
 # ENUMS
@@ -596,7 +594,7 @@ class RiskEngine:
                'tp_reason':'Before liquidity target','reason':f"RR=1:{rr:.2f}"}
 
 # ============================================
-# FASE G: TELEGRAM OUTPUT (SMALL PRICE FORMAT)
+# FASE G: TELEGRAM OUTPUT
 # ============================================
 class TelegramOutput:
     def __init__(self):
@@ -682,7 +680,6 @@ class TelegramOutput:
                     else:
                         tp2 = r['tp'] - (r['entry'] - r['tp']) * 0.5
                     
-                    # Format desimal: 8 digit untuk harga < 0.01
                     price = r['entry']
                     fmt = '{:.8f}' if (price < 0.01 and price > 0) else '{:.4f}'
                     
@@ -828,6 +825,16 @@ class DSSSystem:
         try:
             with open('dss_signals.json','w') as f: json.dump({'timestamp':datetime.now().isoformat(),'total':len(all_signals),'signals':all_signals}, f, indent=2)
         except Exception as e: logger.err("Local save failed", e)
+        
+        # Git auto commit & push
+        try:
+            os.system("cd /data/data/com.termux/files/home/Dss_System2 && git add .")
+            os.system("cd /data/data/com.termux/files/home/Dss_System2 && git commit -m 'auto update signal'")
+            os.system("cd /data/data/com.termux/files/home/Dss_System2 && git push origin system2")
+            logger.info("Git auto push OK")
+        except Exception as e:
+            logger.err("Git auto push failed", e)
+        
         logger.info("CYCLE COMPLETE"); logger.info("="*50)
 
 # ============================================
@@ -836,7 +843,7 @@ class DSSSystem:
 def main():
     print("""╔══════════════════════════════════╗
 ║ DSS SWING INTERDAY v7.5          ║
-║ CRYPTO ONLY - FORMAT FIX         ║
+║ CRYPTO ONLY + GIT AUTO PUSH      ║
 ╚══════════════════════════════════╝""")
     print("[*] Running every 1 hour...\n")
     dss = DSSSystem()
@@ -852,7 +859,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    import os
-    os.system("git pull origin main --rebase --autostash")
-    os.system("git push origin main")

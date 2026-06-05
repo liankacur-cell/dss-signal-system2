@@ -4,7 +4,7 @@ DSS SWING INTERDAY - CRYPTO ONLY
 Decision Support System - Manual Trading Only
 Termux Ready - Single File - No Heavy Libraries
 
-STABLE v7.5 - GIT BRANCH FIX
+STABLE v7.5 - SIGNAL HISTORY
 """
 
 import os
@@ -760,6 +760,20 @@ class DSSSystem:
         self.tg = TelegramOutput()
         self.gh = GitHubSync()
 
+    def save_signal_history(self, signals):
+        history_file = "signal_history.json"
+        try:
+            if os.path.exists(history_file):
+                with open(history_file, "r") as f:
+                    history = json.load(f)
+            else:
+                history = []
+            history.extend(signals)
+            with open(history_file, "w") as f:
+                json.dump(history, f, indent=2)
+        except Exception as e:
+            logger.err("History save failed", e)
+
     def analyze_asset(self, pair, price_data):
         if not price_data: logger.skip(pair, "No price data"); return None
         if '1h' not in price_data or len(price_data['1h']) < 4: logger.skip(pair, "Missing 1h data"); return None
@@ -820,6 +834,9 @@ class DSSSystem:
             else: logger.nosig(sym, "No setup")
 
         all_signals.sort(key=lambda x: x['score'], reverse=True)
+        
+        self.save_signal_history(all_signals)
+        
         logger.info(f"=== {len(all_signals)} signals | {logger.skip_count} skipped | {logger.err_count} errors ===")
         self.tg.send_free(all_signals); self.tg.send_vip(all_signals); self.gh.sync(all_signals)
         try:
@@ -843,7 +860,7 @@ class DSSSystem:
 def main():
     print("""╔══════════════════════════════════╗
 ║ DSS SWING INTERDAY v7.5          ║
-║ CRYPTO ONLY + GIT AUTO PUSH      ║
+║ CRYPTO ONLY + SIGNAL HISTORY     ║
 ╚══════════════════════════════════╝""")
     print("[*] Running every 1 hour...\n")
     dss = DSSSystem()

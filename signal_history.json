@@ -3722,5 +3722,61 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-06-07T01:19:24.857435"
+  },
+  {
+    "pair": "SUIUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 81.65,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 72",
+    "vol_reason": "Volatility: high (exp=12.39)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.7105,
+      "sl": 0.6816571428571429,
+      "tp": 0.788239,
+      "risk": 0.02884285714285717,
+      "reward": 0.077739,
+      "rr": 2.6952600297176796,
+      "pos_factor": 0.5,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:2.70"
+    },
+    "ts": "2026-06-07T02:19:40.388494"
+  },
+  {
+    "pair": "ZECUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 74.75578004210738,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 86",
+    "vol_reason": "Volatility: high (exp=11.94)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: True, Energy: 0.66",
+    "risk": {
+      "entry": 360.17,
+      "sl": 328.7071428571429,
+      "tp": 407.3642857142857,
+      "risk": 31.462857142857104,
+      "reward": 47.194285714285684,
+      "rr": 1.5000000000000009,
+      "pos_factor": 0.5,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-06-07T02:19:40.403323"
   }
 ]

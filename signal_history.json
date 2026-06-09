@@ -10946,5 +10946,33 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-06-09T13:39:19.762549"
+  },
+  {
+    "pair": "SUIUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 81.35,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 58",
+    "vol_reason": "Volatility: high (exp=9.05)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.7545,
+      "sl": 0.7757142857142857,
+      "tp": 0.7226785714285713,
+      "risk": 0.02121428571428574,
+      "reward": 0.03182142857142867,
+      "rr": 1.5000000000000027,
+      "pos_factor": 0.5,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-06-09T14:39:37.169615"
   }
 ]

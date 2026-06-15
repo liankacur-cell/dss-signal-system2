@@ -27746,5 +27746,33 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-06-15T07:20:59.783931"
+  },
+  {
+    "pair": "MEMEUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 86.6,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
+    "mom_reason": "Momentum score: 78",
+    "vol_reason": "Volatility: high (exp=19.31)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.0006297,
+      "sl": 0.0005907999999999999,
+      "tp": 0.0006880500000000001,
+      "risk": 3.8900000000000024e-05,
+      "reward": 5.835000000000009e-05,
+      "rr": 1.5000000000000013,
+      "pos_factor": 0.5,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-06-15T08:22:55.291627"
   }
 ]

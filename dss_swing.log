@@ -11237,3 +11237,37 @@
 2026-06-17 03:38:53,701 | INFO | === 6 signals | 0 skipped | 0 errors ===
 2026-06-17 03:38:55,337 | INFO | Sent 5 FREE signals
 2026-06-17 03:39:07,368 | INFO | Sent 5 VIP signals
+2026-06-17 03:39:10,485 | INFO | Git auto push OK
+2026-06-17 03:39:10,487 | INFO | CYCLE COMPLETE
+2026-06-17 03:39:10,488 | INFO | ==================================================
+2026-06-17 04:39:10,491 | INFO | ==================================================
+2026-06-17 04:39:10,494 | INFO | CYCLE START: 2026-06-17 04:39:10.493904
+2026-06-17 04:39:10,494 | INFO | ==================================================
+2026-06-17 04:39:10,495 | INFO | === FETCHING CRYPTO (Binance) ===
+2026-06-17 04:39:26,315 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='fapi.binance.com', port=443): Read timed out. (read timeout=15)")': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-06-17 04:39:26,953 | INFO |   OK BTCUSDT
+2026-06-17 04:39:27,475 | INFO |   OK ETHUSDT
+2026-06-17 04:39:28,000 | INFO |   OK SOLUSDT
+2026-06-17 04:39:28,571 | INFO |   OK SUIUSDT
+2026-06-17 04:39:29,102 | INFO |   OK DOGEUSDT
+2026-06-17 04:39:29,626 | INFO |   OK UNIUSDT
+2026-06-17 04:39:30,192 | INFO |   OK ZECUSDT
+2026-06-17 04:39:36,039 | INFO | CRYPTO COUNT: 14
+2026-06-17 04:39:36,040 | INFO | --- Analyzing CRYPTO ---
+2026-06-17 04:39:36,049 | INFO | NO SIGNAL [BTCUSDT]: No setup
+2026-06-17 04:39:36,057 | INFO | NO SIGNAL [ETHUSDT]: No setup
+2026-06-17 04:39:36,065 | INFO | NO SIGNAL [SOLUSDT]: No setup
+2026-06-17 04:39:36,073 | INFO | SIGNAL: SUIUSDT -> LONG (Score:75.5)
+2026-06-17 04:39:36,081 | INFO | NO SIGNAL [DOGEUSDT]: No setup
+2026-06-17 04:39:36,089 | INFO | SIGNAL: UNIUSDT -> LONG (Score:86.8)
+2026-06-17 04:39:36,098 | INFO | NO SIGNAL [ZECUSDT]: No setup
+2026-06-17 04:39:36,107 | INFO | NO SIGNAL [1000SATSUSDT]: No setup
+2026-06-17 04:39:36,115 | INFO | NO SIGNAL [HMSTRUSDT]: No setup
+2026-06-17 04:39:36,123 | INFO | SIGNAL: DOGSUSDT -> SHORT (Score:77.0)
+2026-06-17 04:39:36,133 | INFO | NO SIGNAL [NEIROUSDT]: No setup
+2026-06-17 04:39:36,141 | INFO | NO SIGNAL [1000PEPEUSDT]: No setup
+2026-06-17 04:39:36,149 | INFO | NO SIGNAL [SPELLUSDT]: No setup
+2026-06-17 04:39:36,158 | INFO | NO SIGNAL [PUMPUSDT]: No setup
+2026-06-17 04:39:36,562 | INFO | === 3 signals | 0 skipped | 0 errors ===
+2026-06-17 04:39:38,105 | INFO | Sent 3 FREE signals
+2026-06-17 04:39:40,973 | INFO | Sent 3 VIP signals

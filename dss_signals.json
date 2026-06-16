@@ -1,63 +1,7 @@
 {
-  "timestamp": "2026-06-16T15:34:44.952934",
-  "total": 3,
+  "timestamp": "2026-06-16T16:35:02.373198",
+  "total": 2,
   "signals": [
-    {
-      "pair": "UNIUSDT",
-      "market": "crypto",
-      "dir": "LONG",
-      "score": 92.25,
-      "struct": "valid_bullish",
-      "struct_reason": "Bullish: HH+HL",
-      "trend": "bullish",
-      "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
-      "mom_reason": "Momentum score: 100",
-      "vol_reason": "Volatility: high (exp=9.40)",
-      "liq_reason": "Liquidity resting: inside_range",
-      "mf_reason": "OBV: rising, Acc:False, Dist:False",
-      "sq_reason": "Squeeze: False, Energy: 0.00",
-      "risk": {
-        "entry": 2.99,
-        "sl": 2.8248571428571427,
-        "tp": 3.237714285714286,
-        "risk": 0.16514285714285748,
-        "reward": 0.24771428571428578,
-        "rr": 1.4999999999999973,
-        "pos_factor": 0.4,
-        "sl_reason": "Below liquidity + ATR",
-        "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.50"
-      },
-      "ts": "2026-06-16T15:34:40.222739"
-    },
-    {
-      "pair": "ZECUSDT",
-      "market": "crypto",
-      "dir": "LONG",
-      "score": 82.12339591693237,
-      "struct": "valid_bearish",
-      "struct_reason": "Bearish: LH+LL",
-      "trend": "bullish",
-      "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
-      "mom_reason": "Momentum score: 100",
-      "vol_reason": "Volatility: high (exp=11.97)",
-      "liq_reason": "Liquidity resting: inside_range",
-      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
-      "sq_reason": "Squeeze: True, Energy: 0.82",
-      "risk": {
-        "entry": 526.46,
-        "sl": 504.7834,
-        "tp": 554.6257142857144,
-        "risk": 21.676600000000064,
-        "reward": 28.16571428571433,
-        "rr": 1.2993603372168259,
-        "pos_factor": 0.4,
-        "sl_reason": "Below liquidity + ATR",
-        "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.30"
-      },
-      "ts": "2026-06-16T15:34:40.226924"
-    },
     {
       "pair": "HMSTRUSDT",
       "market": "crypto",
@@ -68,23 +12,51 @@
       "trend": "bullish",
       "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
       "mom_reason": "Momentum score: 58",
-      "vol_reason": "Volatility: high (exp=11.81)",
+      "vol_reason": "Volatility: high (exp=9.89)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:False, Dist:False",
       "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 0.0001712,
-        "sl": 0.00015534285714285712,
+        "entry": 0.0001711,
+        "sl": 0.00015428571428571428,
         "tp": 0.0002715355,
-        "risk": 1.585714285714287e-05,
-        "reward": 0.00010033550000000002,
-        "rr": 6.327463963963959,
+        "risk": 1.6814285714285732e-05,
+        "reward": 0.00010043549999999999,
+        "rr": 5.973224299065413,
         "pos_factor": 0.6,
         "sl_reason": "Below liquidity + ATR",
         "tp_reason": "Before liquidity target",
-        "reason": "RR=1:6.33"
+        "reason": "RR=1:5.97"
       },
-      "ts": "2026-06-16T15:34:40.234870"
+      "ts": "2026-06-16T16:34:57.226608"
+    },
+    {
+      "pair": "ZECUSDT",
+      "market": "crypto",
+      "dir": "LONG",
+      "score": 78.67737405367986,
+      "struct": "valid_bearish",
+      "struct_reason": "Bearish: LH+LL",
+      "trend": "bullish",
+      "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
+      "mom_reason": "Momentum score: 83",
+      "vol_reason": "Volatility: high (exp=6.87)",
+      "liq_reason": "Liquidity resting: inside_range",
+      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+      "sq_reason": "Squeeze: True, Energy: 0.82",
+      "risk": {
+        "entry": 528.22,
+        "sl": 504.7834,
+        "tp": 557.3714285714286,
+        "risk": 23.436600000000055,
+        "reward": 29.151428571428596,
+        "rr": 1.243842049248975,
+        "pos_factor": 0.4,
+        "sl_reason": "Below liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.24"
+      },
+      "ts": "2026-06-16T16:34:57.217637"
     }
   ]
 }

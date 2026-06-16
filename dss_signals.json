@@ -1,62 +1,34 @@
 {
-  "timestamp": "2026-06-16T16:35:02.373198",
-  "total": 2,
+  "timestamp": "2026-06-16T17:35:30.385289",
+  "total": 1,
   "signals": [
     {
-      "pair": "HMSTRUSDT",
+      "pair": "UNIUSDT",
       "market": "crypto",
       "dir": "LONG",
-      "score": 78.85,
+      "score": 91.0,
       "struct": "valid_bullish",
       "struct_reason": "Bullish: HH+HL",
       "trend": "bullish",
-      "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
-      "mom_reason": "Momentum score: 58",
-      "vol_reason": "Volatility: high (exp=9.89)",
+      "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
+      "mom_reason": "Momentum score: 100",
+      "vol_reason": "Volatility: high (exp=7.04)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:False, Dist:False",
       "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 0.0001711,
-        "sl": 0.00015428571428571428,
-        "tp": 0.0002715355,
-        "risk": 1.6814285714285732e-05,
-        "reward": 0.00010043549999999999,
-        "rr": 5.973224299065413,
-        "pos_factor": 0.6,
-        "sl_reason": "Below liquidity + ATR",
-        "tp_reason": "Before liquidity target",
-        "reason": "RR=1:5.97"
-      },
-      "ts": "2026-06-16T16:34:57.226608"
-    },
-    {
-      "pair": "ZECUSDT",
-      "market": "crypto",
-      "dir": "LONG",
-      "score": 78.67737405367986,
-      "struct": "valid_bearish",
-      "struct_reason": "Bearish: LH+LL",
-      "trend": "bullish",
-      "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
-      "mom_reason": "Momentum score: 83",
-      "vol_reason": "Volatility: high (exp=6.87)",
-      "liq_reason": "Liquidity resting: inside_range",
-      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
-      "sq_reason": "Squeeze: True, Energy: 0.82",
-      "risk": {
-        "entry": 528.22,
-        "sl": 504.7834,
-        "tp": 557.3714285714286,
-        "risk": 23.436600000000055,
-        "reward": 29.151428571428596,
-        "rr": 1.243842049248975,
+        "entry": 3.035,
+        "sl": 2.847,
+        "tp": 3.317,
+        "risk": 0.18800000000000017,
+        "reward": 0.28200000000000003,
+        "rr": 1.499999999999999,
         "pos_factor": 0.4,
         "sl_reason": "Below liquidity + ATR",
         "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.24"
+        "reason": "RR=1:1.50"
       },
-      "ts": "2026-06-16T16:34:57.217637"
+      "ts": "2026-06-16T17:35:16.006874"
     }
   ]
 }

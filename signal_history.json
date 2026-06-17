@@ -34382,5 +34382,33 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-06-17T18:16:52.771765"
+  },
+  {
+    "pair": "DOGEUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 86.65,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 72",
+    "vol_reason": "Volatility: high (exp=8.51)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.08591,
+      "sl": 0.08706428571428572,
+      "tp": 0.08417857142857142,
+      "risk": 0.0011542857142857188,
+      "reward": 0.0017314285714285782,
+      "rr": 1.5,
+      "pos_factor": 0.5,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-06-17T19:17:27.456608"
   }
 ]

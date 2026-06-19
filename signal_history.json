@@ -36818,5 +36818,33 @@
       "reason": "RR=1:1.43"
     },
     "ts": "2026-06-19T22:39:23.193346"
+  },
+  {
+    "pair": "SPELLUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 81.01621134711255,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 100",
+    "vol_reason": "Volatility: high (exp=9.28)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: rising, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: True, Energy: 0.35",
+    "risk": {
+      "entry": 0.0001248,
+      "sl": 0.00012158899999999999,
+      "tp": 0.00012837857142857144,
+      "risk": 3.211000000000007e-06,
+      "reward": 3.578571428571438e-06,
+      "rr": 1.114472571962451,
+      "pos_factor": 0.4,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.11"
+    },
+    "ts": "2026-06-19T23:39:38.563033"
   }
 ]

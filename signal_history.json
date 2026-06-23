@@ -37098,5 +37098,61 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-06-22T22:50:22.493802"
+  },
+  {
+    "pair": "BTCUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 81.25,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 45",
+    "vol_reason": "Volatility: high (exp=14.47)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 62420.5,
+      "sl": 63220.0275,
+      "tp": 61273.79285714286,
+      "risk": 799.5274999999965,
+      "reward": 1146.7071428571435,
+      "rr": 1.4342310212683722,
+      "pos_factor": 0.4,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.43"
+    },
+    "ts": "2026-06-23T19:07:25.105922"
+  },
+  {
+    "pair": "ETHUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 78.75,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 45",
+    "vol_reason": "Volatility: high (exp=14.77)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 1658.25,
+      "sl": 1699.7464499999999,
+      "tp": 1613.6314285714284,
+      "risk": 41.49644999999987,
+      "reward": 44.61857142857161,
+      "rr": 1.0752382776977731,
+      "pos_factor": 0.4,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.08"
+    },
+    "ts": "2026-06-23T19:07:25.111666"
   }
 ]

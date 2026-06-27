@@ -1,5 +1,62 @@
 {
-  "timestamp": "2026-06-28T02:23:14.739674",
-  "total": 0,
-  "signals": []
+  "timestamp": "2026-06-28T03:23:32.345654",
+  "total": 2,
+  "signals": [
+    {
+      "pair": "DOGSUSDT",
+      "market": "crypto",
+      "dir": "SHORT",
+      "score": 79.48442086984056,
+      "struct": "valid_bearish",
+      "struct_reason": "Bearish: LH+LL",
+      "trend": "bearish",
+      "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+      "mom_reason": "Momentum score: 36",
+      "vol_reason": "Volatility: high (exp=12.97)",
+      "liq_reason": "Liquidity resting: inside_range",
+      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+      "sq_reason": "Squeeze: True, Energy: 0.51",
+      "risk": {
+        "entry": 3.754e-05,
+        "sl": 3.822571428571429e-05,
+        "tp": 3.651142857142857e-05,
+        "risk": 6.857142857142869e-07,
+        "reward": 1.0285714285714303e-06,
+        "rr": 1.5,
+        "pos_factor": 0.5,
+        "sl_reason": "Above liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50"
+      },
+      "ts": "2026-06-28T03:23:27.502346"
+    },
+    {
+      "pair": "UNIUSDT",
+      "market": "crypto",
+      "dir": "SHORT",
+      "score": 67.0304082601103,
+      "struct": "valid_bullish",
+      "struct_reason": "Bullish: HH+HL",
+      "trend": "bearish",
+      "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+      "mom_reason": "Momentum score: 41",
+      "vol_reason": "Volatility: high (exp=13.03)",
+      "liq_reason": "Liquidity resting: inside_range",
+      "mf_reason": "OBV: falling, Acc:False, Dist:False",
+      "sq_reason": "Squeeze: True, Energy: 0.42",
+      "risk": {
+        "entry": 2.946,
+        "sl": 3.0092857142857143,
+        "tp": 2.8510714285714287,
+        "risk": 0.06328571428571417,
+        "reward": 0.09492857142857147,
+        "rr": 1.5000000000000036,
+        "pos_factor": 0.5,
+        "sl_reason": "Above liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50"
+      },
+      "ts": "2026-06-28T03:23:27.442611"
+    }
+  ]
 }

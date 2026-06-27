@@ -38694,5 +38694,33 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-06-28T03:23:27.442611"
+  },
+  {
+    "pair": "HOTUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 89.75,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 100",
+    "vol_reason": "Volatility: high (exp=2.16)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:True, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.0003575,
+      "sl": 0.0003196935,
+      "tp": 0.0004008071428571429,
+      "risk": 3.780649999999999e-05,
+      "reward": 4.330714285714286e-05,
+      "rr": 1.1454946333869274,
+      "pos_factor": 0.4,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.15"
+    },
+    "ts": "2026-06-28T04:23:45.474253"
   }
 ]

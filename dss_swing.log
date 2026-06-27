@@ -12809,3 +12809,64 @@
 2026-06-27 15:49:32,588 | INFO | === 6 signals | 0 skipped | 0 errors ===
 2026-06-27 15:49:34,087 | INFO | Sent 5 FREE signals
 2026-06-27 15:49:37,022 | INFO | Sent 5 VIP signals
+2026-06-27 15:49:39,935 | INFO | Git auto push OK
+2026-06-27 15:49:39,937 | INFO | CYCLE COMPLETE
+2026-06-27 15:49:39,937 | INFO | ==================================================
+2026-06-27 16:49:39,972 | INFO | ==================================================
+2026-06-27 16:49:39,996 | INFO | CYCLE START: 2026-06-27 16:49:39.996028
+2026-06-27 16:49:39,998 | INFO | ==================================================
+2026-06-27 16:49:40,000 | INFO | === FETCHING CRYPTO (Binance) ===
+2026-06-27 16:49:44,295 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-06-27 16:49:50,114 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-06-27 16:49:57,533 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-06-27 16:50:08,156 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-06-27 16:50:25,176 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-06-27 16:50:29,400 | ERROR | Binance connection error: BTCUSDT 1m
+2026-06-27 16:50:33,623 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=5m&limit=100
+2026-06-27 16:50:39,443 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=5m&limit=100
+2026-06-27 16:50:46,866 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=5m&limit=100
+2026-06-27 16:50:57,489 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=5m&limit=100
+2026-06-27 16:51:14,513 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=5m&limit=100
+2026-06-27 16:51:18,737 | ERROR | Binance connection error: BTCUSDT 5m
+2026-06-27 16:51:22,961 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=15m&limit=100
+2026-06-27 16:51:28,782 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=15m&limit=100
+2026-06-27 16:51:36,207 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=15m&limit=100
+2026-06-27 16:51:46,830 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=15m&limit=100
+2026-06-27 16:52:03,854 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=15m&limit=100
+2026-06-27 16:52:08,077 | ERROR | Binance connection error: BTCUSDT 15m
+2026-06-27 16:52:12,303 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=1h&limit=100
+2026-06-27 16:52:18,118 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=1h&limit=100
+2026-06-27 16:52:25,535 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=1h&limit=100
+2026-06-27 16:52:36,156 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=1h&limit=100
+2026-06-27 16:52:53,174 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=1h&limit=100
+2026-06-27 16:52:57,391 | ERROR | Binance connection error: BTCUSDT 1h
+2026-06-27 16:52:57,393 | WARNING | SKIP [BTCUSDT]: Empty dataset
+2026-06-27 16:52:57,394 | WARNING |   FAIL BTCUSDT
+2026-06-27 16:53:01,614 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=ETHUSDT&interval=1m&limit=100
+2026-06-27 16:53:07,440 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=ETHUSDT&interval=1m&limit=100
+2026-06-27 16:53:14,862 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=ETHUSDT&interval=1m&limit=100
+2026-06-27 16:53:25,499 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=ETHUSDT&interval=1m&limit=100
+2026-06-27 16:53:26,831 | INFO |   OK ETHUSDT
+2026-06-27 16:53:27,429 | INFO |   OK SOLUSDT
+2026-06-27 16:53:28,088 | INFO |   OK SUIUSDT
+2026-06-27 16:53:28,753 | INFO |   OK DOGEUSDT
+2026-06-27 16:53:29,346 | INFO |   OK UNIUSDT
+2026-06-27 16:53:29,971 | INFO |   OK ZECUSDT
+2026-06-27 16:53:35,386 | INFO | CRYPTO COUNT: 13
+2026-06-27 16:53:35,387 | INFO | --- Analyzing CRYPTO ---
+2026-06-27 16:53:35,400 | INFO | NO SIGNAL [ETHUSDT]: No setup
+2026-06-27 16:53:35,408 | INFO | NO SIGNAL [SOLUSDT]: No setup
+2026-06-27 16:53:35,415 | INFO | NO SIGNAL [SUIUSDT]: No setup
+2026-06-27 16:53:35,423 | INFO | NO SIGNAL [DOGEUSDT]: No setup
+2026-06-27 16:53:35,431 | INFO | NO SIGNAL [UNIUSDT]: No setup
+2026-06-27 16:53:35,438 | INFO | NO SIGNAL [ZECUSDT]: No setup
+2026-06-27 16:53:35,446 | INFO | NO SIGNAL [1000SATSUSDT]: No setup
+2026-06-27 16:53:35,453 | INFO | NO SIGNAL [1000PEPEUSDT]: No setup
+2026-06-27 16:53:35,458 | INFO | NO SIGNAL [HMSTRUSDT]: No setup
+2026-06-27 16:53:35,462 | INFO | NO SIGNAL [NEIROUSDT]: No setup
+2026-06-27 16:53:35,466 | INFO | SIGNAL: DOGSUSDT -> SHORT (Score:82.5)
+2026-06-27 16:53:35,469 | INFO | NO SIGNAL [PUMPUSDT]: No setup
+2026-06-27 16:53:35,473 | INFO | NO SIGNAL [GUSDT]: No setup
+2026-06-27 16:53:35,981 | INFO | === 1 signals | 1 skipped | 4 errors ===
+2026-06-27 16:53:37,523 | INFO | Sent 1 FREE signals
+2026-06-27 16:53:40,386 | INFO | Sent 1 VIP signals

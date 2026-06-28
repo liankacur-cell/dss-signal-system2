@@ -40206,5 +40206,33 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-06-28T15:27:30.139825"
+  },
+  {
+    "pair": "NEIROUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 84.55,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 74",
+    "vol_reason": "Volatility: high (exp=14.95)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:True",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 6.048e-05,
+      "sl": 6.165428571428572e-05,
+      "tp": 5.871857142857142e-05,
+      "risk": 1.174285714285719e-06,
+      "reward": 1.7614285714285751e-06,
+      "rr": 1.4999999999999971,
+      "pos_factor": 0.4,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-06-28T16:27:47.671895"
   }
 ]

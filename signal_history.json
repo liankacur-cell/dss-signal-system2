@@ -45694,5 +45694,61 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-06-30T06:41:07.496792"
+  },
+  {
+    "pair": "BTCUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 64.85,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 28",
+    "vol_reason": "Volatility: high (exp=7.20)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 59691.3,
+      "sl": 60804.21428571429,
+      "tp": 58021.92857142857,
+      "risk": 1112.914285714287,
+      "reward": 1669.3714285714304,
+      "rr": 1.5,
+      "pos_factor": 0.5,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-06-30T07:41:25.511926"
+  },
+  {
+    "pair": "DOGEUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 64.85,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 28",
+    "vol_reason": "Volatility: high (exp=6.09)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.07255,
+      "sl": 0.07417571428571429,
+      "tp": 0.07011142857142859,
+      "risk": 0.0016257142857142859,
+      "reward": 0.002438571428571415,
+      "rr": 1.4999999999999916,
+      "pos_factor": 0.4,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-06-30T07:41:25.534163"
   }
 ]

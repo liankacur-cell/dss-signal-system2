@@ -50202,5 +50202,33 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-07-01T16:54:06.507572"
+  },
+  {
+    "pair": "NFPUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 78.0,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
+    "mom_reason": "Momentum score: 100",
+    "vol_reason": "Volatility: high (exp=4.86)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:True, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.007947,
+      "sl": 0.005909428571428571,
+      "tp": 0.011003357142857141,
+      "risk": 0.0020375714285714285,
+      "reward": 0.003056357142857142,
+      "rr": 1.4999999999999996,
+      "pos_factor": 0.4,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-07-01T17:54:36.063226"
   }
 ]

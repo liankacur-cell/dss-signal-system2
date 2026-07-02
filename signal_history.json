@@ -53142,5 +53142,33 @@
       "reason": "RR=1:1.13"
     },
     "ts": "2026-07-02T17:03:06.170864"
+  },
+  {
+    "pair": "NOMUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 86.95,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 86",
+    "vol_reason": "Volatility: high (exp=3.52)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: rising, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.001887,
+      "sl": 0.0016457142857142857,
+      "tp": 0.0022489285714285714,
+      "risk": 0.00024128571428571428,
+      "reward": 0.0003619285714285714,
+      "rr": 1.5,
+      "pos_factor": 0.5,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-07-02T18:03:26.508406"
   }
 ]

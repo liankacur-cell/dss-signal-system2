@@ -53590,5 +53590,33 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-07-02T22:04:59.433006"
+  },
+  {
+    "pair": "TLMUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 89.75,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 100",
+    "vol_reason": "Volatility: high (exp=3.96)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: rising, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.001836,
+      "sl": 0.0014207142857142856,
+      "tp": 0.002458928571428571,
+      "risk": 0.0004152857142857144,
+      "reward": 0.0006229285714285712,
+      "rr": 1.499999999999999,
+      "pos_factor": 0.4,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-07-02T23:05:18.611991"
   }
 ]

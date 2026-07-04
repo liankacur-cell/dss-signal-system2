@@ -1,5 +1,62 @@
 {
-  "timestamp": "2026-07-05T04:19:24.218532",
-  "total": 0,
-  "signals": []
+  "timestamp": "2026-07-05T05:19:42.548138",
+  "total": 2,
+  "signals": [
+    {
+      "pair": "UNIUSDT",
+      "market": "crypto",
+      "dir": "SHORT",
+      "score": 81.59128530076626,
+      "struct": "valid_bearish",
+      "struct_reason": "Bearish: LH+LL",
+      "trend": "bearish",
+      "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+      "mom_reason": "Momentum score: 65",
+      "vol_reason": "Volatility: high (exp=10.02)",
+      "liq_reason": "Liquidity resting: inside_range",
+      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+      "sq_reason": "Squeeze: True, Energy: 0.27",
+      "risk": {
+        "entry": 3.226,
+        "sl": 3.2994149999999998,
+        "tp": 3.1379285714285716,
+        "risk": 0.07341499999999979,
+        "reward": 0.08807142857142836,
+        "rr": 1.1996380654011933,
+        "pos_factor": 0.4,
+        "sl_reason": "Above liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.20"
+      },
+      "ts": "2026-07-05T05:19:37.104035"
+    },
+    {
+      "pair": "SOLUSDT",
+      "market": "crypto",
+      "dir": "SHORT",
+      "score": 80.9,
+      "struct": "valid_bearish",
+      "struct_reason": "Bearish: LH+LL",
+      "trend": "bearish",
+      "trend_reason": "Trend bearish (strength:1.00, aligned:True)",
+      "mom_reason": "Momentum score: 37",
+      "vol_reason": "Volatility: high (exp=9.67)",
+      "liq_reason": "Liquidity resting: inside_range",
+      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+      "sq_reason": "Squeeze: False, Energy: 0.00",
+      "risk": {
+        "entry": 81.91,
+        "sl": 83.1939,
+        "tp": 80.25142857142858,
+        "risk": 1.2839000000000027,
+        "reward": 1.6585714285714204,
+        "rr": 1.2918229056557495,
+        "pos_factor": 0.4,
+        "sl_reason": "Above liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.29"
+      },
+      "ts": "2026-07-05T05:19:37.070830"
+    }
+  ]
 }

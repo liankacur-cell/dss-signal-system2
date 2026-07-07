@@ -65630,5 +65630,61 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-07-07T10:40:08.044809"
+  },
+  {
+    "pair": "HMSTRUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 75.55,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 29",
+    "vol_reason": "Volatility: high (exp=11.14)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.0003227,
+      "sl": 0.00037219999999999994,
+      "tp": 0.00024845,
+      "risk": 4.9499999999999956e-05,
+      "reward": 7.424999999999999e-05,
+      "rr": 1.500000000000001,
+      "pos_factor": 0.5,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-07-07T11:40:25.840202"
+  },
+  {
+    "pair": "1000SATSUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 66.95,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 51",
+    "vol_reason": "Volatility: high (exp=13.09)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 9.57e-06,
+      "sl": 9.808799999999998e-06,
+      "tp": 9.261428571428573e-06,
+      "risk": 2.3879999999999846e-07,
+      "reward": 3.0857142857142707e-07,
+      "rr": 1.2921751615218973,
+      "pos_factor": 0.4,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.29"
+    },
+    "ts": "2026-07-07T11:40:25.845810"
   }
 ]

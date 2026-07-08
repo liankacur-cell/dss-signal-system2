@@ -67982,5 +67982,33 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-07-08T06:47:58.305151"
+  },
+  {
+    "pair": "BTCUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 75.28780156957394,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 65",
+    "vol_reason": "Volatility: high (exp=14.22)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: True, Energy: 0.61",
+    "risk": {
+      "entry": 63638.2,
+      "sl": 62625.299999999996,
+      "tp": 65157.549999999996,
+      "risk": 1012.9000000000015,
+      "reward": 1519.3499999999985,
+      "rr": 1.4999999999999964,
+      "pos_factor": 0.4,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-07-08T07:48:15.673776"
   }
 ]

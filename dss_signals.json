@@ -1,34 +1,5 @@
 {
-  "timestamp": "2026-07-09T17:01:25.604607",
-  "total": 1,
-  "signals": [
-    {
-      "pair": "DOGEUSDT",
-      "market": "crypto",
-      "dir": "LONG",
-      "score": 89.27694659172826,
-      "struct": "valid_bullish",
-      "struct_reason": "Bullish: HH+HL",
-      "trend": "bullish",
-      "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
-      "mom_reason": "Momentum score: 79",
-      "vol_reason": "Volatility: high (exp=13.04)",
-      "liq_reason": "Liquidity resting: inside_range",
-      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
-      "sq_reason": "Squeeze: True, Energy: 0.75",
-      "risk": {
-        "entry": 0.07274,
-        "sl": 0.07157034999999999,
-        "tp": 0.07410928571428571,
-        "risk": 0.0011696500000000082,
-        "reward": 0.0013692857142857118,
-        "rr": 1.1706798737106845,
-        "pos_factor": 0.4,
-        "sl_reason": "Below liquidity + ATR",
-        "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.17"
-      },
-      "ts": "2026-07-09T17:01:20.707525"
-    }
-  ]
+  "timestamp": "2026-07-09T18:01:42.808442",
+  "total": 0,
+  "signals": []
 }

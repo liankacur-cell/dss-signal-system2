@@ -72686,5 +72686,61 @@
       "reason": "RR=1:1.91"
     },
     "ts": "2026-07-10T02:14:04.897073"
+  },
+  {
+    "pair": "DOGSUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 91.08901068706075,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
+    "mom_reason": "Momentum score: 91",
+    "vol_reason": "Volatility: high (exp=7.71)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: True, Energy: 0.38",
+    "risk": {
+      "entry": 3.892e-05,
+      "sl": 3.79095e-05,
+      "tp": 4.030857142857143e-05,
+      "risk": 1.0105e-06,
+      "reward": 1.3885714285714269e-06,
+      "rr": 1.3741429278292203,
+      "pos_factor": 0.4,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.37"
+    },
+    "ts": "2026-07-10T03:14:23.752161"
+  },
+  {
+    "pair": "TAGUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 86.50160915668191,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 86",
+    "vol_reason": "Volatility: high (exp=6.52)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: True, Energy: 0.41",
+    "risk": {
+      "entry": 0.000886,
+      "sl": 0.0006355714285714285,
+      "tp": 0.001261642857142857,
+      "risk": 0.0002504285714285715,
+      "reward": 0.00037564285714285705,
+      "rr": 1.4999999999999993,
+      "pos_factor": 0.4,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-07-10T03:14:23.712074"
   }
 ]

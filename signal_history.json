@@ -73050,5 +73050,33 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-07-10T06:15:22.198686"
+  },
+  {
+    "pair": "SOLUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 85.25,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 65",
+    "vol_reason": "Volatility: high (exp=7.19)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 78.01,
+      "sl": 79.12,
+      "tp": 76.34500000000001,
+      "risk": 1.1099999999999994,
+      "reward": 1.664999999999992,
+      "rr": 1.4999999999999936,
+      "pos_factor": 0.4,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-07-10T07:15:39.955680"
   }
 ]

@@ -78230,5 +78230,33 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-07-12T01:32:37.383447"
+  },
+  {
+    "pair": "XPINUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 81.61544225773021,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 65",
+    "vol_reason": "Volatility: high (exp=14.78)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: True, Energy: 0.27",
+    "risk": {
+      "entry": 0.001939,
+      "sl": 0.0016560000000000001,
+      "tp": 0.0023634999999999997,
+      "risk": 0.00028299999999999983,
+      "reward": 0.00042449999999999975,
+      "rr": 1.5,
+      "pos_factor": 0.5,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-07-12T02:32:55.706158"
   }
 ]

@@ -81506,5 +81506,33 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-07-13T21:13:55.087065"
+  },
+  {
+    "pair": "HMSTRUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 82.75,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 65",
+    "vol_reason": "Volatility: high (exp=15.23)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.0002002,
+      "sl": 0.0002143665,
+      "tp": 0.00018584285714285713,
+      "risk": 1.4166500000000007e-05,
+      "reward": 1.4357142857142861e-05,
+      "rr": 1.013457301178333,
+      "pos_factor": 0.4,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.01"
+    },
+    "ts": "2026-07-13T22:14:17.183152"
   }
 ]

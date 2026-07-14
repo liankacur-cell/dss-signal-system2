@@ -84558,5 +84558,33 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-07-14T23:23:15.372271"
+  },
+  {
+    "pair": "SUIUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 77.65,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 92",
+    "vol_reason": "Volatility: high (exp=10.75)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.7562,
+      "sl": 0.741,
+      "tp": 0.7789999999999999,
+      "risk": 0.015199999999999991,
+      "reward": 0.02279999999999993,
+      "rr": 1.4999999999999964,
+      "pos_factor": 0.4,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-07-15T01:25:29.593068"
   }
 ]

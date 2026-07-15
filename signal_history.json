@@ -87050,5 +87050,61 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-07-15T22:35:32.403098"
+  },
+  {
+    "pair": "DOGSUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 67.16445961921359,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:1.00, aligned:True)",
+    "mom_reason": "Momentum score: 15",
+    "vol_reason": "Volatility: high (exp=6.29)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: True, Energy: 0.73",
+    "risk": {
+      "entry": 3.759e-05,
+      "sl": 3.8461349999999994e-05,
+      "tp": 3.656571428571428e-05,
+      "risk": 8.713499999999963e-07,
+      "reward": 1.0242857142857154e-06,
+      "rr": 1.17551582519736,
+      "pos_factor": 0.4,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.18"
+    },
+    "ts": "2026-07-15T23:35:52.009452"
+  },
+  {
+    "pair": "DOGEUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 63.18482480414363,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 15",
+    "vol_reason": "Volatility: high (exp=6.02)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:True",
+    "sq_reason": "Squeeze: True, Energy: 0.69",
+    "risk": {
+      "entry": 0.07348,
+      "sl": 0.0750333,
+      "tp": 0.07141642857142858,
+      "risk": 0.0015532999999999936,
+      "reward": 0.0020635714285714285,
+      "rr": 1.328507969208419,
+      "pos_factor": 0.4,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.33"
+    },
+    "ts": "2026-07-15T23:35:51.959199"
   }
 ]

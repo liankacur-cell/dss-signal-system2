@@ -89822,5 +89822,61 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-07-16T20:44:11.258634"
+  },
+  {
+    "pair": "AKEUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 93.29935719377934,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 100",
+    "vol_reason": "Volatility: high (exp=13.20)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: True, Energy: 0.71",
+    "risk": {
+      "entry": 0.0009697,
+      "sl": 0.0007861000000000001,
+      "tp": 0.0012450999999999999,
+      "risk": 0.0001835999999999999,
+      "reward": 0.00027539999999999986,
+      "rr": 1.5,
+      "pos_factor": 0.5,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-07-16T21:44:31.594896"
+  },
+  {
+    "pair": "UNIUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 86.95,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 86",
+    "vol_reason": "Volatility: high (exp=10.74)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 3.699,
+      "sl": 3.5808571428571425,
+      "tp": 3.876214285714286,
+      "risk": 0.11814285714285733,
+      "reward": 0.1772142857142862,
+      "rr": 1.5000000000000018,
+      "pos_factor": 0.5,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-07-16T21:44:31.579743"
   }
 ]

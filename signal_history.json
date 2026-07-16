@@ -90046,5 +90046,33 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-07-16T22:44:52.988138"
+  },
+  {
+    "pair": "ZECUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 77.45,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 51",
+    "vol_reason": "Volatility: high (exp=8.15)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 554.26,
+      "sl": 573.18165,
+      "tp": 529.7607142857142,
+      "risk": 18.92165,
+      "reward": 24.499285714285747,
+      "rr": 1.294775334829983,
+      "pos_factor": 0.4,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.29"
+    },
+    "ts": "2026-07-16T23:45:12.827157"
   }
 ]

@@ -95394,5 +95394,61 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-07-18T17:33:21.172440"
+  },
+  {
+    "pair": "1000XECUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 93.0673878650057,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
+    "mom_reason": "Momentum score: 100",
+    "vol_reason": "Volatility: high (exp=6.27)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: True, Energy: 0.41",
+    "risk": {
+      "entry": 0.009372,
+      "sl": 0.00835757142857143,
+      "tp": 0.010893642857142857,
+      "risk": 0.0010144285714285706,
+      "reward": 0.0015216428571428568,
+      "rr": 1.5000000000000009,
+      "pos_factor": 0.5,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-07-18T18:33:52.643340"
+  },
+  {
+    "pair": "AKEUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 72.25,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 25",
+    "vol_reason": "Volatility: high (exp=7.58)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.0017316,
+      "sl": 0.0012494285714285715,
+      "tp": 0.002454857142857143,
+      "risk": 0.00048217142857142855,
+      "reward": 0.0007232571428571432,
+      "rr": 1.5000000000000007,
+      "pos_factor": 0.5,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-07-18T18:33:52.585295"
   }
 ]

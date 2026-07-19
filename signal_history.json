@@ -97802,5 +97802,61 @@
       "reason": "RR=1:1.05"
     },
     "ts": "2026-07-19T16:52:47.256913"
+  },
+  {
+    "pair": "TLMUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 89.75,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 100",
+    "vol_reason": "Volatility: high (exp=10.82)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:True, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.00196,
+      "sl": 0.0016524285714285714,
+      "tp": 0.0024213571428571426,
+      "risk": 0.00030757142857142854,
+      "reward": 0.0004613571428571427,
+      "rr": 1.4999999999999996,
+      "pos_factor": 0.4,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-07-19T17:53:18.035616"
+  },
+  {
+    "pair": "TOSHIUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 84.02233114373158,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:1.00, aligned:True)",
+    "mom_reason": "Momentum score: 51",
+    "vol_reason": "Volatility: high (exp=7.44)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: True, Energy: 0.56",
+    "risk": {
+      "entry": 0.0001125,
+      "sl": 0.00012120299999999998,
+      "tp": 0.00010373571428571428,
+      "risk": 8.702999999999988e-06,
+      "reward": 8.764285714285712e-06,
+      "rr": 1.00704190673167,
+      "pos_factor": 0.4,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.01"
+    },
+    "ts": "2026-07-19T17:53:18.017225"
   }
 ]

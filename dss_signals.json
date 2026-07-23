@@ -1,5 +1,90 @@
 {
-  "timestamp": "2026-07-23T14:39:37.373755",
-  "total": 0,
-  "signals": []
+  "timestamp": "2026-07-23T15:39:56.718096",
+  "total": 3,
+  "signals": [
+    {
+      "pair": "AKEUSDT",
+      "market": "crypto",
+      "dir": "LONG",
+      "score": 80.5,
+      "struct": "valid_bearish",
+      "struct_reason": "Bearish: LH+LL",
+      "trend": "bullish",
+      "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
+      "mom_reason": "Momentum score: 100",
+      "vol_reason": "Volatility: high (exp=11.13)",
+      "liq_reason": "Liquidity resting: inside_range",
+      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+      "sq_reason": "Squeeze: False, Energy: 0.00",
+      "risk": {
+        "entry": 0.0018931,
+        "sl": 0.0017311142857142857,
+        "tp": 0.0021360785714285716,
+        "risk": 0.00016198571428571425,
+        "reward": 0.0002429785714285716,
+        "rr": 1.5000000000000013,
+        "pos_factor": 0.5,
+        "sl_reason": "Below liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50"
+      },
+      "ts": "2026-07-23T15:39:51.162899"
+    },
+    {
+      "pair": "UNIUSDT",
+      "market": "crypto",
+      "dir": "LONG",
+      "score": 78.07402044070297,
+      "struct": "valid_bearish",
+      "struct_reason": "Bearish: LH+LL",
+      "trend": "bullish",
+      "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
+      "mom_reason": "Momentum score: 94",
+      "vol_reason": "Volatility: high (exp=9.41)",
+      "liq_reason": "Liquidity resting: inside_range",
+      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+      "sq_reason": "Squeeze: True, Energy: 0.25",
+      "risk": {
+        "entry": 3.851,
+        "sl": 3.7262750000000002,
+        "tp": 3.9881428571428574,
+        "risk": 0.12472499999999975,
+        "reward": 0.13714285714285745,
+        "rr": 1.0995618933081397,
+        "pos_factor": 0.4,
+        "sl_reason": "Below liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.10"
+      },
+      "ts": "2026-07-23T15:39:51.147510"
+    },
+    {
+      "pair": "PUMPUSDT",
+      "market": "crypto",
+      "dir": "SHORT",
+      "score": 76.74522111846221,
+      "struct": "valid_bullish",
+      "struct_reason": "Bullish: HH+HL",
+      "trend": "bearish",
+      "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+      "mom_reason": "Momentum score: 79",
+      "vol_reason": "Volatility: high (exp=10.96)",
+      "liq_reason": "Liquidity resting: inside_range",
+      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+      "sq_reason": "Squeeze: True, Energy: 0.34",
+      "risk": {
+        "entry": 0.001893,
+        "sl": 0.0019368571428571427,
+        "tp": 0.0018272142857142857,
+        "risk": 4.385714285714279e-05,
+        "reward": 6.578571428571419e-05,
+        "rr": 1.5,
+        "pos_factor": 0.5,
+        "sl_reason": "Above liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50"
+      },
+      "ts": "2026-07-23T15:39:51.202347"
+    }
+  ]
 }

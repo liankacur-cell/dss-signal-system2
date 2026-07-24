@@ -109506,5 +109506,61 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-07-24T14:33:35.173364"
+  },
+  {
+    "pair": "1000SATSUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 79.25,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 100",
+    "vol_reason": "Volatility: high (exp=6.83)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 9.42e-06,
+      "sl": 9.302857142857142e-06,
+      "tp": 9.595714285714285e-06,
+      "risk": 1.1714285714285723e-07,
+      "reward": 1.75714285714285e-07,
+      "rr": 1.4999999999999927,
+      "pos_factor": 0.4,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-07-24T15:33:56.607700"
+  },
+  {
+    "pair": "PUMPUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 69.65,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 77",
+    "vol_reason": "Volatility: high (exp=10.24)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: rising, Acc:False, Dist:True",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.001847,
+      "sl": 0.0017855714285714285,
+      "tp": 0.0019391428571428572,
+      "risk": 6.142857142857143e-05,
+      "reward": 9.214285714285726e-05,
+      "rr": 1.5000000000000018,
+      "pos_factor": 0.5,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-07-24T15:33:56.636599"
   }
 ]

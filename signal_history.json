@@ -112138,5 +112138,61 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-07-25T18:43:00.056625"
+  },
+  {
+    "pair": "ETHUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 90.65919570199912,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 86",
+    "vol_reason": "Volatility: high (exp=10.11)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: True, Energy: 0.74",
+    "risk": {
+      "entry": 1857.48,
+      "sl": 1841.0087,
+      "tp": 1893.9825,
+      "risk": 16.47129999999993,
+      "reward": 36.502500000000055,
+      "rr": 2.2161274459211,
+      "pos_factor": 0.5,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:2.22"
+    },
+    "ts": "2026-07-25T19:43:20.842583"
+  },
+  {
+    "pair": "1000SATSUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 82.12045494774343,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 100",
+    "vol_reason": "Volatility: high (exp=35.75)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: True, Energy: 0.57",
+    "risk": {
+      "entry": 9.2e-06,
+      "sl": 8.995714285714287e-06,
+      "tp": 9.506428571428571e-06,
+      "risk": 2.0428571428571306e-07,
+      "reward": 3.064285714285713e-07,
+      "rr": 1.5000000000000082,
+      "pos_factor": 0.5,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-07-25T19:43:20.890414"
   }
 ]

@@ -111522,5 +111522,33 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-07-25T09:40:03.867593"
+  },
+  {
+    "pair": "AKEUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 69.03780778603453,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 56",
+    "vol_reason": "Volatility: high (exp=17.86)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: True, Energy: 0.22",
+    "risk": {
+      "entry": 0.0027076,
+      "sl": 0.0022427857142857145,
+      "tp": 0.003404821428571429,
+      "risk": 0.0004648142857142856,
+      "reward": 0.0006972214285714288,
+      "rr": 1.5000000000000009,
+      "pos_factor": 0.5,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-07-25T10:40:21.750940"
   }
 ]

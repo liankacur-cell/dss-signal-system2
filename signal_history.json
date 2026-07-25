@@ -112922,5 +112922,33 @@
       "reason": "RR=1:1.24"
     },
     "ts": "2026-07-26T04:46:33.907859"
+  },
+  {
+    "pair": "1000PEPEUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 71.15,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 72",
+    "vol_reason": "Volatility: high (exp=15.09)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.0027489,
+      "sl": 0.0028301805,
+      "tp": 0.002665135714285714,
+      "risk": 8.128050000000015e-05,
+      "reward": 8.376428571428606e-05,
+      "rr": 1.0305581992517996,
+      "pos_factor": 0.4,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.03"
+    },
+    "ts": "2026-07-26T05:46:53.531735"
   }
 ]

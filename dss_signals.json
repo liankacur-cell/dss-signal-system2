@@ -1,62 +1,62 @@
 {
-  "timestamp": "2026-07-25T23:44:59.426322",
+  "timestamp": "2026-07-26T00:45:19.053811",
   "total": 2,
   "signals": [
     {
-      "pair": "DOGEUSDT",
+      "pair": "DOGSUSDT",
       "market": "crypto",
       "dir": "LONG",
-      "score": 98.5,
+      "score": 93.5,
       "struct": "valid_bullish",
       "struct_reason": "Bullish: HH+HL",
       "trend": "bullish",
       "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
       "mom_reason": "Momentum score: 100",
-      "vol_reason": "Volatility: high (exp=2.50)",
+      "vol_reason": "Volatility: high (exp=2.67)",
       "liq_reason": "Liquidity resting: inside_range",
-      "mf_reason": "OBV: rising, Acc:True, Dist:False",
+      "mf_reason": "OBV: mixed, Acc:True, Dist:False",
       "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 0.07207,
-        "sl": 0.07085395,
-        "tp": 0.07342214285714285,
-        "risk": 0.0012160499999999963,
-        "reward": 0.0013521428571428573,
-        "rr": 1.1119138663236392,
+        "entry": 3.716e-05,
+        "sl": 3.61782e-05,
+        "tp": 3.848642857142857e-05,
+        "risk": 9.818000000000047e-07,
+        "reward": 1.32642857142857e-06,
+        "rr": 1.3510170823269134,
         "pos_factor": 0.4,
         "sl_reason": "Below liquidity + ATR",
         "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.11"
+        "reason": "RR=1:1.35"
       },
-      "ts": "2026-07-25T23:44:53.876032"
+      "ts": "2026-07-26T00:45:13.596897"
     },
     {
-      "pair": "ZECUSDT",
+      "pair": "AKEUSDT",
       "market": "crypto",
       "dir": "LONG",
-      "score": 89.45,
+      "score": 78.45,
       "struct": "valid_bullish",
       "struct_reason": "Bullish: HH+HL",
       "trend": "bullish",
       "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
-      "mom_reason": "Momentum score: 86",
-      "vol_reason": "Volatility: high (exp=6.13)",
+      "mom_reason": "Momentum score: 56",
+      "vol_reason": "Volatility: high (exp=11.07)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:False, Dist:False",
       "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 479.83,
-        "sl": 470.68475,
-        "tp": 491.97785714285715,
-        "risk": 9.145249999999976,
-        "reward": 12.147857142857163,
-        "rr": 1.328324227643552,
+        "entry": 0.0032401,
+        "sl": 0.0025733685,
+        "tp": 0.003984807142857143,
+        "risk": 0.0006667315,
+        "reward": 0.0007447071428571426,
+        "rr": 1.1169520906948938,
         "pos_factor": 0.4,
         "sl_reason": "Below liquidity + ATR",
         "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.33"
+        "reason": "RR=1:1.12"
       },
-      "ts": "2026-07-25T23:44:53.888866"
+      "ts": "2026-07-26T00:45:13.579163"
     }
   ]
 }

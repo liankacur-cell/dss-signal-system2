@@ -1,34 +1,34 @@
 {
-  "timestamp": "2026-07-25T15:42:02.521227",
+  "timestamp": "2026-07-25T16:42:22.290111",
   "total": 1,
   "signals": [
     {
-      "pair": "NEIROUSDT",
+      "pair": "1000SATSUSDT",
       "market": "crypto",
       "dir": "SHORT",
-      "score": 74.79089927781895,
-      "struct": "valid_bullish",
-      "struct_reason": "Bullish: HH+HL",
+      "score": 93.23547418113228,
+      "struct": "valid_bearish",
+      "struct_reason": "Bearish: LH+LL",
       "trend": "bearish",
       "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
-      "mom_reason": "Momentum score: 72",
-      "vol_reason": "Volatility: high (exp=11.78)",
+      "mom_reason": "Momentum score: 93",
+      "vol_reason": "Volatility: high (exp=23.67)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:False, Dist:False",
-      "sq_reason": "Squeeze: True, Energy: 0.23",
+      "sq_reason": "Squeeze: True, Energy: 0.48",
       "risk": {
-        "entry": 5.742e-05,
-        "sl": 5.826142857142857e-05,
-        "tp": 5.6157857142857144e-05,
-        "risk": 8.414285714285704e-07,
-        "reward": 1.262142857142859e-06,
-        "rr": 1.500000000000004,
-        "pos_factor": 0.5,
+        "entry": 9.18e-06,
+        "sl": 9.382857142857143e-06,
+        "tp": 8.875714285714286e-06,
+        "risk": 2.028571428571431e-07,
+        "reward": 3.042857142857138e-07,
+        "rr": 1.4999999999999958,
+        "pos_factor": 0.4,
         "sl_reason": "Above liquidity + ATR",
         "tp_reason": "Before liquidity target",
         "reason": "RR=1:1.50"
       },
-      "ts": "2026-07-25T15:41:57.291685"
+      "ts": "2026-07-25T16:42:16.959466"
     }
   ]
 }

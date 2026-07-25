@@ -111998,5 +111998,33 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-07-25T15:41:57.291685"
+  },
+  {
+    "pair": "1000SATSUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 93.23547418113228,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 93",
+    "vol_reason": "Volatility: high (exp=23.67)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: True, Energy: 0.48",
+    "risk": {
+      "entry": 9.18e-06,
+      "sl": 9.382857142857143e-06,
+      "tp": 8.875714285714286e-06,
+      "risk": 2.028571428571431e-07,
+      "reward": 3.042857142857138e-07,
+      "rr": 1.4999999999999958,
+      "pos_factor": 0.4,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-07-25T16:42:16.959466"
   }
 ]

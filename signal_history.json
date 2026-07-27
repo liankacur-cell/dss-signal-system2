@@ -115022,5 +115022,33 @@
       "reason": "RR=1:2.80"
     },
     "ts": "2026-07-27T11:16:54.592889"
+  },
+  {
+    "pair": "BOMEUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 93.91883342706778,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
+    "mom_reason": "Momentum score: 100",
+    "vol_reason": "Volatility: high (exp=7.54)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: True, Energy: 0.58",
+    "risk": {
+      "entry": 0.0005404,
+      "sl": 0.0005062428571428571,
+      "tp": 0.0005916357142857143,
+      "risk": 3.4157142857142936e-05,
+      "reward": 5.1235714285714296e-05,
+      "rr": 1.499999999999997,
+      "pos_factor": 0.4,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-07-27T12:17:21.560783"
   }
 ]

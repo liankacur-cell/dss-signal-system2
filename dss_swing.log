@@ -35961,3 +35961,44 @@
 2026-07-27 12:17:22,200 | INFO | === 1 signals | 0 skipped | 0 errors ===
 2026-07-27 12:17:24,765 | INFO | Sent 1 FREE signals
 2026-07-27 12:17:29,051 | INFO | Sent 1 VIP signals
+2026-07-27 12:17:32,519 | INFO | Git auto push OK
+2026-07-27 12:17:32,520 | INFO | CYCLE COMPLETE
+2026-07-27 12:17:32,521 | INFO | ==================================================
+2026-07-30 18:08:49,152 | INFO | ==================================================
+2026-07-30 18:08:49,154 | INFO | CYCLE START: 2026-07-30 18:08:49.154116
+2026-07-30 18:08:49,154 | INFO | ==================================================
+2026-07-30 18:08:49,154 | INFO | === FETCHING CRYPTO (Binance) ===
+2026-07-30 18:08:49,761 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-07-30 18:08:51,490 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-07-30 18:08:54,801 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-07-30 18:09:01,329 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-07-30 18:09:14,249 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-07-30 18:09:14,369 | ERROR | Binance connection error: BTCUSDT 1m
+2026-07-30 18:09:14,480 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=5m&limit=100
+2026-07-30 18:09:16,199 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=5m&limit=100
+2026-07-30 18:09:16,851 | INFO |   OK BTCUSDT
+2026-07-30 18:09:17,529 | INFO |   OK ETHUSDT
+2026-07-30 18:09:18,205 | INFO |   OK SOLUSDT
+2026-07-30 18:09:18,869 | INFO |   OK SUIUSDT
+2026-07-30 18:09:19,555 | INFO |   OK DOGEUSDT
+2026-07-30 18:09:20,227 | INFO |   OK UNIUSDT
+2026-07-30 18:09:20,908 | INFO |   OK ZECUSDT
+2026-07-30 18:09:26,490 | INFO | CRYPTO COUNT: 14
+2026-07-30 18:09:26,490 | INFO | --- Analyzing CRYPTO ---
+2026-07-30 18:09:26,499 | INFO | NO SIGNAL [BTCUSDT]: No setup
+2026-07-30 18:09:26,506 | INFO | NO SIGNAL [ETHUSDT]: No setup
+2026-07-30 18:09:26,512 | INFO | SIGNAL: SOLUSDT -> LONG (Score:80.5)
+2026-07-30 18:09:26,517 | INFO | NO SIGNAL [SUIUSDT]: No setup
+2026-07-30 18:09:26,523 | INFO | SIGNAL: DOGEUSDT -> LONG (Score:79.2)
+2026-07-30 18:09:26,529 | INFO | SIGNAL: UNIUSDT -> LONG (Score:73.5)
+2026-07-30 18:09:26,535 | INFO | NO SIGNAL [ZECUSDT]: No setup
+2026-07-30 18:09:26,540 | INFO | NO SIGNAL [1000SATSUSDT]: No setup
+2026-07-30 18:09:26,546 | INFO | NO SIGNAL [NEIROUSDT]: No setup
+2026-07-30 18:09:26,551 | INFO | SIGNAL: AKEUSDT -> LONG (Score:90.0)
+2026-07-30 18:09:26,558 | INFO | NO SIGNAL [COTIUSDT]: No setup
+2026-07-30 18:09:26,565 | INFO | NO SIGNAL [1000PEPEUSDT]: No setup
+2026-07-30 18:09:26,570 | INFO | NO SIGNAL [DOGSUSDT]: No setup
+2026-07-30 18:09:26,576 | INFO | NO SIGNAL [PUMPUSDT]: No setup
+2026-07-30 18:09:27,485 | INFO | === 4 signals | 0 skipped | 1 errors ===
+2026-07-30 18:09:29,924 | INFO | Sent 4 FREE signals
+2026-07-30 18:09:34,111 | INFO | Sent 4 VIP signals

@@ -36035,3 +36035,38 @@
 2026-07-30 19:09:51,231 | INFO | === 5 signals | 0 skipped | 0 errors ===
 2026-07-30 19:09:53,338 | INFO | Sent 5 FREE signals
 2026-07-30 19:09:57,456 | INFO | Sent 5 VIP signals
+2026-07-30 19:10:01,245 | INFO | Git auto push OK
+2026-07-30 19:10:01,250 | INFO | CYCLE COMPLETE
+2026-07-30 19:10:01,251 | INFO | ==================================================
+2026-07-30 20:10:01,297 | INFO | ==================================================
+2026-07-30 20:10:01,328 | INFO | CYCLE START: 2026-07-30 20:10:01.327460
+2026-07-30 20:10:01,329 | INFO | ==================================================
+2026-07-30 20:10:01,330 | INFO | === FETCHING CRYPTO (Binance) ===
+2026-07-30 20:10:02,178 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-07-30 20:10:03,899 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-07-30 20:10:04,721 | INFO |   OK BTCUSDT
+2026-07-30 20:10:05,361 | INFO |   OK ETHUSDT
+2026-07-30 20:10:06,047 | INFO |   OK SOLUSDT
+2026-07-30 20:10:06,726 | INFO |   OK SUIUSDT
+2026-07-30 20:10:07,427 | INFO |   OK DOGEUSDT
+2026-07-30 20:10:08,122 | INFO |   OK UNIUSDT
+2026-07-30 20:10:08,802 | INFO |   OK ZECUSDT
+2026-07-30 20:10:14,372 | INFO | CRYPTO COUNT: 14
+2026-07-30 20:10:14,373 | INFO | --- Analyzing CRYPTO ---
+2026-07-30 20:10:14,394 | INFO | SIGNAL: BTCUSDT -> LONG (Score:93.5)
+2026-07-30 20:10:14,403 | INFO | SIGNAL: ETHUSDT -> LONG (Score:96.0)
+2026-07-30 20:10:14,409 | INFO | NO SIGNAL [SOLUSDT]: No setup
+2026-07-30 20:10:14,414 | INFO | NO SIGNAL [SUIUSDT]: No setup
+2026-07-30 20:10:14,418 | INFO | SIGNAL: DOGEUSDT -> LONG (Score:92.2)
+2026-07-30 20:10:14,423 | INFO | NO SIGNAL [UNIUSDT]: No setup
+2026-07-30 20:10:14,427 | INFO | SIGNAL: ZECUSDT -> LONG (Score:88.5)
+2026-07-30 20:10:14,432 | INFO | NO SIGNAL [1000SATSUSDT]: No setup
+2026-07-30 20:10:14,436 | INFO | NO SIGNAL [NEIROUSDT]: No setup
+2026-07-30 20:10:14,441 | INFO | SIGNAL: COTIUSDT -> LONG (Score:77.4)
+2026-07-30 20:10:14,446 | INFO | SIGNAL: AKEUSDT -> LONG (Score:92.4)
+2026-07-30 20:10:14,451 | INFO | NO SIGNAL [1000PEPEUSDT]: No setup
+2026-07-30 20:10:14,455 | INFO | NO SIGNAL [DOGSUSDT]: No setup
+2026-07-30 20:10:14,460 | INFO | NO SIGNAL [PUMPUSDT]: No setup
+2026-07-30 20:10:15,303 | INFO | === 6 signals | 0 skipped | 0 errors ===
+2026-07-30 20:10:17,407 | INFO | Sent 5 FREE signals
+2026-07-30 20:10:21,404 | INFO | Sent 5 VIP signals

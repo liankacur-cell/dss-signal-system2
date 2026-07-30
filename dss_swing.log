@@ -36278,3 +36278,37 @@
 2026-07-31 02:12:56,231 | INFO | === 5 signals | 0 skipped | 0 errors ===
 2026-07-31 02:12:58,327 | INFO | Sent 5 FREE signals
 2026-07-31 02:13:02,357 | INFO | Sent 5 VIP signals
+2026-07-31 02:13:06,457 | INFO | Git auto push OK
+2026-07-31 02:13:06,458 | INFO | CYCLE COMPLETE
+2026-07-31 02:13:06,458 | INFO | ==================================================
+2026-07-31 03:13:06,498 | INFO | ==================================================
+2026-07-31 03:13:06,528 | INFO | CYCLE START: 2026-07-31 03:13:06.527599
+2026-07-31 03:13:06,529 | INFO | ==================================================
+2026-07-31 03:13:06,532 | INFO | === FETCHING CRYPTO (Binance) ===
+2026-07-31 03:13:07,236 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-07-31 03:13:08,112 | INFO |   OK BTCUSDT
+2026-07-31 03:13:08,831 | INFO |   OK ETHUSDT
+2026-07-31 03:13:09,556 | INFO |   OK SOLUSDT
+2026-07-31 03:13:10,272 | INFO |   OK SUIUSDT
+2026-07-31 03:13:10,990 | INFO |   OK DOGEUSDT
+2026-07-31 03:13:11,671 | INFO |   OK UNIUSDT
+2026-07-31 03:13:12,391 | INFO |   OK ZECUSDT
+2026-07-31 03:13:17,888 | INFO | CRYPTO COUNT: 14
+2026-07-31 03:13:17,889 | INFO | --- Analyzing CRYPTO ---
+2026-07-31 03:13:17,899 | INFO | SIGNAL: BTCUSDT -> LONG (Score:89.1)
+2026-07-31 03:13:17,905 | INFO | NO SIGNAL [ETHUSDT]: No setup
+2026-07-31 03:13:17,909 | INFO | NO SIGNAL [SOLUSDT]: No setup
+2026-07-31 03:13:17,913 | INFO | NO SIGNAL [SUIUSDT]: No setup
+2026-07-31 03:13:17,917 | INFO | NO SIGNAL [DOGEUSDT]: No setup
+2026-07-31 03:13:17,921 | INFO | NO SIGNAL [UNIUSDT]: No setup
+2026-07-31 03:13:17,924 | INFO | NO SIGNAL [ZECUSDT]: No setup
+2026-07-31 03:13:17,928 | INFO | NO SIGNAL [1000SATSUSDT]: No setup
+2026-07-31 03:13:17,932 | INFO | NO SIGNAL [NEIROUSDT]: No setup
+2026-07-31 03:13:17,935 | INFO | NO SIGNAL [AKEUSDT]: No setup
+2026-07-31 03:13:17,939 | INFO | SIGNAL: COTIUSDT -> SHORT (Score:74.8)
+2026-07-31 03:13:17,943 | INFO | NO SIGNAL [1000PEPEUSDT]: No setup
+2026-07-31 03:13:17,946 | INFO | NO SIGNAL [DOGSUSDT]: No setup
+2026-07-31 03:13:17,950 | INFO | NO SIGNAL [BOMEUSDT]: No setup
+2026-07-31 03:13:18,627 | INFO | === 2 signals | 0 skipped | 0 errors ===
+2026-07-31 03:13:20,743 | INFO | Sent 2 FREE signals
+2026-07-31 03:13:24,753 | INFO | Sent 2 VIP signals

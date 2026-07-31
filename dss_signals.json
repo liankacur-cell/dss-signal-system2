@@ -1,34 +1,34 @@
 {
-  "timestamp": "2026-07-31T23:57:31.856370",
+  "timestamp": "2026-08-01T00:38:46.619502",
   "total": 1,
   "signals": [
     {
-      "pair": "DOGSUSDT",
+      "pair": "AKEUSDT",
       "market": "crypto",
-      "dir": "SHORT",
-      "score": 73.9768110107161,
+      "dir": "LONG",
+      "score": 65.75,
       "struct": "valid_bearish",
       "struct_reason": "Bearish: LH+LL",
-      "trend": "bearish",
-      "trend_reason": "Trend bearish (strength:1.00, aligned:True)",
-      "mom_reason": "Momentum score: 44",
-      "vol_reason": "Volatility: high (exp=10.22)",
+      "trend": "bullish",
+      "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+      "mom_reason": "Momentum score: 75",
+      "vol_reason": "Volatility: high (exp=6.75)",
       "liq_reason": "Liquidity resting: inside_range",
-      "mf_reason": "OBV: mixed, Acc:False, Dist:True",
-      "sq_reason": "Squeeze: True, Energy: 0.40",
+      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+      "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 3.401e-05,
-        "sl": 3.4725714285714286e-05,
-        "tp": 3.2936428571428574e-05,
-        "risk": 7.157142857142849e-07,
-        "reward": 1.0735714285714274e-06,
-        "rr": 1.5,
+        "entry": 0.0040738,
+        "sl": 0.003585157142857143,
+        "tp": 0.004806764285714285,
+        "risk": 0.0004886428571428568,
+        "reward": 0.0007329642857142856,
+        "rr": 1.5000000000000009,
         "pos_factor": 0.5,
-        "sl_reason": "Above liquidity + ATR",
+        "sl_reason": "Below liquidity + ATR",
         "tp_reason": "Before liquidity target",
         "reason": "RR=1:1.50"
       },
-      "ts": "2026-07-31T23:57:25.107542"
+      "ts": "2026-08-01T00:38:40.507233"
     }
   ]
 }

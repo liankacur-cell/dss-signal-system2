@@ -36933,3 +36933,42 @@
 2026-07-31 14:18:53,723 | INFO | CRYPTO COUNT: 0
 2026-07-31 14:18:53,723 | INFO | --- Analyzing CRYPTO ---
 2026-07-31 14:18:54,642 | INFO | === 0 signals | 7 skipped | 0 errors ===
+2026-07-31 14:19:00,587 | INFO | Git auto push OK
+2026-07-31 14:19:00,588 | INFO | CYCLE COMPLETE
+2026-07-31 14:19:00,589 | INFO | ==================================================
+2026-07-31 14:34:30,512 | INFO | IPv4 forced for Termux stability
+2026-07-31 14:34:30,514 | INFO | ==================================================
+2026-07-31 14:34:30,515 | INFO | CYCLE START: 2026-07-31 14:34:30.515277
+2026-07-31 14:34:30,515 | INFO | ==================================================
+2026-07-31 14:34:30,515 | INFO | === FETCHING CRYPTO (Binance) ===
+2026-07-31 14:34:30,767 | WARNING | Health check failed: fapi.binance.com
+2026-07-31 14:34:30,767 | WARNING | Endpoint down, using cache only
+2026-07-31 14:34:30,908 | WARNING | Connection error (reset): https://fapi.binance.com/fapi/v1/klines
+2026-07-31 14:34:31,209 | WARNING | Connection error (reset): https://fapi.binance.com/fapi/v1/klines
+2026-07-31 14:34:31,210 | WARNING | Binance BTCUSDT 1m: All attempts failed, using last good cache
+2026-07-31 14:34:31,489 | WARNING | Connection error (reset): https://fapi.binance.com/fapi/v1/klines
+2026-07-31 14:34:31,808 | WARNING | Connection error (reset): https://fapi.binance.com/fapi/v1/klines
+2026-07-31 14:34:31,808 | WARNING | Binance BTCUSDT 5m: All attempts failed, using last good cache
+2026-07-31 14:34:32,129 | WARNING | Connection error (reset): https://fapi.binance.com/fapi/v1/klines
+2026-07-31 14:34:32,130 | WARNING | Circuit breaker OPEN (5 consecutive failures)
+2026-07-31 14:34:32,397 | WARNING | Connection error (reset): https://fapi.binance.com/fapi/v1/klines
+2026-07-31 14:34:32,398 | WARNING | Circuit breaker OPEN (5 consecutive failures)
+2026-07-31 14:34:32,398 | WARNING | Binance BTCUSDT 15m: All attempts failed, using last good cache
+2026-07-31 14:34:32,399 | WARNING | SKIP [BTCUSDT]: Empty dataset
+2026-07-31 14:34:32,399 | WARNING |   FAIL BTCUSDT
+2026-07-31 14:34:32,399 | WARNING | SKIP [ETHUSDT]: Empty dataset
+2026-07-31 14:34:32,399 | WARNING |   FAIL ETHUSDT
+2026-07-31 14:34:32,400 | WARNING | SKIP [SOLUSDT]: Empty dataset
+2026-07-31 14:34:32,400 | WARNING |   FAIL SOLUSDT
+2026-07-31 14:34:32,400 | WARNING | SKIP [SUIUSDT]: Empty dataset
+2026-07-31 14:34:32,400 | WARNING |   FAIL SUIUSDT
+2026-07-31 14:34:32,401 | WARNING | SKIP [DOGEUSDT]: Empty dataset
+2026-07-31 14:34:32,401 | WARNING |   FAIL DOGEUSDT
+2026-07-31 14:34:32,401 | WARNING | SKIP [UNIUSDT]: Empty dataset
+2026-07-31 14:34:32,401 | WARNING |   FAIL UNIUSDT
+2026-07-31 14:34:32,402 | WARNING | SKIP [ZECUSDT]: Empty dataset
+2026-07-31 14:34:32,402 | WARNING |   FAIL ZECUSDT
+2026-07-31 14:34:32,402 | INFO | NET STATS | total:61 ok:0 timeout:0 reset:6 http_err:0 bad_json:0 bad_resp:0 cache_hit:0 cache_miss:29 cb:26 endpoint:fapi
+2026-07-31 14:34:32,402 | INFO | CRYPTO COUNT: 0
+2026-07-31 14:34:32,403 | INFO | --- Analyzing CRYPTO ---
+2026-07-31 14:34:33,341 | INFO | === 0 signals | 7 skipped | 0 errors ===

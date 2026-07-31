@@ -4,7 +4,14 @@ DSS SWING INTERDAY - CRYPTO ONLY
 Decision Support System - Manual Trading Only
 Termux Ready - Single File - No Heavy Libraries
 
-STABLE v7.5 - SIGNAL HISTORY
+STABLE v7.6 - NETWORK RESILIENCE
+- Fallback endpoints (fapi + fstream)
+- Last Good Cache
+- Circuit Breaker
+- Health Check
+- Network Stats
+- IPv4 force
+- Connection pooling
 """
 
 import os
@@ -36,8 +43,8 @@ TELEGRAM_FREE_CHAT_ID = "-1003624661217"
 TELEGRAM_VIP_TOKEN = "8440657002:AAEqJIJziZ37HVRKOd0e3TcXyEAb3PclrwQ"
 TELEGRAM_VIP_CHAT_ID = "-1003765702878"
 GITHUB_TOKEN = ""
-GITHUB_REPO = ""
-GITHUB_BRANCH = ""
+GITHUB_REPO = "liankacur-cell/dss-signal-feed"
+GITHUB_BRANCH = "main"
 
 # ============================================
 # ENUMS
@@ -126,117 +133,426 @@ class MathLib:
     def clamp(v, lo, hi): return max(lo, min(hi, v))
 
 # ============================================
-# FASE B: DATA FETCHER
+# NETWORK STATS TRACKER
+# ============================================
+class NetworkStats:
+    def __init__(self):
+        self.total_requests = 0
+        self.success = 0
+        self.timeouts = 0
+        self.connection_resets = 0
+        self.http_errors = 0
+        self.invalid_json = 0
+        self.invalid_response = 0
+        self.cache_hits = 0
+        self.cache_misses = 0
+        self.circuit_breaks = 0
+        self.active_endpoint = "fapi"
+        self.fallback_used = 0
+        self.lock = Lock()
+
+    def record(self, event: str):
+        with self.lock:
+            if event == "success": self.success += 1
+            elif event == "timeout": self.timeouts += 1
+            elif event == "connection_reset": self.connection_resets += 1
+            elif event == "http_error": self.http_errors += 1
+            elif event == "invalid_json": self.invalid_json += 1
+            elif event == "invalid_response": self.invalid_response += 1
+            elif event == "cache_hit": self.cache_hits += 1
+            elif event == "cache_miss": self.cache_misses += 1
+            elif event == "circuit_break": self.circuit_breaks += 1
+            elif event == "fallback_used": self.fallback_used += 1
+            self.total_requests += 1
+
+    def report(self) -> str:
+        with self.lock:
+            return (f"NET STATS | total:{self.total_requests} ok:{self.success} "
+                    f"timeout:{self.timeouts} reset:{self.connection_resets} "
+                    f"http_err:{self.http_errors} bad_json:{self.invalid_json} "
+                    f"bad_resp:{self.invalid_response} cache_hit:{self.cache_hits} "
+                    f"cache_miss:{self.cache_misses} cb:{self.circuit_breaks} "
+                    f"fallback:{self.fallback_used} endpoint:{self.active_endpoint}")
+
+net_stats = NetworkStats()
+
+# ============================================
+# FASE B: DATA FETCHER (NETWORK RESILIENCE)
 # ============================================
 class DataFetcher:
+    # Binance Futures endpoints (fallback)
+    ENDPOINTS = [
+        "https://fapi.binance.com",
+        "https://fstream.binance.com"
+    ]
+
     def __init__(self):
+        # Session dengan connection pooling
         self.ses = requests.Session()
-        retry = Retry(total=5, backoff_factor=0.8,
-                     status_forcelist=[429, 500, 502, 503, 504],
-                     allowed_methods=["GET", "POST"])
-        adapter = HTTPAdapter(max_retries=retry)
+
+        # Custom adapter dengan connection pool
+        adapter = HTTPAdapter(
+            pool_connections=10,
+            pool_maxsize=20,
+            max_retries=0  # Kita handle retry manual
+        )
         self.ses.mount("https://", adapter)
         self.ses.mount("http://", adapter)
         self.ses.headers.update({'User-Agent': 'DSS-Swing/1.0'})
+
+        # Cache system
         self.cache = {}
+        self.last_good_cache = {}
         self.cache_ttl = 600
         self.lock = Lock()
 
-    def _cached(self, key):
+        # Circuit Breaker
+        self.cb_fail_count = 0
+        self.cb_threshold = 5
+        self.cb_open_time = 0
+        self.cb_cooldown = 120  # 2 menit
+
+        # Rate limiting
+        self.last_request_time = 0
+        self.min_request_interval = 0.3  # 300ms antar request
+
+        # Endpoint tracking
+        self.current_endpoint_idx = 0
+        self.endpoint_health = {ep: True for ep in self.ENDPOINTS}
+
+        # Force IPv4 di Termux
+        self._setup_ipv4()
+
+    def _setup_ipv4(self):
+        """Force IPv4 untuk stabilitas di Termux Android"""
+        try:
+            import socket
+            import urllib3.util.connection
+            orig_create_connection = urllib3.util.connection.create_connection
+
+            def patched_create_connection(address, *args, **kwargs):
+                host, port = address
+                # Force IPv4
+                addrinfo = socket.getaddrinfo(host, port, socket.AF_INET, socket.SOCK_STREAM)
+                af, socktype, proto, canonname, sa = addrinfo[0]
+                sock = socket.socket(af, socktype, proto)
+                sock.settimeout(kwargs.get('timeout', 10))
+                sock.connect(sa)
+                return sock
+
+            urllib3.util.connection.create_connection = patched_create_connection
+            logger.info("IPv4 forced for Termux stability")
+        except:
+            pass  # Silent fail, not critical
+
+    def _rate_limit(self):
+        """Delay kecil antar request"""
+        elapsed = time.time() - self.last_request_time
+        if elapsed < self.min_request_interval:
+            time.sleep(self.min_request_interval - elapsed)
+        self.last_request_time = time.time()
+
+    def _circuit_breaker_check(self) -> bool:
+        """Check if circuit breaker is open"""
+        if self.cb_fail_count >= self.cb_threshold:
+            if time.time() - self.cb_open_time < self.cb_cooldown:
+                net_stats.record("circuit_break")
+                return False
+            else:
+                # Reset circuit breaker
+                self.cb_fail_count = 0
+                logger.info("Circuit breaker reset, attempting requests again")
+        return True
+
+    def _record_failure(self):
+        """Record a failure for circuit breaker"""
+        self.cb_fail_count += 1
+        if self.cb_fail_count >= self.cb_threshold:
+            self.cb_open_time = time.time()
+            logger.warn(f"Circuit breaker OPEN ({self.cb_threshold} consecutive failures)")
+
+    def _record_success(self):
+        """Reset circuit breaker on success"""
+        self.cb_fail_count = 0
+
+    def health_check(self) -> bool:
+        """Cek endpoint mana yang available"""
+        for idx, base_url in enumerate(self.ENDPOINTS):
+            try:
+                url = f"{base_url}/fapi/v1/ping"
+                resp = self.ses.get(url, timeout=(5, 5))
+                if resp.status_code == 200:
+                    self.current_endpoint_idx = idx
+                    net_stats.active_endpoint = "fapi" if idx == 0 else "fstream"
+                    self.endpoint_health[base_url] = True
+                    logger.info(f"Health check OK: {base_url}")
+                    return True
+                else:
+                    self.endpoint_health[base_url] = False
+            except:
+                self.endpoint_health[base_url] = False
+
+        logger.warn("All endpoints failed health check")
+        return False
+
+    def _get_active_base_url(self) -> str:
+        """Get current active endpoint"""
+        return self.ENDPOINTS[self.current_endpoint_idx]
+
+    def _switch_endpoint(self):
+        """Switch ke fallback endpoint"""
+        old_idx = self.current_endpoint_idx
+        self.current_endpoint_idx = (self.current_endpoint_idx + 1) % len(self.ENDPOINTS)
+        if old_idx != self.current_endpoint_idx:
+            net_stats.record("fallback_used")
+            net_stats.active_endpoint = "fapi" if self.current_endpoint_idx == 0 else "fstream"
+            logger.warn(f"Switching endpoint: {self.ENDPOINTS[old_idx]} → {self._get_active_base_url()}")
+
+    def _cached(self, key: str) -> Optional[List[Dict]]:
+        """Get from cache, termasuk last good cache"""
         with self.lock:
+            # Cek cache normal
             if key in self.cache:
                 ts, data = self.cache[key]
-                if time.time() - ts < self.cache_ttl: return data
+                if time.time() - ts < self.cache_ttl:
+                    net_stats.record("cache_hit")
+                    return data
+
+            # Cek last good cache (untuk fallback)
+            if key in self.last_good_cache:
+                ts, data = self.last_good_cache[key]
+                net_stats.record("cache_hit")
+                logger.info(f"Using last good cache for {key}")
+                return data
+
+        net_stats.record("cache_miss")
         return None
 
-    def _set_cache(self, key, data):
+    def _set_cache(self, key: str, data: List[Dict]):
+        """Simpan ke cache"""
         with self.lock:
             self.cache[key] = (time.time(), data)
+            self.last_good_cache[key] = (time.time(), data)
 
-    def fetch_binance(self, symbol, interval, limit=100):
-        ck = f"bn_{symbol}_{interval}"
-        cached = self._cached(ck)
-        if cached: return cached
+    def _validate_binance_response(self, data, symbol: str, interval: str) -> bool:
+        """Validasi response adalah list candle Binance yang valid"""
+        if not isinstance(data, list):
+            logger.warn(f"Invalid response type for {symbol} {interval}: {type(data)}")
+            net_stats.record("invalid_response")
+            return False
+        if len(data) == 0:
+            logger.warn(f"Empty response for {symbol} {interval}")
+            return False
+        # Cek elemen pertama adalah list candle
+        if not isinstance(data[0], list):
+            logger.warn(f"Invalid candle format for {symbol} {interval}")
+            net_stats.record("invalid_response")
+            return False
+        if len(data[0]) < 6:
+            logger.warn(f"Incomplete candle data for {symbol} {interval}")
+            net_stats.record("invalid_response")
+            return False
+        return True
+
+    def _make_request(self, url: str, params: dict, timeout: tuple = (5, 10)) -> Optional[requests.Response]:
+        """Make HTTP request dengan error handling terpisah"""
         try:
-            url = "https://fapi.binance.com/fapi/v1/klines"
-            params = {'symbol': symbol, 'interval': interval, 'limit': limit}
-            resp = self.ses.get(url, params=params, timeout=15)
-            if resp.status_code != 200:
-                logger.warn(f"Binance {symbol} {interval}: HTTP {resp.status_code}")
-                return []
-            data = resp.json()
-            if not data or not isinstance(data, list):
-                logger.warn(f"Binance {symbol} {interval}: invalid response")
-                return []
-            out = []
-            for k in data:
-                if len(k) >= 6:
-                    out.append({'ts':float(k[0])/1000,'o':float(k[1]),'h':float(k[2]),
-                               'l':float(k[3]),'c':float(k[4]),'v':float(k[5])})
-            if out: self._set_cache(ck, out)
-            else: logger.skip(symbol, f"Empty dataset {interval}")
-            return out
-        except requests.exceptions.Timeout:
-            logger.err(f"Binance timeout: {symbol} {interval}")
-            return []
+            self._rate_limit()
+            resp = self.ses.get(url, params=params, timeout=timeout)
+            return resp
+        except requests.exceptions.ConnectTimeout:
+            net_stats.record("timeout")
+            logger.warn(f"Connect timeout: {url}")
+            return None
+        except requests.exceptions.ReadTimeout:
+            net_stats.record("timeout")
+            logger.warn(f"Read timeout: {url}")
+            return None
         except requests.exceptions.ConnectionError:
-            logger.err(f"Binance connection error: {symbol} {interval}")
-            return []
+            net_stats.record("connection_reset")
+            logger.warn(f"Connection error (reset): {url}")
+            return None
         except Exception as e:
-            logger.err(f"Binance fetch: {symbol} {interval}", e)
-            return []
+            net_stats.record("http_error")
+            logger.err(f"Request error: {url}", e)
+            return None
 
-    def fetch_crypto_all(self, symbol):
+    def fetch_binance(self, symbol: str, interval: str, limit: int = 100) -> List[Dict]:
+        """Fetch klines dari Binance dengan fallback dan resilience"""
+        ck = f"bn_{symbol}_{interval}"
+
+        # Check cache dulu
+        cached = self._cached(ck)
+        if cached:
+            return cached
+
+        # Circuit breaker check
+        if not self._circuit_breaker_check():
+            return cached if cached else []
+
+        params = {'symbol': symbol, 'interval': interval, 'limit': limit}
+        max_retries = 2
+        data = None
+
+        for attempt in range(max_retries):
+            base_url = self._get_active_base_url()
+            url = f"{base_url}/fapi/v1/klines"
+
+            resp = self._make_request(url, params)
+
+            if resp is None:
+                # Request gagal total
+                self._switch_endpoint()
+                self._record_failure()
+                continue
+
+            if resp.status_code != 200:
+                net_stats.record("http_error")
+                logger.warn(f"Binance {symbol} {interval}: HTTP {resp.status_code}")
+                if resp.status_code in [429, 418]:
+                    # Rate limited, jangan retry
+                    self._record_failure()
+                    break
+                self._switch_endpoint()
+                self._record_failure()
+                continue
+
+            # Parse JSON
+            try:
+                data = resp.json()
+            except json.JSONDecodeError:
+                net_stats.record("invalid_json")
+                logger.warn(f"Binance {symbol} {interval}: Invalid JSON response")
+                self._switch_endpoint()
+                self._record_failure()
+                continue
+
+            # Validate response structure
+            if not self._validate_binance_response(data, symbol, interval):
+                self._switch_endpoint()
+                self._record_failure()
+                continue
+
+            # Success
+            break
+
+        if data is None:
+            # Semua attempt gagal, return last good cache
+            logger.warn(f"Binance {symbol} {interval}: All attempts failed, using last good cache")
+            return cached if cached else []
+
+        # Parse candles
+        out = []
+        for k in data:
+            if len(k) >= 6:
+                out.append({
+                    'ts': float(k[0]) / 1000,
+                    'o': float(k[1]),
+                    'h': float(k[2]),
+                    'l': float(k[3]),
+                    'c': float(k[4]),
+                    'v': float(k[5])
+                })
+
+        if out:
+            self._set_cache(ck, out)
+            self._record_success()
+            net_stats.record("success")
+        else:
+            logger.skip(symbol, f"Empty parsed dataset {interval}")
+
+        return out
+
+    def fetch_crypto_all(self, symbol: str) -> Dict:
+        """Fetch semua timeframe untuk satu symbol"""
         data = {}
-        for tf in ['1m','5m','15m','1h']:
+        for tf in ['1m', '5m', '15m', '1h']:
             candles = self.fetch_binance(symbol, tf)
-            if candles: data[tf] = candles
-        if not data: logger.skip(symbol, "Empty dataset")
+            if candles:
+                data[tf] = candles
+        if not data:
+            logger.skip(symbol, "Empty dataset")
         return data
 
-    def fetch_trending_binance(self):
+    def fetch_trending_binance(self) -> List[str]:
+        """Fetch trending coins dari ticker 24hr"""
         ck = "trending_bn"
         cached = self._cached(ck)
-        if cached: return cached
-        try:
-            url = "https://fapi.binance.com/fapi/v1/ticker/24hr"
-            resp = self.ses.get(url, timeout=10)
-            if resp.status_code != 200:
-                logger.warn(f"Trending API: HTTP {resp.status_code}")
-                return []
-            all_d = resp.json()
-            if not isinstance(all_d, list):
-                logger.warn("Trending API: invalid response")
-                return []
-            usdt = [d for d in all_d if isinstance(d,dict) and d.get('symbol','').endswith('USDT')]
-            usdt.sort(key=lambda x: float(x.get('volume',0)), reverse=True)
-            exclude = {'BTCUSDT','ETHUSDT','SOLUSDT','SUIUSDT','DOGEUSDT','UNIUSDT','ZECUSDT'}
-            trending = []
-            for d in usdt:
-                sym = d.get('symbol','')
-                if sym and sym not in exclude: trending.append(sym)
-                if len(trending) >= 7: break
-            if trending: self._set_cache(ck, trending)
-            return trending
-        except Exception as e:
-            logger.err("Trending fetch failed", e)
+        if cached:
+            return cached
+
+        if not self._circuit_breaker_check():
             return []
 
-    def fetch_all(self):
-        result = {'crypto':{},'ts':datetime.now().isoformat()}
+        base_url = self._get_active_base_url()
+        url = f"{base_url}/fapi/v1/ticker/24hr"
+
+        resp = self._make_request(url, {})
+
+        if resp is None or resp.status_code != 200:
+            logger.warn(f"Trending API failed")
+            return []
+
+        try:
+            all_d = resp.json()
+        except json.JSONDecodeError:
+            logger.warn("Trending API: Invalid JSON")
+            return []
+
+        if not isinstance(all_d, list):
+            logger.warn("Trending API: invalid response")
+            return []
+
+        usdt = [d for d in all_d if isinstance(d, dict) and d.get('symbol', '').endswith('USDT')]
+        usdt.sort(key=lambda x: float(x.get('volume', 0)), reverse=True)
+
+        exclude = {'BTCUSDT', 'ETHUSDT', 'SOLUSDT', 'SUIUSDT', 'DOGEUSDT', 'UNIUSDT', 'ZECUSDT'}
+        trending = []
+        for d in usdt:
+            sym = d.get('symbol', '')
+            if sym and sym not in exclude:
+                trending.append(sym)
+            if len(trending) >= 7:
+                break
+
+        if trending:
+            self._set_cache(ck, trending)
+
+        return trending
+
+    def fetch_all(self) -> Dict:
+        """Fetch semua data crypto"""
+        result = {'crypto': {}, 'ts': datetime.now().isoformat()}
+
         logger.info("=== FETCHING CRYPTO (Binance) ===")
-        for sym in ['BTCUSDT','ETHUSDT','SOLUSDT','SUIUSDT','DOGEUSDT','UNIUSDT','ZECUSDT']:
+
+        # Health check sebelum fetch massal
+        endpoint_ok = self.health_check()
+        if not endpoint_ok:
+            logger.warn("All endpoints down, using cache only")
+
+        for sym in ['BTCUSDT', 'ETHUSDT', 'SOLUSDT', 'SUIUSDT', 'DOGEUSDT', 'UNIUSDT', 'ZECUSDT']:
             d = self.fetch_crypto_all(sym)
-            if d: result['crypto'][sym] = d; logger.info(f"  OK {sym}")
-            else: logger.warn(f"  FAIL {sym}")
+            if d:
+                result['crypto'][sym] = d
+                logger.info(f"  OK {sym}")
+            else:
+                logger.warn(f"  FAIL {sym}")
+
         for sym in self.fetch_trending_binance()[:7]:
             if sym not in result['crypto']:
                 d = self.fetch_crypto_all(sym)
-                if d: result['crypto'][sym] = d
+                if d:
+                    result['crypto'][sym] = d
+
+        # Log network stats setiap siklus
+        logger.info(net_stats.report())
+
         return result
 
+
 # ============================================
-# FASE C: MARKET STRUCTURE ENGINE
+# FASE C: MARKET STRUCTURE ENGINE (UNCHANGED)
 # ============================================
 class StructureEngine:
     def analyze(self, candles_1h):
@@ -273,7 +589,7 @@ class StructureEngine:
                'score':struct_score,'reason':reason}
 
 # ============================================
-# FASE D: TREND ENGINE
+# FASE D: TREND ENGINE (UNCHANGED)
 # ============================================
 class TrendEngine:
     @staticmethod
@@ -315,7 +631,7 @@ class TrendEngine:
                'reason':f"Trend {d.value} (strength:{strength:.2f}, aligned:{aligned})"}
 
 # ============================================
-# FASE D: MOMENTUM ENGINE
+# FASE D: MOMENTUM ENGINE (UNCHANGED)
 # ============================================
 class MomentumEngine:
     @staticmethod
@@ -372,7 +688,7 @@ class MomentumEngine:
         return {'rsi':rsis,'macd':macds,'score':score,'reason':f"Momentum score: {score:.0f}"}
 
 # ============================================
-# FASE D: VOLATILITY ENGINE
+# FASE D: VOLATILITY ENGINE (UNCHANGED)
 # ============================================
 class VolatilityEngine:
     @staticmethod
@@ -418,7 +734,7 @@ class VolatilityEngine:
                'score':vol_score,'reason':f"Volatility: {regime.value} (exp={expansion:.2f})"}
 
 # ============================================
-# FASE E: LIQUIDITY ENGINE
+# FASE E: LIQUIDITY ENGINE (UNCHANGED)
 # ============================================
 class LiquidityEngine:
     def analyze(self, candles, structure):
@@ -463,7 +779,7 @@ class LiquidityEngine:
                'reason':f"Liquidity resting: {resting}"}
 
 # ============================================
-# FASE E: MONEY FLOW ENGINE
+# FASE E: MONEY FLOW ENGINE (UNCHANGED)
 # ============================================
 class MoneyFlowEngine:
     def analyze(self, data):
@@ -500,7 +816,7 @@ class MoneyFlowEngine:
                'reason':f"OBV: {obv_trend}, Acc:{accumulation}, Dist:{distribution}"}
 
 # ============================================
-# FASE E: SQUEEZE ENGINE
+# FASE E: SQUEEZE ENGINE (UNCHANGED)
 # ============================================
 class SqueezeEngine:
     def analyze(self, data, volatility):
@@ -543,7 +859,7 @@ class SqueezeEngine:
                'reason':f"Squeeze: {is_squeezing}, Energy: {energy:.2f}"}
 
 # ============================================
-# FASE F: RISK ENGINE
+# FASE F: RISK ENGINE (UNCHANGED)
 # ============================================
 class RiskEngine:
     def calculate(self, direction, current_price, structure, liquidity, volatility):
@@ -594,7 +910,7 @@ class RiskEngine:
                'tp_reason':'Before liquidity target','reason':f"RR=1:{rr:.2f}"}
 
 # ============================================
-# FASE G: TELEGRAM OUTPUT
+# FASE G: TELEGRAM OUTPUT (UNCHANGED)
 # ============================================
 class TelegramOutput:
     def __init__(self):
@@ -695,7 +1011,7 @@ class TelegramOutput:
         logger.info(f"Sent {len(all_s)} VIP signals")
 
 # ============================================
-# FASE G: GITHUB SYNC
+# FASE G: GITHUB SYNC (UNCHANGED)
 # ============================================
 class GitHubSync:
     def __init__(self):
@@ -744,7 +1060,7 @@ class GitHubSync:
                 if attempt == 0: time.sleep(3)
 
 # ============================================
-# DSS MAIN SYSTEM
+# DSS MAIN SYSTEM (UNCHANGED)
 # ============================================
 class DSSSystem:
     def __init__(self):
@@ -859,8 +1175,8 @@ class DSSSystem:
 # ============================================
 def main():
     print("""╔══════════════════════════════════╗
-║ DSS SWING INTERDAY v7.5          ║
-║ CRYPTO ONLY + SIGNAL HISTORY     ║
+║ DSS SWING INTERDAY v7.6          ║
+║ NETWORK RESILIENCE               ║
 ╚══════════════════════════════════╝""")
     print("[*] Running every 1 hour...\n")
     dss = DSSSystem()

@@ -36798,3 +36798,48 @@
 2026-07-31 12:16:46,744 | INFO | CRYPTO COUNT: 0
 2026-07-31 12:16:46,744 | INFO | --- Analyzing CRYPTO ---
 2026-07-31 12:16:47,569 | INFO | === 0 signals | 7 skipped | 0 errors ===
+2026-07-31 12:16:53,371 | INFO | Git auto push OK
+2026-07-31 12:16:53,372 | INFO | CYCLE COMPLETE
+2026-07-31 12:16:53,373 | INFO | ==================================================
+2026-07-31 13:16:53,409 | INFO | ==================================================
+2026-07-31 13:16:53,430 | INFO | CYCLE START: 2026-07-31 13:16:53.430437
+2026-07-31 13:16:53,432 | INFO | ==================================================
+2026-07-31 13:16:53,433 | INFO | === FETCHING CRYPTO (Binance) ===
+2026-07-31 13:16:54,193 | WARNING | All endpoints failed health check
+2026-07-31 13:16:54,193 | WARNING | All endpoints down, using cache only
+2026-07-31 13:16:54,194 | INFO | Circuit breaker reset, attempting requests again
+2026-07-31 13:16:54,317 | WARNING | Connection error (reset): https://fapi.binance.com/fapi/v1/klines
+2026-07-31 13:16:54,318 | WARNING | Switching endpoint: https://fapi.binance.com → https://fstream.binance.com
+2026-07-31 13:16:54,656 | WARNING | Binance BTCUSDT 1m: HTTP 403
+2026-07-31 13:16:54,657 | WARNING | Switching endpoint: https://fstream.binance.com → https://fapi.binance.com
+2026-07-31 13:16:54,657 | WARNING | Binance BTCUSDT 1m: All attempts failed, using last good cache
+2026-07-31 13:16:54,933 | WARNING | Connection error (reset): https://fapi.binance.com/fapi/v1/klines
+2026-07-31 13:16:54,933 | WARNING | Switching endpoint: https://fapi.binance.com → https://fstream.binance.com
+2026-07-31 13:16:55,228 | WARNING | Binance BTCUSDT 5m: HTTP 403
+2026-07-31 13:16:55,228 | WARNING | Switching endpoint: https://fstream.binance.com → https://fapi.binance.com
+2026-07-31 13:16:55,229 | WARNING | Binance BTCUSDT 5m: All attempts failed, using last good cache
+2026-07-31 13:16:55,516 | WARNING | Connection error (reset): https://fapi.binance.com/fapi/v1/klines
+2026-07-31 13:16:55,516 | WARNING | Switching endpoint: https://fapi.binance.com → https://fstream.binance.com
+2026-07-31 13:16:55,517 | WARNING | Circuit breaker OPEN (5 consecutive failures)
+2026-07-31 13:16:55,841 | WARNING | Binance BTCUSDT 15m: HTTP 403
+2026-07-31 13:16:55,841 | WARNING | Switching endpoint: https://fstream.binance.com → https://fapi.binance.com
+2026-07-31 13:16:55,842 | WARNING | Circuit breaker OPEN (5 consecutive failures)
+2026-07-31 13:16:55,842 | WARNING | Binance BTCUSDT 15m: All attempts failed, using last good cache
+2026-07-31 13:16:55,842 | WARNING | SKIP [BTCUSDT]: Empty dataset
+2026-07-31 13:16:55,843 | WARNING |   FAIL BTCUSDT
+2026-07-31 13:16:55,843 | WARNING | SKIP [ETHUSDT]: Empty dataset
+2026-07-31 13:16:55,843 | WARNING |   FAIL ETHUSDT
+2026-07-31 13:16:55,844 | WARNING | SKIP [SOLUSDT]: Empty dataset
+2026-07-31 13:16:55,844 | WARNING |   FAIL SOLUSDT
+2026-07-31 13:16:55,844 | WARNING | SKIP [SUIUSDT]: Empty dataset
+2026-07-31 13:16:55,845 | WARNING |   FAIL SUIUSDT
+2026-07-31 13:16:55,845 | WARNING | SKIP [DOGEUSDT]: Empty dataset
+2026-07-31 13:16:55,845 | WARNING |   FAIL DOGEUSDT
+2026-07-31 13:16:55,845 | WARNING | SKIP [UNIUSDT]: Empty dataset
+2026-07-31 13:16:55,846 | WARNING |   FAIL UNIUSDT
+2026-07-31 13:16:55,846 | WARNING | SKIP [ZECUSDT]: Empty dataset
+2026-07-31 13:16:55,846 | WARNING |   FAIL ZECUSDT
+2026-07-31 13:16:55,847 | INFO | NET STATS | total:134 ok:0 timeout:0 reset:6 http_err:6 bad_json:0 bad_resp:0 cache_hit:0 cache_miss:58 cb:52 fallback:12 endpoint:fapi
+2026-07-31 13:16:55,847 | INFO | CRYPTO COUNT: 0
+2026-07-31 13:16:55,847 | INFO | --- Analyzing CRYPTO ---
+2026-07-31 13:16:56,924 | INFO | === 0 signals | 7 skipped | 0 errors ===

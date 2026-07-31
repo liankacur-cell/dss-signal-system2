@@ -119614,5 +119614,33 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-07-31T23:14:33.224273"
+  },
+  {
+    "pair": "DOGSUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 74.75559059836868,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 51",
+    "vol_reason": "Volatility: high (exp=10.02)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:True",
+    "sq_reason": "Squeeze: True, Energy: 0.40",
+    "risk": {
+      "entry": 3.403e-05,
+      "sl": 3.474571428571428e-05,
+      "tp": 3.295642857142857e-05,
+      "risk": 7.157142857142849e-07,
+      "reward": 1.0735714285714274e-06,
+      "rr": 1.5,
+      "pos_factor": 0.5,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-07-31T23:44:57.265636"
   }
 ]

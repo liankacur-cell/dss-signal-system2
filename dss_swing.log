@@ -36972,3 +36972,104 @@
 2026-07-31 14:34:32,402 | INFO | CRYPTO COUNT: 0
 2026-07-31 14:34:32,403 | INFO | --- Analyzing CRYPTO ---
 2026-07-31 14:34:33,341 | INFO | === 0 signals | 7 skipped | 0 errors ===
+2026-07-31 14:34:39,349 | INFO | Git auto push OK
+2026-07-31 14:34:39,351 | INFO | CYCLE COMPLETE
+2026-07-31 14:34:39,352 | INFO | ==================================================
+2026-07-31 14:48:41,266 | INFO | IPv4 forced for Termux stability
+2026-07-31 14:48:41,268 | INFO | ==================================================
+2026-07-31 14:48:41,269 | INFO | CYCLE START: 2026-07-31 14:48:41.269358
+2026-07-31 14:48:41,269 | INFO | ==================================================
+2026-07-31 14:48:41,269 | INFO | === FETCHING CRYPTO (Binance) ===
+2026-07-31 14:48:43,973 | WARNING | All endpoints unavailable
+2026-07-31 14:48:43,973 | WARNING | All endpoints down, using cache only
+2026-07-31 14:48:43,974 | INFO | ENDPOINTS | active:fapi (https://fapi.binance.com) | [fapi] fails:1/1 cb:CLOSED latency:999.00s | [api] fails:1/1 cb:CLOSED latency:999.00s | [api1] fails:1/1 cb:CLOSED latency:999.00s | [api2] fails:1/1 cb:CLOSED latency:999.00s | [api3] fails:1/1 cb:CLOSED latency:999.00s
+2026-07-31 14:48:44,090 | WARNING | Connection error (reset): https://fapi.binance.com/fapi/v1/klines
+2026-07-31 14:48:44,729 | WARNING | Connection error (reset): https://fapi.binance.com/fapi/v1/klines
+2026-07-31 14:48:44,931 | WARNING | Connection error (reset): https://api.binance.com/fapi/v1/klines
+2026-07-31 14:48:45,578 | WARNING | Connection error (reset): https://api.binance.com/fapi/v1/klines
+2026-07-31 14:48:45,776 | WARNING | Endpoint api1: HTTP 404
+2026-07-31 14:48:46,416 | WARNING | Endpoint api1: HTTP 404
+2026-07-31 14:48:46,417 | WARNING | Binance BTCUSDT 1m: All endpoints failed, using last good cache
+2026-07-31 14:48:46,417 | WARNING | Circuit breaker OPEN for fapi (3 failures)
+2026-07-31 14:48:46,417 | WARNING | Circuit breaker OPEN for api (3 failures)
+2026-07-31 14:48:46,418 | WARNING | Circuit breaker OPEN for api1 (3 failures)
+2026-07-31 14:48:46,615 | WARNING | Endpoint api2: HTTP 404
+2026-07-31 14:48:47,258 | WARNING | Endpoint api2: HTTP 404
+2026-07-31 14:48:47,457 | WARNING | Endpoint api3: HTTP 404
+2026-07-31 14:48:48,098 | WARNING | Endpoint api3: HTTP 404
+2026-07-31 14:48:48,099 | WARNING | Binance BTCUSDT 5m: All endpoints failed, using last good cache
+2026-07-31 14:48:48,100 | WARNING | Circuit breaker OPEN for api2 (3 failures)
+2026-07-31 14:48:48,100 | WARNING | Circuit breaker OPEN for api3 (3 failures)
+2026-07-31 14:48:48,101 | WARNING | No endpoints available
+2026-07-31 14:48:48,101 | WARNING | Binance BTCUSDT 15m: All endpoints failed, using last good cache
+2026-07-31 14:48:48,102 | WARNING | No endpoints available
+2026-07-31 14:48:48,102 | WARNING | Binance BTCUSDT 1h: All endpoints failed, using last good cache
+2026-07-31 14:48:48,103 | WARNING | SKIP [BTCUSDT]: Empty dataset
+2026-07-31 14:48:48,103 | WARNING |   FAIL BTCUSDT
+2026-07-31 14:48:48,104 | WARNING | No endpoints available
+2026-07-31 14:48:48,105 | WARNING | Binance ETHUSDT 1m: All endpoints failed, using last good cache
+2026-07-31 14:48:48,105 | WARNING | No endpoints available
+2026-07-31 14:48:48,106 | WARNING | Binance ETHUSDT 5m: All endpoints failed, using last good cache
+2026-07-31 14:48:48,106 | WARNING | No endpoints available
+2026-07-31 14:48:48,107 | WARNING | Binance ETHUSDT 15m: All endpoints failed, using last good cache
+2026-07-31 14:48:48,107 | WARNING | No endpoints available
+2026-07-31 14:48:48,108 | WARNING | Binance ETHUSDT 1h: All endpoints failed, using last good cache
+2026-07-31 14:48:48,108 | WARNING | SKIP [ETHUSDT]: Empty dataset
+2026-07-31 14:48:48,109 | WARNING |   FAIL ETHUSDT
+2026-07-31 14:48:48,109 | WARNING | No endpoints available
+2026-07-31 14:48:48,110 | WARNING | Binance SOLUSDT 1m: All endpoints failed, using last good cache
+2026-07-31 14:48:48,110 | WARNING | No endpoints available
+2026-07-31 14:48:48,111 | WARNING | Binance SOLUSDT 5m: All endpoints failed, using last good cache
+2026-07-31 14:48:48,112 | WARNING | No endpoints available
+2026-07-31 14:48:48,112 | WARNING | Binance SOLUSDT 15m: All endpoints failed, using last good cache
+2026-07-31 14:48:48,113 | WARNING | No endpoints available
+2026-07-31 14:48:48,113 | WARNING | Binance SOLUSDT 1h: All endpoints failed, using last good cache
+2026-07-31 14:48:48,114 | WARNING | SKIP [SOLUSDT]: Empty dataset
+2026-07-31 14:48:48,114 | WARNING |   FAIL SOLUSDT
+2026-07-31 14:48:48,115 | WARNING | No endpoints available
+2026-07-31 14:48:48,116 | WARNING | Binance SUIUSDT 1m: All endpoints failed, using last good cache
+2026-07-31 14:48:48,116 | WARNING | No endpoints available
+2026-07-31 14:48:48,117 | WARNING | Binance SUIUSDT 5m: All endpoints failed, using last good cache
+2026-07-31 14:48:48,118 | WARNING | No endpoints available
+2026-07-31 14:48:48,118 | WARNING | Binance SUIUSDT 15m: All endpoints failed, using last good cache
+2026-07-31 14:48:48,119 | WARNING | No endpoints available
+2026-07-31 14:48:48,119 | WARNING | Binance SUIUSDT 1h: All endpoints failed, using last good cache
+2026-07-31 14:48:48,120 | WARNING | SKIP [SUIUSDT]: Empty dataset
+2026-07-31 14:48:48,120 | WARNING |   FAIL SUIUSDT
+2026-07-31 14:48:48,121 | WARNING | No endpoints available
+2026-07-31 14:48:48,121 | WARNING | Binance DOGEUSDT 1m: All endpoints failed, using last good cache
+2026-07-31 14:48:48,122 | WARNING | No endpoints available
+2026-07-31 14:48:48,122 | WARNING | Binance DOGEUSDT 5m: All endpoints failed, using last good cache
+2026-07-31 14:48:48,123 | WARNING | No endpoints available
+2026-07-31 14:48:48,124 | WARNING | Binance DOGEUSDT 15m: All endpoints failed, using last good cache
+2026-07-31 14:48:48,124 | WARNING | No endpoints available
+2026-07-31 14:48:48,125 | WARNING | Binance DOGEUSDT 1h: All endpoints failed, using last good cache
+2026-07-31 14:48:48,125 | WARNING | SKIP [DOGEUSDT]: Empty dataset
+2026-07-31 14:48:48,126 | WARNING |   FAIL DOGEUSDT
+2026-07-31 14:48:48,126 | WARNING | No endpoints available
+2026-07-31 14:48:48,127 | WARNING | Binance UNIUSDT 1m: All endpoints failed, using last good cache
+2026-07-31 14:48:48,129 | WARNING | No endpoints available
+2026-07-31 14:48:48,129 | WARNING | Binance UNIUSDT 5m: All endpoints failed, using last good cache
+2026-07-31 14:48:48,130 | WARNING | No endpoints available
+2026-07-31 14:48:48,131 | WARNING | Binance UNIUSDT 15m: All endpoints failed, using last good cache
+2026-07-31 14:48:48,132 | WARNING | No endpoints available
+2026-07-31 14:48:48,132 | WARNING | Binance UNIUSDT 1h: All endpoints failed, using last good cache
+2026-07-31 14:48:48,132 | WARNING | SKIP [UNIUSDT]: Empty dataset
+2026-07-31 14:48:48,133 | WARNING |   FAIL UNIUSDT
+2026-07-31 14:48:48,133 | WARNING | No endpoints available
+2026-07-31 14:48:48,133 | WARNING | Binance ZECUSDT 1m: All endpoints failed, using last good cache
+2026-07-31 14:48:48,133 | WARNING | No endpoints available
+2026-07-31 14:48:48,134 | WARNING | Binance ZECUSDT 5m: All endpoints failed, using last good cache
+2026-07-31 14:48:48,134 | WARNING | No endpoints available
+2026-07-31 14:48:48,134 | WARNING | Binance ZECUSDT 15m: All endpoints failed, using last good cache
+2026-07-31 14:48:48,134 | WARNING | No endpoints available
+2026-07-31 14:48:48,135 | WARNING | Binance ZECUSDT 1h: All endpoints failed, using last good cache
+2026-07-31 14:48:48,135 | WARNING | SKIP [ZECUSDT]: Empty dataset
+2026-07-31 14:48:48,135 | WARNING |   FAIL ZECUSDT
+2026-07-31 14:48:48,135 | WARNING | No endpoints available
+2026-07-31 14:48:48,136 | WARNING | Trending API: All endpoints failed
+2026-07-31 14:48:48,136 | INFO | NET STATS | total:33 ok:0 timeout:0 reset:4 http_err:0 bad_json:0 bad_resp:0 cache_hit:0 cache_miss:29
+2026-07-31 14:48:48,136 | INFO | ENDPOINTS | active:fapi (https://fapi.binance.com) | [fapi] fails:3/3 cb:OPEN latency:999.00s | [api] fails:3/3 cb:OPEN latency:999.00s | [api1] fails:3/3 cb:OPEN latency:999.00s | [api2] fails:3/3 cb:OPEN latency:999.00s | [api3] fails:3/3 cb:OPEN latency:999.00s
+2026-07-31 14:48:48,137 | INFO | CRYPTO COUNT: 0
+2026-07-31 14:48:48,137 | INFO | --- Analyzing CRYPTO ---
+2026-07-31 14:48:49,074 | INFO | === 0 signals | 7 skipped | 0 errors ===

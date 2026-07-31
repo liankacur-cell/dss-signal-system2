@@ -4,9 +4,11 @@ DSS SWING INTERDAY - CRYPTO ONLY
 Decision Support System - Manual Trading Only
 Termux Ready - Single File - No Heavy Libraries
 
-STABLE v7.7 - ENDPOINT FIX
-- Fixed: fstream.binance.com 403 error
-- Single REST endpoint: fapi.binance.com
+STABLE v7.8 - ENDPOINT MANAGER
+- Multiple endpoints with per-endpoint circuit breaker
+- Auto failover
+- Auto recovery after cooldown
+- Health check selects best endpoint
 """
 
 import os
@@ -127,6 +129,186 @@ class MathLib:
     def clamp(v, lo, hi): return max(lo, min(hi, v))
 
 # ============================================
+# ENDPOINT MANAGER
+# ============================================
+class EndpointState:
+    """Melacak status setiap endpoint"""
+    def __init__(self, url: str, name: str):
+        self.url = url
+        self.name = name
+        self.fail_count = 0
+        self.cb_open = False
+        self.cb_open_time = 0.0
+        self.last_success = 0.0
+        self.total_requests = 0
+        self.total_failures = 0
+        self.latency_sum = 0.0
+        self.latency_count = 0
+
+    def record_success(self, latency: float = 0.0):
+        self.fail_count = 0
+        self.cb_open = False
+        self.last_success = time.time()
+        self.total_requests += 1
+        if latency > 0:
+            self.latency_sum += latency
+            self.latency_count += 1
+
+    def record_failure(self):
+        self.fail_count += 1
+        self.total_requests += 1
+        self.total_failures += 1
+
+    def open_circuit_breaker(self):
+        self.cb_open = True
+        self.cb_open_time = time.time()
+
+    def is_available(self, cb_threshold: int, cb_cooldown: float) -> bool:
+        if self.cb_open:
+            if time.time() - self.cb_open_time >= cb_cooldown:
+                # Auto recovery: tutup circuit breaker setelah cooldown
+                self.cb_open = False
+                self.fail_count = 0
+                logger.info(f"Endpoint {self.name} recovered after cooldown")
+                return True
+            return False
+        if self.fail_count >= cb_threshold:
+            self.open_circuit_breaker()
+            logger.warn(f"Circuit breaker OPEN for {self.name} ({self.fail_count} failures)")
+            return False
+        return True
+
+    def avg_latency(self) -> float:
+        if self.latency_count == 0:
+            return 999.0
+        return self.latency_sum / self.latency_count
+
+    def status_report(self) -> str:
+        return (f"[{self.name}] fails:{self.total_failures}/{self.total_requests} "
+                f"cb:{'OPEN' if self.cb_open else 'CLOSED'} "
+                f"latency:{self.avg_latency():.2f}s")
+
+
+class EndpointManager:
+    """Mengelola multiple Binance REST API endpoints dengan failover"""
+
+    # Semua endpoint REST Binance Futures yang valid
+    ENDPOINTS = [
+        ("https://fapi.binance.com", "fapi"),
+        ("https://api.binance.com", "api"),
+        ("https://api1.binance.com", "api1"),
+        ("https://api2.binance.com", "api2"),
+        ("https://api3.binance.com", "api3"),
+    ]
+
+    def __init__(self, cb_threshold: int = 3, cb_cooldown: float = 120.0):
+        self.states: Dict[str, EndpointState] = {}
+        for url, name in self.ENDPOINTS:
+            self.states[name] = EndpointState(url, name)
+
+        self.cb_threshold = cb_threshold
+        self.cb_cooldown = cb_cooldown
+        self.active_name = "fapi"  # Default
+        self.lock = Lock()
+        self.health_check_done = False
+
+    def get_active_url(self) -> str:
+        with self.lock:
+            return self.states[self.active_name].url
+
+    def get_active_name(self) -> str:
+        with self.lock:
+            return self.active_name
+
+    def health_check(self, session: requests.Session) -> bool:
+        """
+        Cari endpoint terbaik yang tersedia.
+        Return True jika minimal 1 endpoint available.
+        """
+        with self.lock:
+            best_name = None
+            best_latency = 999.0
+
+            for name, state in self.states.items():
+                if not state.is_available(self.cb_threshold, self.cb_cooldown):
+                    continue
+
+                try:
+                    url = f"{state.url}/fapi/v1/ping"
+                    start = time.time()
+                    resp = session.get(url, timeout=(3, 3))
+                    latency = time.time() - start
+
+                    if resp.status_code == 200:
+                        state.record_success(latency)
+                        if latency < best_latency:
+                            best_latency = latency
+                            best_name = name
+                    else:
+                        state.record_failure()
+                except:
+                    state.record_failure()
+
+            if best_name:
+                old_active = self.active_name
+                self.active_name = best_name
+                self.health_check_done = True
+
+                if old_active != best_name:
+                    logger.info(f"Endpoint switched: {old_active} → {best_name} (latency: {best_latency:.2f}s)")
+
+                logger.info(f"Active endpoint: {best_name} ({self.states[best_name].url})")
+                return True
+
+            logger.warn("All endpoints unavailable")
+            return False
+
+    def mark_success(self, name: str, latency: float = 0.0):
+        with self.lock:
+            if name in self.states:
+                self.states[name].record_success(latency)
+
+    def mark_failure(self, name: str):
+        with self.lock:
+            if name in self.states:
+                self.states[name].record_failure()
+
+    def get_available_endpoints(self) -> List[Tuple[str, str]]:
+        """
+        Return daftar endpoint yang tersedia (url, name),
+        diurutkan dari yang terbaik (latency terendah).
+        """
+        with self.lock:
+            available = []
+            for name, state in self.states.items():
+                if state.is_available(self.cb_threshold, self.cb_cooldown):
+                    available.append((state.url, name))
+
+            # Sort by latency (terendah dulu)
+            available.sort(key=lambda x: self.states[x[1]].avg_latency())
+            return available
+
+    def status_report(self) -> str:
+        with self.lock:
+            reports = [s.status_report() for s in self.states.values()]
+            active = self.states[self.active_name]
+            return f"ENDPOINTS | active:{self.active_name} ({active.url}) | " + " | ".join(reports)
+
+    def get_fallback_endpoints(self) -> List[str]:
+        """
+        Return daftar URL endpoint selain yang aktif,
+        untuk retry di level request.
+        """
+        with self.lock:
+            fallback = []
+            active_url = self.states[self.active_name].url
+            for name, state in self.states.items():
+                if state.url != active_url and state.is_available(self.cb_threshold, self.cb_cooldown):
+                    fallback.append(state.url)
+            return fallback
+
+
+# ============================================
 # NETWORK STATS TRACKER
 # ============================================
 class NetworkStats:
@@ -140,8 +322,6 @@ class NetworkStats:
         self.invalid_response = 0
         self.cache_hits = 0
         self.cache_misses = 0
-        self.circuit_breaks = 0
-        self.active_endpoint = "fapi"
         self.lock = Lock()
 
     def record(self, event: str):
@@ -154,7 +334,6 @@ class NetworkStats:
             elif event == "invalid_response": self.invalid_response += 1
             elif event == "cache_hit": self.cache_hits += 1
             elif event == "cache_miss": self.cache_misses += 1
-            elif event == "circuit_break": self.circuit_breaks += 1
             self.total_requests += 1
 
     def report(self) -> str:
@@ -163,17 +342,14 @@ class NetworkStats:
                     f"timeout:{self.timeouts} reset:{self.connection_resets} "
                     f"http_err:{self.http_errors} bad_json:{self.invalid_json} "
                     f"bad_resp:{self.invalid_response} cache_hit:{self.cache_hits} "
-                    f"cache_miss:{self.cache_misses} cb:{self.circuit_breaks} "
-                    f"endpoint:{self.active_endpoint}")
+                    f"cache_miss:{self.cache_misses}")
 
 net_stats = NetworkStats()
 
 # ============================================
-# FASE B: DATA FETCHER (ENDPOINT FIXED)
+# FASE B: DATA FETCHER (ENDPOINT MANAGER)
 # ============================================
 class DataFetcher:
-    BASE_URL = "https://fapi.binance.com"
-
     def __init__(self):
         self.ses = requests.Session()
 
@@ -186,21 +362,18 @@ class DataFetcher:
         self.ses.mount("http://", adapter)
         self.ses.headers.update({'User-Agent': 'DSS-Swing/1.0'})
 
+        # Endpoint Manager
+        self.endpoint_mgr = EndpointManager(cb_threshold=3, cb_cooldown=120.0)
+
         # Cache system
         self.cache = {}
         self.last_good_cache = {}
         self.cache_ttl = 600
         self.lock = Lock()
 
-        # Circuit Breaker
-        self.cb_fail_count = 0
-        self.cb_threshold = 5
-        self.cb_open_time = 0
-        self.cb_cooldown = 120
-
         # Rate limiting
         self.last_request_time = 0
-        self.min_request_interval = 0.3
+        self.min_request_interval = 0.2
 
         # Force IPv4
         self._setup_ipv4()
@@ -231,38 +404,9 @@ class DataFetcher:
             time.sleep(self.min_request_interval - elapsed)
         self.last_request_time = time.time()
 
-    def _circuit_breaker_check(self) -> bool:
-        if self.cb_fail_count >= self.cb_threshold:
-            if time.time() - self.cb_open_time < self.cb_cooldown:
-                net_stats.record("circuit_break")
-                return False
-            else:
-                self.cb_fail_count = 0
-                logger.info("Circuit breaker reset, attempting requests again")
-        return True
-
-    def _record_failure(self):
-        self.cb_fail_count += 1
-        if self.cb_fail_count >= self.cb_threshold:
-            self.cb_open_time = time.time()
-            logger.warn(f"Circuit breaker OPEN ({self.cb_threshold} consecutive failures)")
-
-    def _record_success(self):
-        self.cb_fail_count = 0
-
     def health_check(self) -> bool:
-        """Cek apakah Binance REST API tersedia"""
-        try:
-            url = f"{self.BASE_URL}/fapi/v1/ping"
-            resp = self.ses.get(url, timeout=(5, 5))
-            if resp.status_code == 200:
-                logger.info("Health check OK: fapi.binance.com")
-                return True
-        except:
-            pass
-
-        logger.warn("Health check failed: fapi.binance.com")
-        return False
+        """Cek semua endpoint, pilih yang terbaik"""
+        return self.endpoint_mgr.health_check(self.ses)
 
     def _cached(self, key: str) -> Optional[List[Dict]]:
         with self.lock:
@@ -326,56 +470,87 @@ class DataFetcher:
             logger.err(f"Request error: {url}", e)
             return None
 
+    def _try_single_request(self, base_url: str, path: str, params: dict,
+                            endpoint_name: str) -> Optional[requests.Response]:
+        """Coba request ke satu endpoint, catat latency"""
+        url = f"{base_url}{path}"
+        start = time.time()
+        resp = self._make_request(url, params)
+        latency = time.time() - start
+
+        if resp is not None and resp.status_code == 200:
+            self.endpoint_mgr.mark_success(endpoint_name, latency)
+            return resp
+        else:
+            self.endpoint_mgr.mark_failure(endpoint_name)
+            if resp is not None:
+                logger.warn(f"Endpoint {endpoint_name}: HTTP {resp.status_code}")
+            return None
+
+    def _request_with_failover(self, path: str, params: dict,
+                               max_total_attempts: int = 6) -> Optional[requests.Response]:
+        """
+        Coba request ke semua endpoint yang available.
+        Setiap endpoint dicoba, kalau gagal pindah ke berikutnya.
+        """
+        # Dapatkan daftar endpoint yang available
+        available = self.endpoint_mgr.get_available_endpoints()
+
+        if not available:
+            logger.warn("No endpoints available")
+            return None
+
+        attempts = 0
+        for base_url, name in available:
+            if attempts >= max_total_attempts:
+                break
+
+            # Coba maks 2x per endpoint
+            for retry in range(2):
+                if attempts >= max_total_attempts:
+                    break
+                attempts += 1
+
+                resp = self._try_single_request(base_url, path, params, name)
+                if resp is not None:
+                    return resp
+
+                if retry < 1:
+                    time.sleep(0.5)
+
+        return None
+
     def fetch_binance(self, symbol: str, interval: str, limit: int = 100) -> List[Dict]:
+        """Fetch klines dari Binance dengan multi-endpoint failover"""
         ck = f"bn_{symbol}_{interval}"
 
+        # Check cache
         cached = self._cached(ck)
         if cached:
             return cached
 
-        if not self._circuit_breaker_check():
-            return cached if cached else []
-
         params = {'symbol': symbol, 'interval': interval, 'limit': limit}
-        max_retries = 2
         data = None
 
-        for attempt in range(max_retries):
-            url = f"{self.BASE_URL}/fapi/v1/klines"
+        resp = self._request_with_failover("/fapi/v1/klines", params)
 
-            resp = self._make_request(url, params)
-
-            if resp is None:
-                self._record_failure()
-                continue
-
-            if resp.status_code != 200:
-                net_stats.record("http_error")
-                logger.warn(f"Binance {symbol} {interval}: HTTP {resp.status_code}")
-                if resp.status_code in [429, 418]:
-                    self._record_failure()
-                    break
-                self._record_failure()
-                continue
-
-            try:
-                data = resp.json()
-            except json.JSONDecodeError:
-                net_stats.record("invalid_json")
-                logger.warn(f"Binance {symbol} {interval}: Invalid JSON response")
-                self._record_failure()
-                continue
-
-            if not self._validate_binance_response(data, symbol, interval):
-                self._record_failure()
-                continue
-
-            break
-
-        if data is None:
-            logger.warn(f"Binance {symbol} {interval}: All attempts failed, using last good cache")
+        if resp is None:
+            logger.warn(f"Binance {symbol} {interval}: All endpoints failed, using last good cache")
             return cached if cached else []
 
+        # Parse JSON
+        try:
+            data = resp.json()
+        except json.JSONDecodeError:
+            net_stats.record("invalid_json")
+            logger.warn(f"Binance {symbol} {interval}: Invalid JSON response")
+            return cached if cached else []
+
+        # Validate
+        if not self._validate_binance_response(data, symbol, interval):
+            return cached if cached else []
+
+        # Parse candles
         out = []
         for k in data:
             if len(k) >= 6:
@@ -390,7 +565,6 @@ class DataFetcher:
 
         if out:
             self._set_cache(ck, out)
-            self._record_success()
             net_stats.record("success")
         else:
             logger.skip(symbol, f"Empty parsed dataset {interval}")
@@ -398,6 +572,7 @@ class DataFetcher:
         return out
 
     def fetch_crypto_all(self, symbol: str) -> Dict:
+        """Fetch semua timeframe untuk satu symbol"""
         data = {}
         for tf in ['1m', '5m', '15m', '1h']:
             candles = self.fetch_binance(symbol, tf)
@@ -408,20 +583,16 @@ class DataFetcher:
         return data
 
     def fetch_trending_binance(self) -> List[str]:
+        """Fetch trending coins dari ticker 24hr"""
         ck = "trending_bn"
         cached = self._cached(ck)
         if cached:
             return cached
 
-        if not self._circuit_breaker_check():
-            return []
+        resp = self._request_with_failover("/fapi/v1/ticker/24hr", {}, max_total_attempts=4)
 
-        url = f"{self.BASE_URL}/fapi/v1/ticker/24hr"
-
-        resp = self._make_request(url, {})
-
-        if resp is None or resp.status_code != 200:
-            logger.warn(f"Trending API failed")
+        if resp is None:
+            logger.warn("Trending API: All endpoints failed")
             return []
 
         try:
@@ -452,13 +623,18 @@ class DataFetcher:
         return trending
 
     def fetch_all(self) -> Dict:
+        """Fetch semua data crypto"""
         result = {'crypto': {}, 'ts': datetime.now().isoformat()}
 
         logger.info("=== FETCHING CRYPTO (Binance) ===")
 
+        # Health check: pilih endpoint terbaik
         endpoint_ok = self.health_check()
         if not endpoint_ok:
-            logger.warn("Endpoint down, using cache only")
+            logger.warn("All endpoints down, using cache only")
+
+        # Log status semua endpoint
+        logger.info(self.endpoint_mgr.status_report())
 
         for sym in ['BTCUSDT', 'ETHUSDT', 'SOLUSDT', 'SUIUSDT', 'DOGEUSDT', 'UNIUSDT', 'ZECUSDT']:
             d = self.fetch_crypto_all(sym)
@@ -474,7 +650,9 @@ class DataFetcher:
                 if d:
                     result['crypto'][sym] = d
 
+        # Log network stats
         logger.info(net_stats.report())
+        logger.info(self.endpoint_mgr.status_report())
 
         return result
 
@@ -1103,8 +1281,8 @@ class DSSSystem:
 # ============================================
 def main():
     print("""╔══════════════════════════════════╗
-║ DSS SWING INTERDAY v7.7          ║
-║ ENDPOINT FIX                     ║
+║ DSS SWING INTERDAY v7.8          ║
+║ ENDPOINT MANAGER                 ║
 ╚══════════════════════════════════╝""")
     print("[*] Running every 1 hour...\n")
     dss = DSSSystem()

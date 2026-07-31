@@ -4,12 +4,8 @@ DSS SWING INTERDAY - CRYPTO ONLY
 Decision Support System - Manual Trading Only
 Termux Ready - Single File - No Heavy Libraries
 
-STABLE v7.6 - SIGNAL QUALITY PATCH
-- Late entry filter (position in 20-candle range)
-- Volatility scoring konservatif (HIGH=35, NORMAL=60, LOW=40)
-- Momentum gate (≥40)
-- 1H candle confirmation
-- Bobot rebalancing (S/T 20%, M 25%, V 10%)
+STABLE v7.5 - TRENDING BY PRICE CHANGE
+- Trending pairs sorted by 24h price change (not volume)
 """
 
 import os
@@ -214,7 +210,7 @@ class DataFetcher:
                 logger.warn("Trending API: invalid response")
                 return []
             usdt = [d for d in all_d if isinstance(d,dict) and d.get('symbol','').endswith('USDT')]
-            usdt.sort(key=lambda x: float(x.get('volume',0)), reverse=True)
+            usdt.sort(key=lambda x: abs(float(x.get('priceChangePercent',0))), reverse=True)
             exclude = {'BTCUSDT','ETHUSDT','SOLUSDT','SUIUSDT','DOGEUSDT','UNIUSDT','ZECUSDT'}
             trending = []
             for d in usdt:
@@ -416,10 +412,9 @@ class VolatilityEngine:
         elif atr_1m > 0 and atr_1h < atr_1m*1.5: regime = VolRegime.LOW
         else: regime = VolRegime.NORMAL
         expansion = MathLib.safe_div(atr_1h, atr_1m, 1.0)
-        # PATCH: Nilai volatility lebih konservatif
-        if regime == VolRegime.HIGH: vol_score = 35.0
-        elif regime == VolRegime.LOW: vol_score = 40.0
-        else: vol_score = 60.0
+        if regime == VolRegime.HIGH: vol_score = 70.0
+        elif regime == VolRegime.LOW: vol_score = 30.0
+        else: vol_score = 50.0
         return {'atr':atrs,'bb':bb_pos,'regime':regime,'expansion':expansion,
                'score':vol_score,'reason':f"Volatility: {regime.value} (exp={expansion:.2f})"}
 
@@ -792,8 +787,7 @@ class DSSSystem:
         mf = self.mf_eng.analyze(price_data)
         sq = self.sq_eng.analyze(price_data, vol)
 
-        # PATCH 5: Bobot rebalancing
-        struct_w=0.20; trend_w=0.20; mom_w=0.25; liq_w=0.10; mf_w=0.10; vol_w=0.10; sq_w=0.05
+        struct_w=0.25; trend_w=0.25; mom_w=0.20; liq_w=0.10; mf_w=0.10; vol_w=0.05; sq_w=0.05
         score = (struct.get('score',0.0)*struct_w + trend.get('score',0.0)*trend_w +
                 mom.get('score',50.0)*mom_w + liq.get('score',50.0)*liq_w +
                 mf.get('score',50.0)*mf_w + vol.get('score',50.0)*vol_w +
@@ -811,40 +805,6 @@ class DSSSystem:
         if score >= threshold and trend['dir']==TrendDir.UP and struct['valid']: direction = SignalDir.LONG
         elif score >= threshold and trend['dir']==TrendDir.DOWN and struct['valid']: direction = SignalDir.SHORT
         else: direction = SignalDir.NONE
-
-        # PATCH 1: Late entry filter — posisi harga terhadap range 20 candle terakhir
-        if direction != SignalDir.NONE:
-            candles_1h = price_data['1h']
-            recent_high = MathLib.max_val([c['h'] for c in candles_1h[-20:]])
-            recent_low = MathLib.min_val([c['l'] for c in candles_1h[-20:]])
-            current_price = candles_1h[-1]['c']
-            range_size = recent_high - recent_low
-
-            if range_size > 0:
-                position_pct = (current_price - recent_low) / range_size
-
-                if direction == SignalDir.LONG and position_pct > 0.80:
-                    logger.nosig(pair, f"LONG rejected: price near range high ({position_pct:.1%})")
-                    return None
-                if direction == SignalDir.SHORT and position_pct < 0.20:
-                    logger.nosig(pair, f"SHORT rejected: price near range low ({position_pct:.1%})")
-                    return None
-
-        # PATCH 3: Momentum gate
-        if direction != SignalDir.NONE:
-            if mom['score'] < 40:
-                logger.nosig(pair, f"{direction.value} rejected: momentum too weak ({mom['score']:.0f})")
-                return None
-
-        # PATCH 4: 1H candle confirmation
-        if direction != SignalDir.NONE:
-            last_candle = price_data['1h'][-1]
-            if direction == SignalDir.LONG and last_candle['c'] < last_candle['o']:
-                logger.nosig(pair, "LONG rejected: last 1H candle bearish")
-                return None
-            if direction == SignalDir.SHORT and last_candle['c'] > last_candle['o']:
-                logger.nosig(pair, "SHORT rejected: last 1H candle bullish")
-                return None
 
         risk = None
         current_price = price_data['1h'][-1]['c'] if price_data.get('1h') else 0
@@ -900,8 +860,8 @@ class DSSSystem:
 # ============================================
 def main():
     print("""╔══════════════════════════════════╗
-║ DSS SWING INTERDAY v7.6          ║
-║ SIGNAL QUALITY PATCH             ║
+║ DSS SWING INTERDAY v7.5          ║
+║ CRYPTO ONLY + PRICE CHANGE TREND ║
 ╚══════════════════════════════════╝""")
     print("[*] Running every 1 hour...\n")
     dss = DSSSystem()

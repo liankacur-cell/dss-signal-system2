@@ -4,8 +4,8 @@ DSS SWING INTERDAY - CRYPTO ONLY
 Decision Support System - Manual Trading Only
 Termux Ready - Single File - No Heavy Libraries
 
-STABLE v7.5 - TRENDING BY PRICE CHANGE
-- Trending pairs sorted by 24h price change (not volume)
+STABLE v7.5 - SIGNAL DIRECTION FIX
+- Structure type must match trend direction
 """
 
 import os
@@ -802,9 +802,12 @@ class DSSSystem:
         if score < 40: return None
 
         threshold = 62
-        if score >= threshold and trend['dir']==TrendDir.UP and struct['valid']: direction = SignalDir.LONG
-        elif score >= threshold and trend['dir']==TrendDir.DOWN and struct['valid']: direction = SignalDir.SHORT
-        else: direction = SignalDir.NONE
+        if score >= threshold and trend['dir']==TrendDir.UP and struct['type']==StructType.BULL:
+            direction = SignalDir.LONG
+        elif score >= threshold and trend['dir']==TrendDir.DOWN and struct['type']==StructType.BEAR:
+            direction = SignalDir.SHORT
+        else:
+            direction = SignalDir.NONE
 
         risk = None
         current_price = price_data['1h'][-1]['c'] if price_data.get('1h') else 0
@@ -861,7 +864,7 @@ class DSSSystem:
 def main():
     print("""╔══════════════════════════════════╗
 ║ DSS SWING INTERDAY v7.5          ║
-║ CRYPTO ONLY + PRICE CHANGE TREND ║
+║ CRYPTO ONLY + SIGNAL DIR FIX     ║
 ╚══════════════════════════════════╝""")
     print("[*] Running every 1 hour...\n")
     dss = DSSSystem()

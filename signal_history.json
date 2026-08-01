@@ -122778,5 +122778,33 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-08-01T20:39:12.125288"
+  },
+  {
+    "pair": "BTWUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 76.05,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 44",
+    "vol_reason": "Volatility: high (exp=14.60)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.11369,
+      "sl": 0.09381142857142857,
+      "tp": 0.14350785714285716,
+      "risk": 0.019878571428571426,
+      "reward": 0.02981785714285716,
+      "rr": 1.500000000000001,
+      "pos_factor": 0.5,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-08-01T21:39:56.778667"
   }
 ]

@@ -1,62 +1,34 @@
 {
-  "timestamp": "2026-08-01T20:39:18.566112",
-  "total": 2,
+  "timestamp": "2026-08-01T21:40:02.536795",
+  "total": 1,
   "signals": [
     {
-      "pair": "1000SATSUSDT",
+      "pair": "BTWUSDT",
       "market": "crypto",
       "dir": "LONG",
-      "score": 85.55,
+      "score": 76.05,
       "struct": "valid_bullish",
       "struct_reason": "Bullish: HH+HL",
       "trend": "bullish",
       "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
-      "mom_reason": "Momentum score: 79",
-      "vol_reason": "Volatility: high (exp=9.93)",
+      "mom_reason": "Momentum score: 44",
+      "vol_reason": "Volatility: high (exp=14.60)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:False, Dist:False",
       "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 1.155e-05,
-        "sl": 9.422857142857141e-06,
-        "tp": 1.4740714285714285e-05,
-        "risk": 2.1271428571428583e-06,
-        "reward": 3.1907142857142858e-06,
-        "rr": 1.4999999999999991,
-        "pos_factor": 0.4,
+        "entry": 0.11369,
+        "sl": 0.09381142857142857,
+        "tp": 0.14350785714285716,
+        "risk": 0.019878571428571426,
+        "reward": 0.02981785714285716,
+        "rr": 1.500000000000001,
+        "pos_factor": 0.5,
         "sl_reason": "Below liquidity + ATR",
         "tp_reason": "Before liquidity target",
         "reason": "RR=1:1.50"
       },
-      "ts": "2026-08-01T20:39:12.144568"
-    },
-    {
-      "pair": "UNIUSDT",
-      "market": "crypto",
-      "dir": "SHORT",
-      "score": 77.0,
-      "struct": "valid_bearish",
-      "struct_reason": "Bearish: LH+LL",
-      "trend": "bearish",
-      "trend_reason": "Trend bearish (strength:1.00, aligned:True)",
-      "mom_reason": "Momentum score: 30",
-      "vol_reason": "Volatility: high (exp=16.34)",
-      "liq_reason": "Liquidity resting: inside_range",
-      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
-      "sq_reason": "Squeeze: False, Energy: 0.00",
-      "risk": {
-        "entry": 4.056,
-        "sl": 4.1657142857142855,
-        "tp": 3.8914285714285715,
-        "risk": 0.10971428571428543,
-        "reward": 0.1645714285714286,
-        "rr": 1.500000000000004,
-        "pos_factor": 0.5,
-        "sl_reason": "Above liquidity + ATR",
-        "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.50"
-      },
-      "ts": "2026-08-01T20:39:12.125288"
+      "ts": "2026-08-01T21:39:56.778667"
     }
   ]
 }

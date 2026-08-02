@@ -39674,3 +39674,201 @@
 2026-08-03 00:32:34,918 | INFO | CRYPTO COUNT: 0
 2026-08-03 00:32:34,919 | INFO | --- Analyzing CRYPTO ---
 2026-08-03 00:32:36,829 | INFO | === 0 signals | 7 skipped | 29 errors ===
+2026-08-03 00:32:45,474 | INFO | Git auto push OK
+2026-08-03 00:32:45,476 | INFO | CYCLE COMPLETE
+2026-08-03 00:32:45,476 | INFO | ==================================================
+2026-08-03 01:32:45,516 | INFO | ==================================================
+2026-08-03 01:32:45,533 | INFO | CYCLE START: 2026-08-03 01:32:45.533336
+2026-08-03 01:32:45,534 | INFO | ==================================================
+2026-08-03 01:32:45,535 | INFO | === FETCHING CRYPTO (Binance) ===
+2026-08-03 01:32:46,281 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-08-03 01:32:48,011 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-08-03 01:32:51,371 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-08-03 01:32:57,916 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-08-03 01:33:10,877 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-08-03 01:33:11,040 | ERROR | Binance connection error: BTCUSDT 1m
+2026-08-03 01:33:11,221 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=5m&limit=100
+2026-08-03 01:33:13,019 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=5m&limit=100
+2026-08-03 01:33:16,397 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=5m&limit=100
+2026-08-03 01:33:22,961 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=5m&limit=100
+2026-08-03 01:33:35,909 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=5m&limit=100
+2026-08-03 01:33:36,080 | ERROR | Binance connection error: BTCUSDT 5m
+2026-08-03 01:33:36,238 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=15m&limit=100
+2026-08-03 01:33:37,999 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=15m&limit=100
+2026-08-03 01:33:41,358 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=15m&limit=100
+2026-08-03 01:33:47,921 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=15m&limit=100
+2026-08-03 01:34:01,389 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=15m&limit=100
+2026-08-03 01:34:01,539 | ERROR | Binance connection error: BTCUSDT 15m
+2026-08-03 01:34:01,679 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=1h&limit=100
+2026-08-03 01:34:03,414 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=1h&limit=100
+2026-08-03 01:34:06,759 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=1h&limit=100
+2026-08-03 01:34:13,318 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=1h&limit=100
+2026-08-03 01:34:26,261 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=1h&limit=100
+2026-08-03 01:34:26,416 | ERROR | Binance connection error: BTCUSDT 1h
+2026-08-03 01:34:26,417 | WARNING | SKIP [BTCUSDT]: Empty dataset
+2026-08-03 01:34:26,419 | WARNING |   FAIL BTCUSDT
+2026-08-03 01:34:26,578 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ETHUSDT&interval=1m&limit=100
+2026-08-03 01:34:28,319 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ETHUSDT&interval=1m&limit=100
+2026-08-03 01:34:31,677 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ETHUSDT&interval=1m&limit=100
+2026-08-03 01:34:38,238 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ETHUSDT&interval=1m&limit=100
+2026-08-03 01:34:51,188 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ETHUSDT&interval=1m&limit=100
+2026-08-03 01:34:51,758 | ERROR | Binance connection error: ETHUSDT 1m
+2026-08-03 01:34:51,918 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ETHUSDT&interval=5m&limit=100
+2026-08-03 01:34:53,667 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ETHUSDT&interval=5m&limit=100
+2026-08-03 01:34:57,017 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ETHUSDT&interval=5m&limit=100
+2026-08-03 01:35:03,577 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ETHUSDT&interval=5m&limit=100
+2026-08-03 01:35:16,539 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ETHUSDT&interval=5m&limit=100
+2026-08-03 01:35:16,690 | ERROR | Binance connection error: ETHUSDT 5m
+2026-08-03 01:35:16,857 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ETHUSDT&interval=15m&limit=100
+2026-08-03 01:35:18,609 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ETHUSDT&interval=15m&limit=100
+2026-08-03 01:35:21,958 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ETHUSDT&interval=15m&limit=100
+2026-08-03 01:35:28,519 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ETHUSDT&interval=15m&limit=100
+2026-08-03 01:35:41,479 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ETHUSDT&interval=15m&limit=100
+2026-08-03 01:35:41,637 | ERROR | Binance connection error: ETHUSDT 15m
+2026-08-03 01:35:41,789 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ETHUSDT&interval=1h&limit=100
+2026-08-03 01:35:43,519 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ETHUSDT&interval=1h&limit=100
+2026-08-03 01:35:47,125 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ETHUSDT&interval=1h&limit=100
+2026-08-03 01:35:53,677 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ETHUSDT&interval=1h&limit=100
+2026-08-03 01:36:07,130 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ETHUSDT&interval=1h&limit=100
+2026-08-03 01:36:07,278 | ERROR | Binance connection error: ETHUSDT 1h
+2026-08-03 01:36:07,278 | WARNING | SKIP [ETHUSDT]: Empty dataset
+2026-08-03 01:36:07,279 | WARNING |   FAIL ETHUSDT
+2026-08-03 01:36:07,417 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SOLUSDT&interval=1m&limit=100
+2026-08-03 01:36:09,178 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SOLUSDT&interval=1m&limit=100
+2026-08-03 01:36:12,537 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SOLUSDT&interval=1m&limit=100
+2026-08-03 01:36:19,080 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SOLUSDT&interval=1m&limit=100
+2026-08-03 01:36:32,019 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SOLUSDT&interval=1m&limit=100
+2026-08-03 01:36:32,185 | ERROR | Binance connection error: SOLUSDT 1m
+2026-08-03 01:36:32,339 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SOLUSDT&interval=5m&limit=100
+2026-08-03 01:36:34,080 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SOLUSDT&interval=5m&limit=100
+2026-08-03 01:36:37,418 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SOLUSDT&interval=5m&limit=100
+2026-08-03 01:36:43,970 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SOLUSDT&interval=5m&limit=100
+2026-08-03 01:36:56,919 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SOLUSDT&interval=5m&limit=100
+2026-08-03 01:36:57,358 | ERROR | Binance connection error: SOLUSDT 5m
+2026-08-03 01:36:57,520 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SOLUSDT&interval=15m&limit=100
+2026-08-03 01:36:59,259 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SOLUSDT&interval=15m&limit=100
+2026-08-03 01:37:02,627 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SOLUSDT&interval=15m&limit=100
+2026-08-03 01:37:09,178 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SOLUSDT&interval=15m&limit=100
+2026-08-03 01:37:22,132 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SOLUSDT&interval=15m&limit=100
+2026-08-03 01:37:22,301 | ERROR | Binance connection error: SOLUSDT 15m
+2026-08-03 01:37:22,439 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SOLUSDT&interval=1h&limit=100
+2026-08-03 01:37:24,180 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SOLUSDT&interval=1h&limit=100
+2026-08-03 01:37:27,538 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SOLUSDT&interval=1h&limit=100
+2026-08-03 01:37:34,090 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SOLUSDT&interval=1h&limit=100
+2026-08-03 01:37:47,056 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SOLUSDT&interval=1h&limit=100
+2026-08-03 01:37:47,200 | ERROR | Binance connection error: SOLUSDT 1h
+2026-08-03 01:37:47,201 | WARNING | SKIP [SOLUSDT]: Empty dataset
+2026-08-03 01:37:47,201 | WARNING |   FAIL SOLUSDT
+2026-08-03 01:37:47,328 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SUIUSDT&interval=1m&limit=100
+2026-08-03 01:37:49,067 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SUIUSDT&interval=1m&limit=100
+2026-08-03 01:37:52,410 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SUIUSDT&interval=1m&limit=100
+2026-08-03 01:37:58,959 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SUIUSDT&interval=1m&limit=100
+2026-08-03 01:38:12,430 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SUIUSDT&interval=1m&limit=100
+2026-08-03 01:38:12,758 | ERROR | Binance connection error: SUIUSDT 1m
+2026-08-03 01:38:12,899 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SUIUSDT&interval=5m&limit=100
+2026-08-03 01:38:14,649 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SUIUSDT&interval=5m&limit=100
+2026-08-03 01:38:18,001 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SUIUSDT&interval=5m&limit=100
+2026-08-03 01:38:24,546 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SUIUSDT&interval=5m&limit=100
+2026-08-03 01:38:37,479 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SUIUSDT&interval=5m&limit=100
+2026-08-03 01:38:37,616 | ERROR | Binance connection error: SUIUSDT 5m
+2026-08-03 01:38:37,760 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SUIUSDT&interval=15m&limit=100
+2026-08-03 01:38:39,479 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SUIUSDT&interval=15m&limit=100
+2026-08-03 01:38:42,817 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SUIUSDT&interval=15m&limit=100
+2026-08-03 01:38:49,379 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SUIUSDT&interval=15m&limit=100
+2026-08-03 01:39:02,338 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SUIUSDT&interval=15m&limit=100
+2026-08-03 01:39:03,069 | ERROR | Binance connection error: SUIUSDT 15m
+2026-08-03 01:39:03,489 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SUIUSDT&interval=1h&limit=100
+2026-08-03 01:39:05,238 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SUIUSDT&interval=1h&limit=100
+2026-08-03 01:39:08,580 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SUIUSDT&interval=1h&limit=100
+2026-08-03 01:39:15,129 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SUIUSDT&interval=1h&limit=100
+2026-08-03 01:39:28,080 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=SUIUSDT&interval=1h&limit=100
+2026-08-03 01:39:28,219 | ERROR | Binance connection error: SUIUSDT 1h
+2026-08-03 01:39:28,220 | WARNING | SKIP [SUIUSDT]: Empty dataset
+2026-08-03 01:39:28,220 | WARNING |   FAIL SUIUSDT
+2026-08-03 01:39:28,356 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=DOGEUSDT&interval=1m&limit=100
+2026-08-03 01:39:30,101 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=DOGEUSDT&interval=1m&limit=100
+2026-08-03 01:39:33,439 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=DOGEUSDT&interval=1m&limit=100
+2026-08-03 01:39:39,979 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=DOGEUSDT&interval=1m&limit=100
+2026-08-03 01:39:52,939 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=DOGEUSDT&interval=1m&limit=100
+2026-08-03 01:39:53,097 | ERROR | Binance connection error: DOGEUSDT 1m
+2026-08-03 01:39:53,248 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=DOGEUSDT&interval=5m&limit=100
+2026-08-03 01:39:55,006 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=DOGEUSDT&interval=5m&limit=100
+2026-08-03 01:39:58,358 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=DOGEUSDT&interval=5m&limit=100
+2026-08-03 01:40:04,899 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=DOGEUSDT&interval=5m&limit=100
+2026-08-03 01:40:18,371 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=DOGEUSDT&interval=5m&limit=100
+2026-08-03 01:40:18,508 | ERROR | Binance connection error: DOGEUSDT 5m
+2026-08-03 01:40:18,640 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=DOGEUSDT&interval=15m&limit=100
+2026-08-03 01:40:20,372 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=DOGEUSDT&interval=15m&limit=100
+2026-08-03 01:40:23,710 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=DOGEUSDT&interval=15m&limit=100
+2026-08-03 01:40:30,259 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=DOGEUSDT&interval=15m&limit=100
+2026-08-03 01:40:43,208 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=DOGEUSDT&interval=15m&limit=100
+2026-08-03 01:40:43,360 | ERROR | Binance connection error: DOGEUSDT 15m
+2026-08-03 01:40:43,499 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=DOGEUSDT&interval=1h&limit=100
+2026-08-03 01:40:45,237 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=DOGEUSDT&interval=1h&limit=100
+2026-08-03 01:40:48,590 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=DOGEUSDT&interval=1h&limit=100
+2026-08-03 01:40:55,138 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=DOGEUSDT&interval=1h&limit=100
+2026-08-03 01:41:08,079 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=DOGEUSDT&interval=1h&limit=100
+2026-08-03 01:41:09,009 | ERROR | Binance connection error: DOGEUSDT 1h
+2026-08-03 01:41:09,010 | WARNING | SKIP [DOGEUSDT]: Empty dataset
+2026-08-03 01:41:09,011 | WARNING |   FAIL DOGEUSDT
+2026-08-03 01:41:09,139 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=UNIUSDT&interval=1m&limit=100
+2026-08-03 01:41:10,870 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=UNIUSDT&interval=1m&limit=100
+2026-08-03 01:41:14,209 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=UNIUSDT&interval=1m&limit=100
+2026-08-03 01:41:20,740 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=UNIUSDT&interval=1m&limit=100
+2026-08-03 01:41:33,678 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=UNIUSDT&interval=1m&limit=100
+2026-08-03 01:41:33,818 | ERROR | Binance connection error: UNIUSDT 1m
+2026-08-03 01:41:33,950 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=UNIUSDT&interval=5m&limit=100
+2026-08-03 01:41:35,680 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=UNIUSDT&interval=5m&limit=100
+2026-08-03 01:41:39,028 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=UNIUSDT&interval=5m&limit=100
+2026-08-03 01:41:45,558 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=UNIUSDT&interval=5m&limit=100
+2026-08-03 01:41:58,498 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=UNIUSDT&interval=5m&limit=100
+2026-08-03 01:41:58,638 | ERROR | Binance connection error: UNIUSDT 5m
+2026-08-03 01:41:58,760 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=UNIUSDT&interval=15m&limit=100
+2026-08-03 01:42:00,480 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=UNIUSDT&interval=15m&limit=100
+2026-08-03 01:42:03,820 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=UNIUSDT&interval=15m&limit=100
+2026-08-03 01:42:10,363 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=UNIUSDT&interval=15m&limit=100
+2026-08-03 01:42:23,669 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=UNIUSDT&interval=15m&limit=100
+2026-08-03 01:42:24,045 | ERROR | Binance connection error: UNIUSDT 15m
+2026-08-03 01:42:24,189 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=UNIUSDT&interval=1h&limit=100
+2026-08-03 01:42:25,920 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=UNIUSDT&interval=1h&limit=100
+2026-08-03 01:42:29,268 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=UNIUSDT&interval=1h&limit=100
+2026-08-03 01:42:35,802 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=UNIUSDT&interval=1h&limit=100
+2026-08-03 01:42:48,748 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=UNIUSDT&interval=1h&limit=100
+2026-08-03 01:42:48,897 | ERROR | Binance connection error: UNIUSDT 1h
+2026-08-03 01:42:48,897 | WARNING | SKIP [UNIUSDT]: Empty dataset
+2026-08-03 01:42:48,898 | WARNING |   FAIL UNIUSDT
+2026-08-03 01:42:49,061 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ZECUSDT&interval=1m&limit=100
+2026-08-03 01:42:50,798 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ZECUSDT&interval=1m&limit=100
+2026-08-03 01:42:54,140 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ZECUSDT&interval=1m&limit=100
+2026-08-03 01:43:00,687 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ZECUSDT&interval=1m&limit=100
+2026-08-03 01:43:13,650 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ZECUSDT&interval=1m&limit=100
+2026-08-03 01:43:14,279 | ERROR | Binance connection error: ZECUSDT 1m
+2026-08-03 01:43:14,421 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ZECUSDT&interval=5m&limit=100
+2026-08-03 01:43:16,159 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ZECUSDT&interval=5m&limit=100
+2026-08-03 01:43:19,509 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ZECUSDT&interval=5m&limit=100
+2026-08-03 01:43:26,050 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ZECUSDT&interval=5m&limit=100
+2026-08-03 01:43:38,988 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ZECUSDT&interval=5m&limit=100
+2026-08-03 01:43:39,138 | ERROR | Binance connection error: ZECUSDT 5m
+2026-08-03 01:43:39,289 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ZECUSDT&interval=15m&limit=100
+2026-08-03 01:43:41,032 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ZECUSDT&interval=15m&limit=100
+2026-08-03 01:43:44,380 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ZECUSDT&interval=15m&limit=100
+2026-08-03 01:43:50,920 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ZECUSDT&interval=15m&limit=100
+2026-08-03 01:44:03,858 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ZECUSDT&interval=15m&limit=100
+2026-08-03 01:44:04,001 | ERROR | Binance connection error: ZECUSDT 15m
+2026-08-03 01:44:04,139 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ZECUSDT&interval=1h&limit=100
+2026-08-03 01:44:05,872 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ZECUSDT&interval=1h&limit=100
+2026-08-03 01:44:09,211 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ZECUSDT&interval=1h&limit=100
+2026-08-03 01:44:15,740 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ZECUSDT&interval=1h&limit=100
+2026-08-03 01:44:28,797 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=ZECUSDT&interval=1h&limit=100
+2026-08-03 01:44:28,949 | ERROR | Binance connection error: ZECUSDT 1h
+2026-08-03 01:44:28,950 | WARNING | SKIP [ZECUSDT]: Empty dataset
+2026-08-03 01:44:28,950 | WARNING |   FAIL ZECUSDT
+2026-08-03 01:44:29,080 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/ticker/24hr
+2026-08-03 01:44:30,818 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/ticker/24hr
+2026-08-03 01:44:34,162 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/ticker/24hr
+2026-08-03 01:44:40,710 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/ticker/24hr
+2026-08-03 01:44:53,658 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/ticker/24hr
+2026-08-03 01:44:53,809 | ERROR | Trending fetch failed
+2026-08-03 01:44:53,876 | INFO | CRYPTO COUNT: 0
+2026-08-03 01:44:53,877 | INFO | --- Analyzing CRYPTO ---
+2026-08-03 01:44:55,727 | INFO | === 0 signals | 7 skipped | 29 errors ===

@@ -39167,3 +39167,37 @@
 2026-08-02 14:16:42,040 | INFO | === 5 signals | 0 skipped | 0 errors ===
 2026-08-02 14:16:44,155 | INFO | Sent 5 FREE signals
 2026-08-02 14:16:48,281 | INFO | Sent 5 VIP signals
+2026-08-02 14:16:51,978 | INFO | Git auto push OK
+2026-08-02 14:16:51,979 | INFO | CYCLE COMPLETE
+2026-08-02 14:16:51,980 | INFO | ==================================================
+2026-08-02 15:16:52,019 | INFO | ==================================================
+2026-08-02 15:16:52,044 | INFO | CYCLE START: 2026-08-02 15:16:52.043616
+2026-08-02 15:16:52,045 | INFO | ==================================================
+2026-08-02 15:16:52,046 | INFO | === FETCHING CRYPTO (Binance) ===
+2026-08-02 15:16:53,091 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=5m&limit=100
+2026-08-02 15:16:53,809 | INFO |   OK BTCUSDT
+2026-08-02 15:16:54,509 | INFO |   OK ETHUSDT
+2026-08-02 15:16:55,151 | INFO |   OK SOLUSDT
+2026-08-02 15:16:55,811 | INFO |   OK SUIUSDT
+2026-08-02 15:16:56,475 | INFO |   OK DOGEUSDT
+2026-08-02 15:16:57,109 | INFO |   OK UNIUSDT
+2026-08-02 15:16:57,748 | INFO |   OK ZECUSDT
+2026-08-02 15:17:03,453 | INFO | CRYPTO COUNT: 14
+2026-08-02 15:17:03,455 | INFO | --- Analyzing CRYPTO ---
+2026-08-02 15:17:03,472 | INFO | NO SIGNAL [BTCUSDT]: No setup
+2026-08-02 15:17:03,478 | INFO | SIGNAL: ETHUSDT -> LONG (Score:93.5)
+2026-08-02 15:17:03,483 | INFO | NO SIGNAL [SOLUSDT]: No setup
+2026-08-02 15:17:03,487 | INFO | NO SIGNAL [SUIUSDT]: No setup
+2026-08-02 15:17:03,491 | INFO | SIGNAL: DOGEUSDT -> LONG (Score:92.2)
+2026-08-02 15:17:03,495 | INFO | NO SIGNAL [UNIUSDT]: No setup
+2026-08-02 15:17:03,500 | INFO | SIGNAL: ZECUSDT -> LONG (Score:93.5)
+2026-08-02 15:17:03,504 | INFO | SIGNAL: BLESSUSDT -> LONG (Score:87.2)
+2026-08-02 15:17:03,508 | INFO | NO SIGNAL [1000RATSUSDT]: No setup
+2026-08-02 15:17:03,512 | INFO | SIGNAL: KOMAUSDT -> SHORT (Score:78.5)
+2026-08-02 15:17:03,517 | INFO | NO SIGNAL [UAIUSDT]: No setup
+2026-08-02 15:17:03,521 | INFO | SIGNAL: HOMEUSDT -> LONG (Score:91.0)
+2026-08-02 15:17:03,525 | INFO | NO SIGNAL [STARUSDT]: No setup
+2026-08-02 15:17:03,530 | INFO | SIGNAL: BULLAUSDT -> LONG (Score:89.2)
+2026-08-02 15:17:04,311 | INFO | === 7 signals | 0 skipped | 0 errors ===
+2026-08-02 15:17:06,489 | INFO | Sent 5 FREE signals
+2026-08-02 15:17:10,607 | INFO | Sent 5 VIP signals

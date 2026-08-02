@@ -123870,5 +123870,61 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-08-02T08:14:27.074846"
+  },
+  {
+    "pair": "IDOLUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 94.5341974679312,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
+    "mom_reason": "Momentum score: 100",
+    "vol_reason": "Volatility: high (exp=11.89)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: rising, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: True, Energy: 0.71",
+    "risk": {
+      "entry": 0.02532,
+      "sl": 0.021785714285714283,
+      "tp": 0.03062142857142857,
+      "risk": 0.0035342857142857155,
+      "reward": 0.0053014285714285715,
+      "rr": 1.4999999999999996,
+      "pos_factor": 0.4,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-08-02T09:14:49.553798"
+  },
+  {
+    "pair": "AKEUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 82.85,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 78",
+    "vol_reason": "Volatility: high (exp=3.26)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.005991,
+      "sl": 0.004938214285714285,
+      "tp": 0.0075701785714285715,
+      "risk": 0.0010527857142857144,
+      "reward": 0.0015791785714285717,
+      "rr": 1.5,
+      "pos_factor": 0.5,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-08-02T09:14:49.562482"
   }
 ]

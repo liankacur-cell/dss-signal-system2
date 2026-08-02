@@ -39337,3 +39337,38 @@
 2026-08-02 19:18:36,933 | INFO | === 4 signals | 0 skipped | 0 errors ===
 2026-08-02 19:18:39,078 | INFO | Sent 4 FREE signals
 2026-08-02 19:18:43,155 | INFO | Sent 4 VIP signals
+2026-08-02 19:18:46,727 | INFO | Git auto push OK
+2026-08-02 19:18:46,728 | INFO | CYCLE COMPLETE
+2026-08-02 19:18:46,729 | INFO | ==================================================
+2026-08-02 20:18:46,776 | INFO | ==================================================
+2026-08-02 20:18:46,800 | INFO | CYCLE START: 2026-08-02 20:18:46.799211
+2026-08-02 20:18:46,801 | INFO | ==================================================
+2026-08-02 20:18:46,802 | INFO | === FETCHING CRYPTO (Binance) ===
+2026-08-02 20:18:47,696 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-08-02 20:18:49,449 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-08-02 20:18:50,396 | INFO |   OK BTCUSDT
+2026-08-02 20:18:51,042 | INFO |   OK ETHUSDT
+2026-08-02 20:18:51,710 | INFO |   OK SOLUSDT
+2026-08-02 20:18:52,384 | INFO |   OK SUIUSDT
+2026-08-02 20:18:53,135 | INFO |   OK DOGEUSDT
+2026-08-02 20:18:53,785 | INFO |   OK UNIUSDT
+2026-08-02 20:18:54,467 | INFO |   OK ZECUSDT
+2026-08-02 20:19:00,016 | INFO | CRYPTO COUNT: 14
+2026-08-02 20:19:00,017 | INFO | --- Analyzing CRYPTO ---
+2026-08-02 20:19:00,030 | INFO | NO SIGNAL [BTCUSDT]: No setup
+2026-08-02 20:19:00,036 | INFO | NO SIGNAL [ETHUSDT]: No setup
+2026-08-02 20:19:00,041 | INFO | NO SIGNAL [SOLUSDT]: No setup
+2026-08-02 20:19:00,047 | INFO | NO SIGNAL [SUIUSDT]: No setup
+2026-08-02 20:19:00,052 | INFO | NO SIGNAL [DOGEUSDT]: No setup
+2026-08-02 20:19:00,058 | INFO | NO SIGNAL [UNIUSDT]: No setup
+2026-08-02 20:19:00,064 | INFO | NO SIGNAL [ZECUSDT]: No setup
+2026-08-02 20:19:00,071 | INFO | SIGNAL: BLESSUSDT -> LONG (Score:88.5)
+2026-08-02 20:19:00,076 | INFO | NO SIGNAL [KOMAUSDT]: No setup
+2026-08-02 20:19:00,081 | INFO | NO SIGNAL [BTWUSDT]: No setup
+2026-08-02 20:19:00,086 | INFO | SIGNAL: STARUSDT -> LONG (Score:89.5)
+2026-08-02 20:19:00,092 | INFO | NO SIGNAL [HOMEUSDT]: No setup
+2026-08-02 20:19:00,097 | INFO | NO SIGNAL [UBUSDT]: No setup
+2026-08-02 20:19:00,103 | INFO | NO SIGNAL [UAIUSDT]: No setup
+2026-08-02 20:19:01,174 | INFO | === 2 signals | 0 skipped | 0 errors ===
+2026-08-02 20:19:03,367 | INFO | Sent 2 FREE signals
+2026-08-02 20:19:07,598 | INFO | Sent 2 VIP signals

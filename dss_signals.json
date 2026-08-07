@@ -1,25 +1,25 @@
 {
-  "timestamp": "2026-08-07T20:32:27.394176",
-  "total": 2,
+  "timestamp": "2026-08-07T20:59:56.770047",
+  "total": 4,
   "signals": [
     {
       "pair": "DOGEUSDT",
       "market": "crypto",
       "dir": "LONG",
-      "score": 97.58614839755546,
+      "score": 97.6018237141813,
       "struct": "valid_bullish",
       "struct_reason": "Bullish: HH+HL",
       "trend": "bullish",
       "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
       "mom_reason": "Momentum score: 100",
-      "vol_reason": "Volatility: high (exp=4.56)",
+      "vol_reason": "Volatility: high (exp=8.30)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:True, Dist:False",
       "sq_reason": "Squeeze: True, Energy: 0.32",
       "risk": {
-        "entry": 0.07004,
-        "sl": 0.06931714285714285,
-        "tp": 0.07112428571428572,
+        "entry": 0.07003,
+        "sl": 0.06930714285714284,
+        "tp": 0.07111428571428571,
         "risk": 0.0007228571428571501,
         "reward": 0.0010842857142857182,
         "rr": 1.4999999999999905,
@@ -28,7 +28,7 @@
         "tp_reason": "Before liquidity target",
         "reason": "RR=1:1.50"
       },
-      "ts": "2026-08-07T20:32:20.957206"
+      "ts": "2026-08-07T20:59:50.151916"
     },
     {
       "pair": "SOLUSDT",
@@ -40,14 +40,14 @@
       "trend": "bullish",
       "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
       "mom_reason": "Momentum score: 100",
-      "vol_reason": "Volatility: high (exp=4.63)",
+      "vol_reason": "Volatility: high (exp=7.01)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:True, Dist:False",
       "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 73.93,
-        "sl": 73.16857142857144,
-        "tp": 75.07214285714286,
+        "entry": 73.87,
+        "sl": 73.10857142857144,
+        "tp": 75.01214285714286,
         "risk": 0.7614285714285671,
         "reward": 1.1421428571428578,
         "rr": 1.5000000000000093,
@@ -56,7 +56,63 @@
         "tp_reason": "Before liquidity target",
         "reason": "RR=1:1.50"
       },
-      "ts": "2026-08-07T20:32:20.949347"
+      "ts": "2026-08-07T20:59:50.142835"
+    },
+    {
+      "pair": "C98USDT",
+      "market": "crypto",
+      "dir": "LONG",
+      "score": 93.5,
+      "struct": "valid_bullish",
+      "struct_reason": "Bullish: HH+HL",
+      "trend": "bullish",
+      "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
+      "mom_reason": "Momentum score: 100",
+      "vol_reason": "Volatility: high (exp=3.79)",
+      "liq_reason": "Liquidity resting: inside_range",
+      "mf_reason": "OBV: mixed, Acc:True, Dist:False",
+      "sq_reason": "Squeeze: False, Energy: 0.00",
+      "risk": {
+        "entry": 0.01812,
+        "sl": 0.016435714285714286,
+        "tp": 0.020646428571428573,
+        "risk": 0.0016842857142857146,
+        "reward": 0.002526428571428572,
+        "rr": 1.5,
+        "pos_factor": 0.5,
+        "sl_reason": "Below liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50"
+      },
+      "ts": "2026-08-07T20:59:50.178965"
+    },
+    {
+      "pair": "GWEIUSDT",
+      "market": "crypto",
+      "dir": "LONG",
+      "score": 93.3,
+      "struct": "valid_bullish",
+      "struct_reason": "Bullish: HH+HL",
+      "trend": "bullish",
+      "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
+      "mom_reason": "Momentum score: 99",
+      "vol_reason": "Volatility: high (exp=8.82)",
+      "liq_reason": "Liquidity resting: inside_range",
+      "mf_reason": "OBV: mixed, Acc:True, Dist:False",
+      "sq_reason": "Squeeze: False, Energy: 0.00",
+      "risk": {
+        "entry": 0.02431,
+        "sl": 0.02107142857142857,
+        "tp": 0.029167857142857138,
+        "risk": 0.0032385714285714275,
+        "reward": 0.0048578571428571395,
+        "rr": 1.4999999999999996,
+        "pos_factor": 0.4,
+        "sl_reason": "Below liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50"
+      },
+      "ts": "2026-08-07T20:59:50.182493"
     }
   ]
 }

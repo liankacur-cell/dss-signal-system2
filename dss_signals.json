@@ -1,53 +1,53 @@
 {
-  "timestamp": "2026-08-07T19:31:42.666838",
+  "timestamp": "2026-08-07T19:43:43.971158",
   "total": 3,
   "signals": [
     {
       "pair": "DOGEUSDT",
       "market": "crypto",
       "dir": "LONG",
-      "score": 96.00295615225383,
+      "score": 96.01265303190172,
       "struct": "valid_bullish",
       "struct_reason": "Bullish: HH+HL",
       "trend": "bullish",
       "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
       "mom_reason": "Momentum score: 100",
-      "vol_reason": "Volatility: high (exp=6.01)",
+      "vol_reason": "Volatility: high (exp=8.96)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:False, Dist:False",
       "sq_reason": "Squeeze: True, Energy: 0.50",
       "risk": {
-        "entry": 0.06959,
+        "entry": 0.06958,
         "sl": 0.06882415,
-        "tp": 0.07056928571428571,
-        "risk": 0.0007658499999999985,
+        "tp": 0.07055928571428571,
+        "risk": 0.0007558500000000024,
         "reward": 0.0009792857142857103,
-        "rr": 1.278691276732666,
+        "rr": 1.2956085391092245,
         "pos_factor": 0.4,
         "sl_reason": "Below liquidity + ATR",
         "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.28"
+        "reason": "RR=1:1.30"
       },
-      "ts": "2026-08-07T19:31:36.222936"
+      "ts": "2026-08-07T19:43:37.306101"
     },
     {
       "pair": "SOLUSDT",
       "market": "crypto",
       "dir": "LONG",
-      "score": 92.25,
+      "score": 93.5,
       "struct": "valid_bullish",
       "struct_reason": "Bullish: HH+HL",
       "trend": "bullish",
-      "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+      "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
       "mom_reason": "Momentum score: 100",
-      "vol_reason": "Volatility: high (exp=6.48)",
+      "vol_reason": "Volatility: high (exp=9.17)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:False, Dist:False",
       "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 73.56,
-        "sl": 72.86571428571429,
-        "tp": 74.60142857142857,
+        "entry": 73.63,
+        "sl": 72.93571428571428,
+        "tp": 74.67142857142856,
         "risk": 0.6942857142857122,
         "reward": 1.0414285714285683,
         "rr": 1.5,
@@ -56,35 +56,35 @@
         "tp_reason": "Before liquidity target",
         "reason": "RR=1:1.50"
       },
-      "ts": "2026-08-07T19:31:36.213400"
+      "ts": "2026-08-07T19:43:37.295990"
     },
     {
       "pair": "ONUSDT",
       "market": "crypto",
       "dir": "LONG",
-      "score": 89.95201452423159,
+      "score": 89.96611490286998,
       "struct": "valid_bullish",
       "struct_reason": "Bullish: HH+HL",
       "trend": "bullish",
       "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
       "mom_reason": "Momentum score: 100",
-      "vol_reason": "Volatility: high (exp=11.61)",
+      "vol_reason": "Volatility: high (exp=15.93)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:False, Dist:False",
       "sq_reason": "Squeeze: True, Energy: 0.29",
       "risk": {
-        "entry": 0.44608,
-        "sl": 0.3661614285714286,
-        "tp": 0.5659578571428571,
+        "entry": 0.44392,
+        "sl": 0.3640014285714286,
+        "tp": 0.5637978571428571,
         "risk": 0.0799185714285714,
-        "reward": 0.11987785714285709,
-        "rr": 1.5,
+        "reward": 0.11987785714285715,
+        "rr": 1.5000000000000007,
         "pos_factor": 0.5,
         "sl_reason": "Below liquidity + ATR",
         "tp_reason": "Before liquidity target",
         "reason": "RR=1:1.50"
       },
-      "ts": "2026-08-07T19:31:36.257380"
+      "ts": "2026-08-07T19:43:37.345578"
     }
   ]
 }

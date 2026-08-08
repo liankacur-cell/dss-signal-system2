@@ -1,34 +1,34 @@
 {
-  "timestamp": "2026-08-08T21:53:56.077393",
+  "timestamp": "2026-08-08T21:57:49.797118",
   "total": 1,
   "signals": [
     {
       "pair": "UNIUSDT",
       "market": "crypto",
       "dir": "SHORT",
-      "score": 75.41276600113447,
+      "score": 84.85294872125112,
       "struct": "valid_bearish",
       "struct_reason": "Bearish: LH+LL",
       "trend": "bearish",
       "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
-      "mom_reason": "Momentum score: 22",
-      "vol_reason": "Volatility: high (exp=6.93)",
+      "mom_reason": "Momentum score: 56",
+      "vol_reason": "Volatility: high (exp=6.29)",
       "liq_reason": "Liquidity resting: inside_range",
-      "mf_reason": "OBV: falling, Acc:False, Dist:False",
-      "sq_reason": "Squeeze: True, Energy: 0.25",
+      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+      "sq_reason": "Squeeze: True, Energy: 0.28",
       "risk": {
-        "entry": 3.961,
+        "entry": 3.973,
         "sl": 4.035074999999999,
-        "tp": 3.876357142857143,
-        "risk": 0.07407499999999922,
-        "reward": 0.0846428571428568,
-        "rr": 1.1426642881249771,
+        "tp": 3.8881428571428573,
+        "risk": 0.062074999999999214,
+        "reward": 0.08485714285714252,
+        "rr": 1.3670099533973998,
         "pos_factor": 0.4,
         "sl_reason": "Above liquidity + ATR",
         "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.14"
+        "reason": "RR=1:1.37"
       },
-      "ts": "2026-08-08T21:53:49.924354"
+      "ts": "2026-08-08T21:57:43.658725"
     }
   ]
 }

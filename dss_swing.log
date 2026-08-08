@@ -42915,3 +42915,44 @@
 2026-08-08 23:59:10,561 | INFO | NO SIGNAL [ACEUSDT]: No setup
 2026-08-08 23:59:10,569 | INFO | NO SIGNAL [KAITOUSDT]: No setup
 2026-08-08 23:59:12,173 | INFO | === 0 signals | 0 skipped | 0 errors ===
+2026-08-08 23:59:20,259 | INFO | Git auto push OK
+2026-08-08 23:59:20,261 | INFO | CYCLE COMPLETE
+2026-08-08 23:59:20,262 | INFO | ==================================================
+2026-08-09 00:59:20,297 | INFO | ==================================================
+2026-08-09 00:59:20,316 | INFO | CYCLE START: 2026-08-09 00:59:20.315732
+2026-08-09 00:59:20,317 | INFO | ==================================================
+2026-08-09 00:59:20,318 | INFO | === FETCHING CRYPTO (Binance) ===
+2026-08-09 01:03:33,212 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-08-09 01:12:05,344 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-08-09 01:19:37,420 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-08-09 01:22:40,867 | WARNING | Retrying (Retry(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-08-09 01:25:48,368 | WARNING | Retrying (Retry(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-08-09 02:24:09,241 | ERROR | Binance connection error: BTCUSDT 1m
+2026-08-09 03:01:41,520 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=5m&limit=100
+2026-08-09 05:25:22,160 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=5m&limit=100
+2026-08-09 07:13:31,358 | INFO |   OK BTCUSDT
+2026-08-09 07:13:33,681 | INFO |   OK ETHUSDT
+2026-08-09 07:13:35,726 | INFO |   OK SOLUSDT
+2026-08-09 07:13:37,768 | INFO |   OK SUIUSDT
+2026-08-09 07:13:39,789 | INFO |   OK DOGEUSDT
+2026-08-09 07:13:41,784 | INFO |   OK UNIUSDT
+2026-08-09 07:13:43,824 | INFO |   OK ZECUSDT
+2026-08-09 07:13:58,868 | INFO | CRYPTO COUNT: 14
+2026-08-09 07:13:58,869 | INFO | --- Analyzing CRYPTO ---
+2026-08-09 07:13:58,886 | INFO | NO SIGNAL [BTCUSDT]: No setup
+2026-08-09 07:13:58,895 | INFO | NO SIGNAL [ETHUSDT]: No setup
+2026-08-09 07:13:58,899 | INFO | NO SIGNAL [SOLUSDT]: No setup
+2026-08-09 07:13:58,905 | INFO | SIGNAL: SUIUSDT -> SHORT (Score:71.2)
+2026-08-09 07:13:58,909 | INFO | NO SIGNAL [DOGEUSDT]: No setup
+2026-08-09 07:13:58,914 | INFO | SIGNAL: UNIUSDT -> LONG (Score:87.6)
+2026-08-09 07:13:58,918 | INFO | NO SIGNAL [ZECUSDT]: No setup
+2026-08-09 07:13:58,922 | INFO | NO SIGNAL [TUTUSDT]: No setup
+2026-08-09 07:13:58,926 | INFO | NO SIGNAL [BLUAIUSDT]: No setup
+2026-08-09 07:13:58,931 | INFO | SIGNAL: 1000CATUSDT -> LONG (Score:86.9)
+2026-08-09 07:13:58,935 | INFO | NO SIGNAL [ACEUSDT]: No setup
+2026-08-09 07:13:58,939 | INFO | SIGNAL: BEATUSDT -> LONG (Score:86.9)
+2026-08-09 07:13:58,943 | INFO | SIGNAL: 龙虾USDT -> LONG (Score:84.7)
+2026-08-09 07:13:58,947 | INFO | SIGNAL: COOKIEUSDT -> LONG (Score:88.3)
+2026-08-09 07:13:59,824 | INFO | === 6 signals | 0 skipped | 1 errors ===
+2026-08-09 07:14:01,737 | INFO | Sent 5 FREE signals
+2026-08-09 07:14:05,115 | INFO | Sent 5 VIP signals

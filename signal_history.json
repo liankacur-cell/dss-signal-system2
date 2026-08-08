@@ -129610,5 +129610,33 @@
       "reason": "RR=1:1.13"
     },
     "ts": "2026-08-08T21:35:41.044985"
+  },
+  {
+    "pair": "UNIUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 75.41276600113447,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 22",
+    "vol_reason": "Volatility: high (exp=6.93)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: falling, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: True, Energy: 0.25",
+    "risk": {
+      "entry": 3.961,
+      "sl": 4.035074999999999,
+      "tp": 3.876357142857143,
+      "risk": 0.07407499999999922,
+      "reward": 0.0846428571428568,
+      "rr": 1.1426642881249771,
+      "pos_factor": 0.4,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.14"
+    },
+    "ts": "2026-08-08T21:53:49.924354"
   }
 ]

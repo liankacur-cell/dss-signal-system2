@@ -1,34 +1,34 @@
 {
-  "timestamp": "2026-08-08T21:57:49.797118",
+  "timestamp": "2026-08-08T22:58:33.037807",
   "total": 1,
   "signals": [
     {
-      "pair": "UNIUSDT",
+      "pair": "CETUSUSDT",
       "market": "crypto",
-      "dir": "SHORT",
-      "score": 84.85294872125112,
-      "struct": "valid_bearish",
-      "struct_reason": "Bearish: LH+LL",
-      "trend": "bearish",
-      "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
-      "mom_reason": "Momentum score: 56",
-      "vol_reason": "Volatility: high (exp=6.29)",
+      "dir": "LONG",
+      "score": 89.0,
+      "struct": "valid_bullish",
+      "struct_reason": "Bullish: HH+HL",
+      "trend": "bullish",
+      "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
+      "mom_reason": "Momentum score: 100",
+      "vol_reason": "Volatility: low (exp=1.02)",
       "liq_reason": "Liquidity resting: inside_range",
-      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
-      "sq_reason": "Squeeze: True, Energy: 0.28",
+      "mf_reason": "OBV: mixed, Acc:True, Dist:False",
+      "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 3.973,
-        "sl": 4.035074999999999,
-        "tp": 3.8881428571428573,
-        "risk": 0.062074999999999214,
-        "reward": 0.08485714285714252,
-        "rr": 1.3670099533973998,
-        "pos_factor": 0.4,
-        "sl_reason": "Above liquidity + ATR",
+        "entry": 0.02196,
+        "sl": 0.02085714285714286,
+        "tp": 0.023614285714285713,
+        "risk": 0.0011028571428571415,
+        "reward": 0.0016542857142857123,
+        "rr": 1.5,
+        "pos_factor": 1.5,
+        "sl_reason": "Below liquidity + ATR",
         "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.37"
+        "reason": "RR=1:1.50"
       },
-      "ts": "2026-08-08T21:57:43.658725"
+      "ts": "2026-08-08T22:58:25.997947"
     }
   ]
 }

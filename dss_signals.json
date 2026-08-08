@@ -1,62 +1,62 @@
 {
-  "timestamp": "2026-08-08T21:07:57.015720",
+  "timestamp": "2026-08-08T21:35:47.264513",
   "total": 2,
   "signals": [
     {
-      "pair": "REUSDT",
+      "pair": "MMTUSDT",
       "market": "crypto",
       "dir": "LONG",
-      "score": 93.5,
+      "score": 86.75,
       "struct": "valid_bullish",
       "struct_reason": "Bullish: HH+HL",
       "trend": "bullish",
-      "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
-      "mom_reason": "Momentum score: 100",
-      "vol_reason": "Volatility: high (exp=5.41)",
+      "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+      "mom_reason": "Momentum score: 85",
+      "vol_reason": "Volatility: high (exp=12.20)",
       "liq_reason": "Liquidity resting: inside_range",
-      "mf_reason": "OBV: rising, Acc:False, Dist:False",
+      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
       "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 0.4728,
-        "sl": 0.4422857142857143,
-        "tp": 0.5185714285714286,
-        "risk": 0.030514285714285716,
-        "reward": 0.045771428571428574,
-        "rr": 1.5,
+        "entry": 0.2303,
+        "sl": 0.2004857142857143,
+        "tp": 0.2750214285714286,
+        "risk": 0.02981428571428571,
+        "reward": 0.04472142857142858,
+        "rr": 1.5000000000000004,
         "pos_factor": 0.5,
         "sl_reason": "Below liquidity + ATR",
         "tp_reason": "Before liquidity target",
         "reason": "RR=1:1.50"
       },
-      "ts": "2026-08-08T21:07:50.004727"
+      "ts": "2026-08-08T21:35:41.071890"
     },
     {
       "pair": "UNIUSDT",
       "market": "crypto",
       "dir": "SHORT",
-      "score": 82.23933548870225,
+      "score": 75.26276600113447,
       "struct": "valid_bearish",
       "struct_reason": "Bearish: LH+LL",
       "trend": "bearish",
       "trend_reason": "Trend bearish (strength:1.00, aligned:True)",
-      "mom_reason": "Momentum score: 37",
-      "vol_reason": "Volatility: high (exp=7.86)",
+      "mom_reason": "Momentum score: 15",
+      "vol_reason": "Volatility: high (exp=13.00)",
       "liq_reason": "Liquidity resting: inside_range",
-      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
-      "sq_reason": "Squeeze: True, Energy: 0.27",
+      "mf_reason": "OBV: falling, Acc:False, Dist:False",
+      "sq_reason": "Squeeze: True, Energy: 0.25",
       "risk": {
-        "entry": 3.967,
+        "entry": 3.961,
         "sl": 4.035074999999999,
-        "tp": 3.8845000000000005,
-        "risk": 0.068074999999999,
-        "reward": 0.08249999999999957,
-        "rr": 1.2118986412045654,
+        "tp": 3.8774285714285717,
+        "risk": 0.07407499999999922,
+        "reward": 0.08357142857142819,
+        "rr": 1.128200183212002,
         "pos_factor": 0.4,
         "sl_reason": "Above liquidity + ATR",
         "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.21"
+        "reason": "RR=1:1.13"
       },
-      "ts": "2026-08-08T21:07:49.975328"
+      "ts": "2026-08-08T21:35:41.044985"
     }
   ]
 }

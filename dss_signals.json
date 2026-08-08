@@ -1,34 +1,5 @@
 {
-  "timestamp": "2026-08-08T22:58:33.037807",
-  "total": 1,
-  "signals": [
-    {
-      "pair": "CETUSUSDT",
-      "market": "crypto",
-      "dir": "LONG",
-      "score": 89.0,
-      "struct": "valid_bullish",
-      "struct_reason": "Bullish: HH+HL",
-      "trend": "bullish",
-      "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
-      "mom_reason": "Momentum score: 100",
-      "vol_reason": "Volatility: low (exp=1.02)",
-      "liq_reason": "Liquidity resting: inside_range",
-      "mf_reason": "OBV: mixed, Acc:True, Dist:False",
-      "sq_reason": "Squeeze: False, Energy: 0.00",
-      "risk": {
-        "entry": 0.02196,
-        "sl": 0.02085714285714286,
-        "tp": 0.023614285714285713,
-        "risk": 0.0011028571428571415,
-        "reward": 0.0016542857142857123,
-        "rr": 1.5,
-        "pos_factor": 1.5,
-        "sl_reason": "Below liquidity + ATR",
-        "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.50"
-      },
-      "ts": "2026-08-08T22:58:25.997947"
-    }
-  ]
+  "timestamp": "2026-08-08T23:59:15.752436",
+  "total": 0,
+  "signals": []
 }

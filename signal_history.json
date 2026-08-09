@@ -132760,5 +132760,35 @@
     "entry_status": "WAIT_PULLBACK",
     "entry_reason": "Price below EMA21, wait confirmation",
     "ts": "2026-08-10T03:40:30.638001"
+  },
+  {
+    "pair": "MUBARAKUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 87.25,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 100",
+    "vol_reason": "Volatility: high (exp=10.43)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.02396,
+      "sl": 0.0177906,
+      "tp": 0.030729285714285716,
+      "risk": 0.0061693999999999985,
+      "reward": 0.006769285714285717,
+      "rr": 1.0972356654270625,
+      "pos_factor": 0.4,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.10"
+    },
+    "entry_status": "WAIT_PULLBACK",
+    "entry_reason": "Price 3.5% above EMA21, wait pullback",
+    "ts": "2026-08-10T04:41:13.820087"
   }
 ]

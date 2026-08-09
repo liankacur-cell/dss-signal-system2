@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-08-10T06:26:08.401000",
-  "total": 2,
+  "timestamp": "2026-08-10T06:32:58.148099",
+  "total": 1,
   "signals": [
     {
       "pair": "XANUSDT",
@@ -12,14 +12,14 @@
       "trend": "bullish",
       "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
       "mom_reason": "Momentum score: 100",
-      "vol_reason": "Volatility: high (exp=9.63)",
+      "vol_reason": "Volatility: high (exp=9.50)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:False, Dist:False",
       "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 0.020617,
-        "sl": 0.01779657142857143,
-        "tp": 0.024847642857142856,
+        "entry": 0.020457,
+        "sl": 0.01763657142857143,
+        "tp": 0.024687642857142856,
         "risk": 0.002820428571428571,
         "reward": 0.004230642857142856,
         "rr": 1.5,
@@ -29,38 +29,8 @@
         "reason": "RR=1:1.50"
       },
       "entry_status": "WAIT_PULLBACK",
-      "entry_reason": "Price 4.0% above EMA21, wait pullback",
-      "ts": "2026-08-10T06:26:02.036670"
-    },
-    {
-      "pair": "MUBARAKUSDT",
-      "market": "crypto",
-      "dir": "LONG",
-      "score": 87.25,
-      "struct": "valid_bullish",
-      "struct_reason": "Bullish: HH+HL",
-      "trend": "bullish",
-      "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
-      "mom_reason": "Momentum score: 100",
-      "vol_reason": "Volatility: high (exp=7.04)",
-      "liq_reason": "Liquidity resting: inside_range",
-      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
-      "sq_reason": "Squeeze: False, Energy: 0.00",
-      "risk": {
-        "entry": 0.02513,
-        "sl": 0.020674285714285714,
-        "tp": 0.03181357142857143,
-        "risk": 0.004455714285714285,
-        "reward": 0.006683571428571428,
-        "rr": 1.5,
-        "pos_factor": 0.5,
-        "sl_reason": "Below liquidity + ATR",
-        "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.50"
-      },
-      "entry_status": "WAIT_PULLBACK",
-      "entry_reason": "Price 4.9% above EMA21, wait pullback",
-      "ts": "2026-08-10T06:26:02.029846"
+      "entry_reason": "Price 2.9% above EMA21, wait pullback",
+      "ts": "2026-08-10T06:32:51.720069"
     }
   ]
 }

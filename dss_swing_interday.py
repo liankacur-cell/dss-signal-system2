@@ -4,10 +4,11 @@ DSS SWING INTERDAY - CRYPTO ONLY
 Decision Support System - Manual Trading Only
 Termux Ready - Single File - No Heavy Libraries
 
-STABLE v7.6 - ENTRY TIMING FILTER
-- EMA 20/50/200 on 15m timeframe
-- GOOD_ENTRY / WAIT_PULLBACK / LATE_ENTRY
-- Late entry signals are rejected
+STABLE v7.6 - ENTRY TIMING PATCH
+- Entry timing filter using EMA20/50/200 on 15m
+- Entry price from 15m (not 1h)
+- WAIT_PULLBACK kept as valid signal
+- Telegram VIP shows entry timing status
 """
 
 import os
@@ -597,6 +598,60 @@ class RiskEngine:
                'tp_reason':'Before liquidity target','reason':f"RR=1:{rr:.2f}"}
 
 # ============================================
+# ENTRY TIMING FILTER
+# ============================================
+class EntryTimingFilter:
+    def filter(self, price_data, direction):
+        if '15m' not in price_data or len(price_data['15m']) < 200:
+            return {'status':'NO_DATA','reason':'Insufficient 15m data','distance':0}
+
+        closes = [c['c'] for c in price_data['15m']]
+        price = closes[-1]
+
+        ema20 = TrendEngine.ema(closes, 20)
+        ema50 = TrendEngine.ema(closes, 50)
+        ema200 = TrendEngine.ema(closes, 200)
+
+        if not ema20 or not ema50 or not ema200:
+            return {'status':'NO_DATA','reason':'EMA calculation failed','distance':0}
+
+        e20 = ema20[-1]
+        e50 = ema50[-1]
+        e200 = ema200[-1]
+
+        if direction == SignalDir.LONG:
+            if e50 < e200:
+                return {'status':'WEAK','reason':'EMA50 below EMA200','distance':0}
+
+            distance = ((price - e20) / e20) * 100
+
+            if price >= e20 and distance <= 2.5:
+                return {'status':'GOOD','reason':f'Price {distance:.1f}% above EMA20','distance':distance}
+            elif price > e20 and distance <= 5:
+                return {'status':'WAIT_PULLBACK','reason':f'Price {distance:.1f}% above EMA20, wait pullback','distance':distance}
+            elif price < e20:
+                return {'status':'WAIT_PULLBACK','reason':'Price below EMA20, wait confirmation','distance':distance}
+            else:
+                return {'status':'LATE','reason':f'Price extended {distance:.1f}% above EMA20','distance':distance}
+
+        elif direction == SignalDir.SHORT:
+            if e50 > e200:
+                return {'status':'WEAK','reason':'EMA50 above EMA200','distance':0}
+
+            distance = ((e20 - price) / e20) * 100
+
+            if price <= e20 and distance <= 2.5:
+                return {'status':'GOOD','reason':f'Price {distance:.1f}% below EMA20','distance':distance}
+            elif price < e20 and distance <= 5:
+                return {'status':'WAIT_PULLBACK','reason':f'Price {distance:.1f}% below EMA20, wait pullback','distance':distance}
+            elif price > e20:
+                return {'status':'WAIT_PULLBACK','reason':'Price above EMA20, wait rejection','distance':distance}
+            else:
+                return {'status':'LATE','reason':f'Price extended {distance:.1f}% below EMA20','distance':distance}
+
+        return {'status':'NO_DATA','reason':'Unknown direction','distance':0}
+
+# ============================================
 # FASE G: TELEGRAM OUTPUT
 # ============================================
 class TelegramOutput:
@@ -682,10 +737,10 @@ class TelegramOutput:
                         tp2 = r['tp'] + (r['tp'] - r['entry']) * 0.5
                     else:
                         tp2 = r['tp'] - (r['entry'] - r['tp']) * 0.5
-                    
+
                     price = r['entry']
                     fmt = '{:.8f}' if (price < 0.01 and price > 0) else '{:.4f}'
-                    
+
                     msg += (
                         f"📍 <b>ENTRY:</b> <b>{fmt.format(r['entry'])}</b>\n"
                         f"🛑 <b>SL:</b> <b>{fmt.format(r['sl'])}</b>\n"
@@ -693,7 +748,11 @@ class TelegramOutput:
                         f"🎯 <b>TP2:</b> <b>{fmt.format(tp2)}</b>\n"
                         f"💰 <b>RR:</b> <b>1:{r['rr']:.2f}</b>\n\n"
                     )
-            msg += f"🎯 <b>{s.get('entry_status','?')}</b>: {s.get('entry_reason','?')}\n"
+            if s.get('entry_status'):
+                msg += (
+                    f"⏳ <b>Entry:</b> {s.get('entry_status','?')}\n"
+                    f"   {s.get('entry_reason','?')}\n\n"
+                )
             msg += f"📊 <b>{s.get('struct_reason','?')}</b>\n📈 <b>{s.get('trend_reason','?')}</b>\n⚡ <b>{s.get('mom_reason','?')}</b>\n🌊 <b>{s.get('vol_reason','?')}</b>\n💧 <b>{s.get('liq_reason','?')}</b>\n💰 <b>{s.get('mf_reason','?')}</b>\n🔨 <b>{s.get('sq_reason','?')}</b>\n\n"
         self._send(self.vip_token, self.vip_chat, msg)
         logger.info(f"Sent {len(all_s)} VIP signals")
@@ -761,6 +820,7 @@ class DSSSystem:
         self.mf_eng = MoneyFlowEngine()
         self.sq_eng = SqueezeEngine()
         self.risk_eng = RiskEngine()
+        self.entry_filter = EntryTimingFilter()
         self.tg = TelegramOutput()
         self.gh = GitHubSync()
 
@@ -777,53 +837,6 @@ class DSSSystem:
                 json.dump(history, f, indent=2)
         except Exception as e:
             logger.err("History save failed", e)
-
-    def entry_timing_filter(self, price_data, direction):
-        """Entry timing filter menggunakan EMA 20/50/200 pada TF 15m"""
-        if '15m' not in price_data or len(price_data['15m']) < 200:
-            return {'status': 'NO_DATA', 'reason': 'Insufficient 15m data', 'distance': 0}
-
-        closes = [c['c'] for c in price_data['15m']]
-        price = closes[-1]
-
-        ema20 = TrendEngine.ema(closes, 20)
-        ema50 = TrendEngine.ema(closes, 50)
-        ema200 = TrendEngine.ema(closes, 200)
-
-        if not ema20 or not ema50 or not ema200:
-            return {'status': 'NO_DATA', 'reason': 'EMA calculation failed', 'distance': 0}
-
-        e20 = ema20[-1]
-        e50 = ema50[-1]
-        e200 = ema200[-1]
-
-        if direction == SignalDir.LONG:
-            if not (price > e200 and e20 > e50 and e50 > e200):
-                return {'status': 'WEAK_ENTRY', 'reason': 'Trend filter not met', 'distance': 0}
-
-            distance = ((price - e20) / e20) * 100
-
-            if distance <= 1.5:
-                return {'status': 'GOOD_ENTRY', 'reason': f'Price near EMA20 ({distance:.1f}%)', 'distance': distance}
-            elif distance <= 3.0:
-                return {'status': 'WAIT_PULLBACK', 'reason': f'Price extended ({distance:.1f}%)', 'distance': distance}
-            else:
-                return {'status': 'LATE_ENTRY', 'reason': f'Price too far from EMA20 ({distance:.1f}%)', 'distance': distance}
-
-        elif direction == SignalDir.SHORT:
-            if not (price < e200 and e20 < e50 and e50 < e200):
-                return {'status': 'WEAK_ENTRY', 'reason': 'Trend filter not met', 'distance': 0}
-
-            distance = ((e20 - price) / e20) * 100
-
-            if distance <= 1.5:
-                return {'status': 'GOOD_ENTRY', 'reason': f'Price near EMA20 ({distance:.1f}%)', 'distance': distance}
-            elif distance <= 3.0:
-                return {'status': 'WAIT_PULLBACK', 'reason': f'Price extended ({distance:.1f}%)', 'distance': distance}
-            else:
-                return {'status': 'LATE_ENTRY', 'reason': f'Price too far from EMA20 ({distance:.1f}%)', 'distance': distance}
-
-        return {'status': 'NO_DATA', 'reason': 'Unknown direction', 'distance': 0}
 
     def analyze_asset(self, pair, price_data):
         if not price_data: logger.skip(pair, "No price data"); return None
@@ -859,18 +872,21 @@ class DSSSystem:
         else:
             direction = SignalDir.NONE
 
+        if direction == SignalDir.NONE:
+            return None
+
         # Entry timing filter
-        if direction != SignalDir.NONE:
-            entry_timing = self.entry_timing_filter(price_data, direction)
-            if entry_timing['status'] == 'LATE_ENTRY':
-                logger.nosig(pair, f"Late entry: {entry_timing['reason']}")
-                return None
-        else:
-            entry_timing = {'status': 'NONE', 'reason': 'No direction', 'distance': 0}
+        entry_timing = self.entry_filter.filter(price_data, direction)
+
+        if entry_timing['status'] == 'LATE':
+            logger.nosig(pair, f"Late entry: {entry_timing['reason']}")
+            return None
+
+        # Entry price dari 15m
+        current_price = price_data['15m'][-1]['c'] if price_data.get('15m') else 0
 
         risk = None
-        current_price = price_data['1h'][-1]['c'] if price_data.get('1h') else 0
-        if direction != SignalDir.NONE and current_price > 0:
+        if current_price > 0:
             risk = self.risk_eng.calculate(direction, current_price, struct, liq, vol)
             if risk is None: direction = SignalDir.NONE
         if direction == SignalDir.NONE: return None
@@ -880,9 +896,10 @@ class DSSSystem:
                'trend':trend['dir'].value,'trend_reason':trend['reason'],
                'mom_reason':mom['reason'],'vol_reason':vol['reason'],
                'liq_reason':liq['reason'],'mf_reason':mf['reason'],
-               'sq_reason':sq['reason'],'risk':risk,'ts':datetime.now().isoformat(),
-               'entry_status': entry_timing['status'],
-               'entry_reason': entry_timing['reason']}
+               'sq_reason':sq['reason'],'risk':risk,
+               'entry_status':entry_timing['status'],
+               'entry_reason':entry_timing['reason'],
+               'ts':datetime.now().isoformat()}
 
     def run_cycle(self):
         logger.skip_count=0; logger.err_count=0; logger.sig_count=0
@@ -899,15 +916,15 @@ class DSSSystem:
             else: logger.nosig(sym, "No setup")
 
         all_signals.sort(key=lambda x: x['score'], reverse=True)
-        
+
         self.save_signal_history(all_signals)
-        
+
         logger.info(f"=== {len(all_signals)} signals | {logger.skip_count} skipped | {logger.err_count} errors ===")
         self.tg.send_free(all_signals); self.tg.send_vip(all_signals); self.gh.sync(all_signals)
         try:
             with open('dss_signals.json','w') as f: json.dump({'timestamp':datetime.now().isoformat(),'total':len(all_signals),'signals':all_signals}, f, indent=2)
         except Exception as e: logger.err("Local save failed", e)
-        
+
         # Git auto commit & push
         try:
             os.system("cd /data/data/com.termux/files/home/Dss_System2 && git add .")
@@ -916,7 +933,7 @@ class DSSSystem:
             logger.info("Git auto push OK")
         except Exception as e:
             logger.err("Git auto push failed", e)
-        
+
         logger.info("CYCLE COMPLETE"); logger.info("="*50)
 
 # ============================================

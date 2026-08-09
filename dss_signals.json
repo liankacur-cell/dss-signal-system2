@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-08-10T06:32:58.148099",
-  "total": 1,
+  "timestamp": "2026-08-10T06:42:07.782828",
+  "total": 4,
   "signals": [
     {
       "pair": "XANUSDT",
@@ -12,14 +12,14 @@
       "trend": "bullish",
       "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
       "mom_reason": "Momentum score: 100",
-      "vol_reason": "Volatility: high (exp=9.50)",
+      "vol_reason": "Volatility: high (exp=11.45)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:False, Dist:False",
       "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 0.020457,
-        "sl": 0.01763657142857143,
-        "tp": 0.024687642857142856,
+        "entry": 0.020546,
+        "sl": 0.017725571428571427,
+        "tp": 0.024776642857142855,
         "risk": 0.002820428571428571,
         "reward": 0.004230642857142856,
         "rr": 1.5,
@@ -29,8 +29,98 @@
         "reason": "RR=1:1.50"
       },
       "entry_status": "WAIT_PULLBACK",
-      "entry_reason": "Price 2.9% above EMA21, wait pullback",
-      "ts": "2026-08-10T06:32:51.720069"
+      "entry_reason": "Price 3.3% above EMA21, wait pullback",
+      "ts": "2026-08-10T06:42:00.863857"
+    },
+    {
+      "pair": "BANANAS31USDT",
+      "market": "crypto",
+      "dir": "LONG",
+      "score": 91.0,
+      "struct": "valid_bullish",
+      "struct_reason": "Bullish: HH+HL",
+      "trend": "bullish",
+      "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
+      "mom_reason": "Momentum score: 100",
+      "vol_reason": "Volatility: high (exp=7.74)",
+      "liq_reason": "Liquidity resting: inside_range",
+      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+      "sq_reason": "Squeeze: False, Energy: 0.00",
+      "risk": {
+        "entry": 0.010563,
+        "sl": 0.009588142857142856,
+        "tp": 0.012025285714285714,
+        "risk": 0.0009748571428571436,
+        "reward": 0.0014622857142857146,
+        "rr": 1.4999999999999991,
+        "pos_factor": 0.4,
+        "sl_reason": "Below liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50"
+      },
+      "entry_status": "WAIT_PULLBACK",
+      "entry_reason": "Price 5.0% above EMA21, wait pullback",
+      "ts": "2026-08-10T06:42:00.871668"
+    },
+    {
+      "pair": "MUBARAKUSDT",
+      "market": "crypto",
+      "dir": "LONG",
+      "score": 87.05,
+      "struct": "valid_bullish",
+      "struct_reason": "Bullish: HH+HL",
+      "trend": "bullish",
+      "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+      "mom_reason": "Momentum score: 99",
+      "vol_reason": "Volatility: high (exp=9.24)",
+      "liq_reason": "Liquidity resting: inside_range",
+      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+      "sq_reason": "Squeeze: False, Energy: 0.00",
+      "risk": {
+        "entry": 0.02525,
+        "sl": 0.02074714285714286,
+        "tp": 0.032004285714285714,
+        "risk": 0.004502857142857142,
+        "reward": 0.006754285714285713,
+        "rr": 1.5,
+        "pos_factor": 0.5,
+        "sl_reason": "Below liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50"
+      },
+      "entry_status": "WAIT_PULLBACK",
+      "entry_reason": "Price 4.7% above EMA21, wait pullback",
+      "ts": "2026-08-10T06:42:00.856077"
+    },
+    {
+      "pair": "BTCUSDT",
+      "market": "crypto",
+      "dir": "SHORT",
+      "score": 77.75,
+      "struct": "valid_bearish",
+      "struct_reason": "Bearish: LH+LL",
+      "trend": "bearish",
+      "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+      "mom_reason": "Momentum score: 15",
+      "vol_reason": "Volatility: high (exp=3.76)",
+      "liq_reason": "Liquidity resting: inside_range",
+      "mf_reason": "OBV: mixed, Acc:True, Dist:False",
+      "sq_reason": "Squeeze: False, Energy: 0.00",
+      "risk": {
+        "entry": 64965.2,
+        "sl": 65309.723999999995,
+        "tp": 64573.65714285714,
+        "risk": 344.5239999999976,
+        "reward": 391.5428571428565,
+        "rr": 1.1364748381618095,
+        "pos_factor": 0.4,
+        "sl_reason": "Above liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.14"
+      },
+      "entry_status": "WEAK",
+      "entry_reason": "EMA50 above EMA200",
+      "ts": "2026-08-10T06:42:00.818726"
     }
   ]
 }

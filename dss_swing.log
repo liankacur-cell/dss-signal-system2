@@ -43071,3 +43071,39 @@
 2026-08-09 10:52:43,006 | INFO | === 1 signals | 11 skipped | 0 errors ===
 2026-08-09 10:52:45,275 | INFO | Sent 1 FREE signals
 2026-08-09 10:52:49,021 | INFO | Sent 1 VIP signals
+2026-08-09 10:52:53,240 | INFO | Git auto push OK
+2026-08-09 10:52:53,242 | INFO | CYCLE COMPLETE
+2026-08-09 10:52:53,242 | INFO | ==================================================
+2026-08-09 11:52:53,247 | INFO | ==================================================
+2026-08-09 11:52:53,248 | INFO | CYCLE START: 2026-08-09 11:52:53.248114
+2026-08-09 11:52:53,248 | INFO | ==================================================
+2026-08-09 11:52:53,248 | INFO | === FETCHING CRYPTO (Binance) ===
+2026-08-09 11:53:08,279 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ReadTimeoutError("HTTPSConnectionPool(host='fapi.binance.com', port=443): Read timed out. (read timeout=15)")': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-08-09 12:22:59,929 | WARNING | Retrying (Retry(total=3, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-08-09 13:02:04,861 | WARNING | Retrying (Retry(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NameResolutionError("HTTPSConnection(host='fapi.binance.com', port=443): Failed to resolve 'fapi.binance.com' ([Errno 7] No address associated with hostname)")': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-08-09 13:02:08,262 | INFO |   OK BTCUSDT
+2026-08-09 13:02:10,373 | INFO |   OK ETHUSDT
+2026-08-09 13:02:12,813 | INFO |   OK SOLUSDT
+2026-08-09 13:02:15,618 | INFO |   OK SUIUSDT
+2026-08-09 13:02:18,003 | INFO |   OK DOGEUSDT
+2026-08-09 13:02:20,293 | INFO |   OK UNIUSDT
+2026-08-09 13:02:22,461 | INFO |   OK ZECUSDT
+2026-08-09 13:02:40,442 | INFO | CRYPTO COUNT: 14
+2026-08-09 13:02:40,444 | INFO | --- Analyzing CRYPTO ---
+2026-08-09 13:02:40,501 | INFO | NO SIGNAL [BTCUSDT]: No setup
+2026-08-09 13:02:40,540 | INFO | NO SIGNAL [ETHUSDT]: No setup
+2026-08-09 13:02:40,561 | INFO | NO SIGNAL [SOLUSDT]: No setup
+2026-08-09 13:02:40,596 | INFO | NO SIGNAL [SUIUSDT]: No setup
+2026-08-09 13:02:40,641 | INFO | SIGNAL: DOGEUSDT -> SHORT (Score:86.5)
+2026-08-09 13:02:40,687 | INFO | SIGNAL: UNIUSDT -> SHORT (Score:85.2)
+2026-08-09 13:02:40,741 | INFO | NO SIGNAL [ZECUSDT]: No setup
+2026-08-09 13:02:40,785 | INFO | NO SIGNAL [TUTUSDT]: No setup
+2026-08-09 13:02:40,814 | INFO | SIGNAL: BLUAIUSDT -> LONG (Score:96.0)
+2026-08-09 13:02:40,840 | INFO | NO SIGNAL [SAGAUSDT]: No setup
+2026-08-09 13:02:40,875 | INFO | NO SIGNAL [IOTXUSDT]: No setup
+2026-08-09 13:02:40,911 | INFO | NO SIGNAL [TSTUSDT]: No setup
+2026-08-09 13:02:40,935 | INFO | NO SIGNAL [BEATUSDT]: No setup
+2026-08-09 13:02:40,961 | INFO | NO SIGNAL [BMTUSDT]: No setup
+2026-08-09 13:02:43,902 | INFO | === 3 signals | 0 skipped | 0 errors ===
+2026-08-09 13:02:46,061 | INFO | Sent 3 FREE signals
+2026-08-09 13:02:50,038 | INFO | Sent 3 VIP signals

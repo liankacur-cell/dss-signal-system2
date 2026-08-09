@@ -43174,3 +43174,37 @@
 2026-08-09 15:04:20,815 | INFO | === 3 signals | 0 skipped | 0 errors ===
 2026-08-09 15:04:22,883 | INFO | Sent 3 FREE signals
 2026-08-09 15:04:27,653 | INFO | Sent 3 VIP signals
+2026-08-09 15:04:32,067 | INFO | Git auto push OK
+2026-08-09 15:04:32,068 | INFO | CYCLE COMPLETE
+2026-08-09 15:04:32,069 | INFO | ==================================================
+2026-08-09 16:04:32,103 | INFO | ==================================================
+2026-08-09 16:04:32,124 | INFO | CYCLE START: 2026-08-09 16:04:32.123500
+2026-08-09 16:04:32,124 | INFO | ==================================================
+2026-08-09 16:04:32,126 | INFO | === FETCHING CRYPTO (Binance) ===
+2026-08-09 16:04:32,255 | WARNING | Retrying (Retry(total=4, connect=None, read=None, redirect=None, status=None)) after connection broken by 'ConnectionResetError(104, 'Connection reset by peer')': /fapi/v1/klines?symbol=BTCUSDT&interval=1m&limit=100
+2026-08-09 16:04:35,537 | INFO |   OK BTCUSDT
+2026-08-09 16:04:37,977 | INFO |   OK ETHUSDT
+2026-08-09 16:04:40,459 | INFO |   OK SOLUSDT
+2026-08-09 16:04:42,538 | INFO |   OK SUIUSDT
+2026-08-09 16:04:44,575 | INFO |   OK DOGEUSDT
+2026-08-09 16:04:46,595 | INFO |   OK UNIUSDT
+2026-08-09 16:04:48,673 | INFO |   OK ZECUSDT
+2026-08-09 16:05:04,055 | INFO | CRYPTO COUNT: 14
+2026-08-09 16:05:04,056 | INFO | --- Analyzing CRYPTO ---
+2026-08-09 16:05:04,067 | INFO | NO SIGNAL [BTCUSDT]: No setup
+2026-08-09 16:05:04,071 | INFO | NO SIGNAL [ETHUSDT]: No setup
+2026-08-09 16:05:04,077 | INFO | NO SIGNAL [SOLUSDT]: No setup
+2026-08-09 16:05:04,082 | INFO | NO SIGNAL [SUIUSDT]: No setup
+2026-08-09 16:05:04,087 | INFO | NO SIGNAL [DOGEUSDT]: No setup
+2026-08-09 16:05:04,091 | INFO | NO SIGNAL [UNIUSDT]: No setup
+2026-08-09 16:05:04,097 | INFO | NO SIGNAL [ZECUSDT]: No setup
+2026-08-09 16:05:04,102 | INFO | NO SIGNAL [TUTUSDT]: No setup
+2026-08-09 16:05:04,107 | INFO | SIGNAL: BEATUSDT -> LONG (Score:91.0)
+2026-08-09 16:05:04,112 | INFO | SIGNAL: IOTXUSDT -> LONG (Score:89.8)
+2026-08-09 16:05:04,117 | INFO | NO SIGNAL [BMTUSDT]: No setup
+2026-08-09 16:05:04,122 | INFO | NO SIGNAL [BTWUSDT]: No setup
+2026-08-09 16:05:04,127 | INFO | SIGNAL: MUBARAKUSDT -> LONG (Score:85.5)
+2026-08-09 16:05:04,132 | INFO | NO SIGNAL [SAGAUSDT]: No setup
+2026-08-09 16:05:05,119 | INFO | === 3 signals | 0 skipped | 0 errors ===
+2026-08-09 16:05:06,929 | INFO | Sent 3 FREE signals
+2026-08-09 16:05:10,555 | INFO | Sent 3 VIP signals

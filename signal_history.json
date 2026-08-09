@@ -130030,5 +130030,33 @@
       "reason": "RR=1:1.05"
     },
     "ts": "2026-08-09T09:25:04.197452"
+  },
+  {
+    "pair": "BLUAIUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 76.6,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.50, aligned:False)",
+    "mom_reason": "Momentum score: 78",
+    "vol_reason": "Volatility: high (exp=11.34)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: rising, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.022044,
+      "sl": 0.01834557142857143,
+      "tp": 0.02759164285714286,
+      "risk": 0.0036984285714285713,
+      "reward": 0.005547642857142859,
+      "rr": 1.5000000000000004,
+      "pos_factor": 0.5,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-08-09T10:52:41.706008"
   }
 ]

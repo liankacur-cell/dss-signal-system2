@@ -130450,5 +130450,33 @@
       "reason": "RR=1:1.50"
     },
     "ts": "2026-08-09T16:05:04.127359"
+  },
+  {
+    "pair": "MUBARAKUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 89.75,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 100",
+    "vol_reason": "Volatility: high (exp=5.24)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.01933,
+      "sl": 0.016634285714285716,
+      "tp": 0.023373571428571428,
+      "risk": 0.002695714285714284,
+      "reward": 0.004043571428571428,
+      "rr": 1.5000000000000007,
+      "pos_factor": 0.5,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "ts": "2026-08-09T18:16:10.106069"
   }
 ]

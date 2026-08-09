@@ -4,8 +4,10 @@ DSS SWING INTERDAY - CRYPTO ONLY
 Decision Support System - Manual Trading Only
 Termux Ready - Single File - No Heavy Libraries
 
-STABLE v7.5 - SIGNAL DIRECTION FIX
-- Structure type must match trend direction
+STABLE v7.6 - ENTRY TIMING FILTER
+- EMA 20/50/200 on 15m timeframe
+- GOOD_ENTRY / WAIT_PULLBACK / LATE_ENTRY
+- Late entry signals are rejected
 """
 
 import os
@@ -691,6 +693,7 @@ class TelegramOutput:
                         f"🎯 <b>TP2:</b> <b>{fmt.format(tp2)}</b>\n"
                         f"💰 <b>RR:</b> <b>1:{r['rr']:.2f}</b>\n\n"
                     )
+            msg += f"🎯 <b>{s.get('entry_status','?')}</b>: {s.get('entry_reason','?')}\n"
             msg += f"📊 <b>{s.get('struct_reason','?')}</b>\n📈 <b>{s.get('trend_reason','?')}</b>\n⚡ <b>{s.get('mom_reason','?')}</b>\n🌊 <b>{s.get('vol_reason','?')}</b>\n💧 <b>{s.get('liq_reason','?')}</b>\n💰 <b>{s.get('mf_reason','?')}</b>\n🔨 <b>{s.get('sq_reason','?')}</b>\n\n"
         self._send(self.vip_token, self.vip_chat, msg)
         logger.info(f"Sent {len(all_s)} VIP signals")
@@ -775,6 +778,53 @@ class DSSSystem:
         except Exception as e:
             logger.err("History save failed", e)
 
+    def entry_timing_filter(self, price_data, direction):
+        """Entry timing filter menggunakan EMA 20/50/200 pada TF 15m"""
+        if '15m' not in price_data or len(price_data['15m']) < 200:
+            return {'status': 'NO_DATA', 'reason': 'Insufficient 15m data', 'distance': 0}
+
+        closes = [c['c'] for c in price_data['15m']]
+        price = closes[-1]
+
+        ema20 = TrendEngine.ema(closes, 20)
+        ema50 = TrendEngine.ema(closes, 50)
+        ema200 = TrendEngine.ema(closes, 200)
+
+        if not ema20 or not ema50 or not ema200:
+            return {'status': 'NO_DATA', 'reason': 'EMA calculation failed', 'distance': 0}
+
+        e20 = ema20[-1]
+        e50 = ema50[-1]
+        e200 = ema200[-1]
+
+        if direction == SignalDir.LONG:
+            if not (price > e200 and e20 > e50 and e50 > e200):
+                return {'status': 'WEAK_ENTRY', 'reason': 'Trend filter not met', 'distance': 0}
+
+            distance = ((price - e20) / e20) * 100
+
+            if distance <= 1.5:
+                return {'status': 'GOOD_ENTRY', 'reason': f'Price near EMA20 ({distance:.1f}%)', 'distance': distance}
+            elif distance <= 3.0:
+                return {'status': 'WAIT_PULLBACK', 'reason': f'Price extended ({distance:.1f}%)', 'distance': distance}
+            else:
+                return {'status': 'LATE_ENTRY', 'reason': f'Price too far from EMA20 ({distance:.1f}%)', 'distance': distance}
+
+        elif direction == SignalDir.SHORT:
+            if not (price < e200 and e20 < e50 and e50 < e200):
+                return {'status': 'WEAK_ENTRY', 'reason': 'Trend filter not met', 'distance': 0}
+
+            distance = ((e20 - price) / e20) * 100
+
+            if distance <= 1.5:
+                return {'status': 'GOOD_ENTRY', 'reason': f'Price near EMA20 ({distance:.1f}%)', 'distance': distance}
+            elif distance <= 3.0:
+                return {'status': 'WAIT_PULLBACK', 'reason': f'Price extended ({distance:.1f}%)', 'distance': distance}
+            else:
+                return {'status': 'LATE_ENTRY', 'reason': f'Price too far from EMA20 ({distance:.1f}%)', 'distance': distance}
+
+        return {'status': 'NO_DATA', 'reason': 'Unknown direction', 'distance': 0}
+
     def analyze_asset(self, pair, price_data):
         if not price_data: logger.skip(pair, "No price data"); return None
         if '1h' not in price_data or len(price_data['1h']) < 4: logger.skip(pair, "Missing 1h data"); return None
@@ -809,6 +859,15 @@ class DSSSystem:
         else:
             direction = SignalDir.NONE
 
+        # Entry timing filter
+        if direction != SignalDir.NONE:
+            entry_timing = self.entry_timing_filter(price_data, direction)
+            if entry_timing['status'] == 'LATE_ENTRY':
+                logger.nosig(pair, f"Late entry: {entry_timing['reason']}")
+                return None
+        else:
+            entry_timing = {'status': 'NONE', 'reason': 'No direction', 'distance': 0}
+
         risk = None
         current_price = price_data['1h'][-1]['c'] if price_data.get('1h') else 0
         if direction != SignalDir.NONE and current_price > 0:
@@ -821,7 +880,9 @@ class DSSSystem:
                'trend':trend['dir'].value,'trend_reason':trend['reason'],
                'mom_reason':mom['reason'],'vol_reason':vol['reason'],
                'liq_reason':liq['reason'],'mf_reason':mf['reason'],
-               'sq_reason':sq['reason'],'risk':risk,'ts':datetime.now().isoformat()}
+               'sq_reason':sq['reason'],'risk':risk,'ts':datetime.now().isoformat(),
+               'entry_status': entry_timing['status'],
+               'entry_reason': entry_timing['reason']}
 
     def run_cycle(self):
         logger.skip_count=0; logger.err_count=0; logger.sig_count=0
@@ -863,8 +924,8 @@ class DSSSystem:
 # ============================================
 def main():
     print("""╔══════════════════════════════════╗
-║ DSS SWING INTERDAY v7.5          ║
-║ CRYPTO ONLY + SIGNAL DIR FIX     ║
+║ DSS SWING INTERDAY v7.6          ║
+║ CRYPTO ONLY + ENTRY TIMING       ║
 ╚══════════════════════════════════╝""")
     print("[*] Running every 1 hour...\n")
     dss = DSSSystem()

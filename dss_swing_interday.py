@@ -4,11 +4,10 @@ DSS SWING INTERDAY - CRYPTO ONLY
 Decision Support System - Manual Trading Only
 Termux Ready - Single File - No Heavy Libraries
 
-STABLE v7.6 - ENTRY TIMING PATCH
-- Entry timing filter using EMA20/50/200 on 15m
-- Entry price from 15m (not 1h)
-- WAIT_PULLBACK kept as valid signal
-- Telegram VIP shows entry timing status
+STABLE v7.6 - ENTRY TIMING PATCH FIX
+- EMA21/50/200 adaptive (min period = len(closes))
+- 15m data min 50 candles
+- EMA21 (bukan EMA20) for consistency
 """
 
 import os
@@ -598,24 +597,26 @@ class RiskEngine:
                'tp_reason':'Before liquidity target','reason':f"RR=1:{rr:.2f}"}
 
 # ============================================
-# ENTRY TIMING FILTER
+# ENTRY TIMING FILTER (EMA21 + EMA50 + EMA200 adaptive)
 # ============================================
 class EntryTimingFilter:
     def filter(self, price_data, direction):
-        if '15m' not in price_data or len(price_data['15m']) < 200:
+        if '15m' not in price_data or len(price_data['15m']) < 50:
             return {'status':'NO_DATA','reason':'Insufficient 15m data','distance':0}
 
         closes = [c['c'] for c in price_data['15m']]
         price = closes[-1]
 
-        ema20 = TrendEngine.ema(closes, 20)
+        ema21 = TrendEngine.ema(closes, 21)
         ema50 = TrendEngine.ema(closes, 50)
-        ema200 = TrendEngine.ema(closes, 200)
 
-        if not ema20 or not ema50 or not ema200:
+        ema200_period = min(200, len(closes))
+        ema200 = TrendEngine.ema(closes, ema200_period)
+
+        if not ema21 or not ema50 or not ema200:
             return {'status':'NO_DATA','reason':'EMA calculation failed','distance':0}
 
-        e20 = ema20[-1]
+        e21 = ema21[-1]
         e50 = ema50[-1]
         e200 = ema200[-1]
 
@@ -623,31 +624,31 @@ class EntryTimingFilter:
             if e50 < e200:
                 return {'status':'WEAK','reason':'EMA50 below EMA200','distance':0}
 
-            distance = ((price - e20) / e20) * 100
+            distance = ((price - e21) / e21) * 100
 
-            if price >= e20 and distance <= 2.5:
-                return {'status':'GOOD','reason':f'Price {distance:.1f}% above EMA20','distance':distance}
-            elif price > e20 and distance <= 5:
-                return {'status':'WAIT_PULLBACK','reason':f'Price {distance:.1f}% above EMA20, wait pullback','distance':distance}
-            elif price < e20:
-                return {'status':'WAIT_PULLBACK','reason':'Price below EMA20, wait confirmation','distance':distance}
+            if price >= e21 and distance <= 2.5:
+                return {'status':'GOOD','reason':f'Price {distance:.1f}% above EMA21','distance':distance}
+            elif price > e21 and distance <= 5:
+                return {'status':'WAIT_PULLBACK','reason':f'Price {distance:.1f}% above EMA21, wait pullback','distance':distance}
+            elif price < e21:
+                return {'status':'WAIT_PULLBACK','reason':'Price below EMA21, wait confirmation','distance':distance}
             else:
-                return {'status':'LATE','reason':f'Price extended {distance:.1f}% above EMA20','distance':distance}
+                return {'status':'LATE','reason':f'Price extended {distance:.1f}% above EMA21','distance':distance}
 
         elif direction == SignalDir.SHORT:
             if e50 > e200:
                 return {'status':'WEAK','reason':'EMA50 above EMA200','distance':0}
 
-            distance = ((e20 - price) / e20) * 100
+            distance = ((e21 - price) / e21) * 100
 
-            if price <= e20 and distance <= 2.5:
-                return {'status':'GOOD','reason':f'Price {distance:.1f}% below EMA20','distance':distance}
-            elif price < e20 and distance <= 5:
-                return {'status':'WAIT_PULLBACK','reason':f'Price {distance:.1f}% below EMA20, wait pullback','distance':distance}
-            elif price > e20:
-                return {'status':'WAIT_PULLBACK','reason':'Price above EMA20, wait rejection','distance':distance}
+            if price <= e21 and distance <= 2.5:
+                return {'status':'GOOD','reason':f'Price {distance:.1f}% below EMA21','distance':distance}
+            elif price < e21 and distance <= 5:
+                return {'status':'WAIT_PULLBACK','reason':f'Price {distance:.1f}% below EMA21, wait pullback','distance':distance}
+            elif price > e21:
+                return {'status':'WAIT_PULLBACK','reason':'Price above EMA21, wait rejection','distance':distance}
             else:
-                return {'status':'LATE','reason':f'Price extended {distance:.1f}% below EMA20','distance':distance}
+                return {'status':'LATE','reason':f'Price extended {distance:.1f}% below EMA21','distance':distance}
 
         return {'status':'NO_DATA','reason':'Unknown direction','distance':0}
 
@@ -942,7 +943,7 @@ class DSSSystem:
 def main():
     print("""╔══════════════════════════════════╗
 ║ DSS SWING INTERDAY v7.6          ║
-║ CRYPTO ONLY + ENTRY TIMING       ║
+║ CRYPTO ONLY + ENTRY TIMING FIX   ║
 ╚══════════════════════════════════╝""")
     print("[*] Running every 1 hour...\n")
     dss = DSSSystem()

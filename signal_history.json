@@ -135790,5 +135790,35 @@
     "entry_status": "WAIT_PULLBACK",
     "entry_reason": "Price 2.5% below EMA21, wait pullback",
     "ts": "2026-08-10T22:04:19.645298"
+  },
+  {
+    "pair": "ZECUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 82.09921974934775,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:1.00, aligned:True)",
+    "mom_reason": "Momentum score: 37",
+    "vol_reason": "Volatility: high (exp=6.48)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: True, Energy: 0.24",
+    "risk": {
+      "entry": 503.19,
+      "sl": 512.4085714285713,
+      "tp": 489.3621428571429,
+      "risk": 9.218571428571352,
+      "reward": 13.827857142857113,
+      "rr": 1.5000000000000093,
+      "pos_factor": 0.5,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "entry_status": "GOOD",
+    "entry_reason": "Price 0.4% below EMA21",
+    "ts": "2026-08-10T23:05:17.743873"
   }
 ]

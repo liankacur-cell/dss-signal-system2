@@ -1,25 +1,25 @@
 {
-  "timestamp": "2026-08-10T10:43:13.105699",
-  "total": 2,
+  "timestamp": "2026-08-10T10:49:54.329889",
+  "total": 1,
   "signals": [
     {
       "pair": "BMTUSDT",
       "market": "crypto",
       "dir": "LONG",
-      "score": 87.05,
+      "score": 87.25,
       "struct": "valid_bullish",
       "struct_reason": "Bullish: HH+HL",
       "trend": "bullish",
       "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
-      "mom_reason": "Momentum score: 99",
-      "vol_reason": "Volatility: high (exp=6.00)",
+      "mom_reason": "Momentum score: 100",
+      "vol_reason": "Volatility: high (exp=6.96)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:False, Dist:False",
       "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 0.03651,
-        "sl": 0.02613571428571429,
-        "tp": 0.052071428571428574,
+        "entry": 0.03612,
+        "sl": 0.02574571428571429,
+        "tp": 0.05168142857142857,
         "risk": 0.010374285714285711,
         "reward": 0.015561428571428573,
         "rr": 1.5000000000000007,
@@ -29,38 +29,8 @@
         "reason": "RR=1:1.50"
       },
       "entry_status": "WAIT_PULLBACK",
-      "entry_reason": "Price 4.6% above EMA21, wait pullback",
-      "ts": "2026-08-10T10:43:06.729323"
-    },
-    {
-      "pair": "BICOUSDT",
-      "market": "crypto",
-      "dir": "SHORT",
-      "score": 80.25,
-      "struct": "valid_bearish",
-      "struct_reason": "Bearish: LH+LL",
-      "trend": "bearish",
-      "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
-      "mom_reason": "Momentum score: 65",
-      "vol_reason": "Volatility: high (exp=11.13)",
-      "liq_reason": "Liquidity resting: inside_range",
-      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
-      "sq_reason": "Squeeze: False, Energy: 0.00",
-      "risk": {
-        "entry": 0.04419,
-        "sl": 0.05355714285714286,
-        "tp": 0.030139285714285716,
-        "risk": 0.009367142857142859,
-        "reward": 0.014050714285714284,
-        "rr": 1.4999999999999996,
-        "pos_factor": 0.4,
-        "sl_reason": "Above liquidity + ATR",
-        "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.50"
-      },
-      "entry_status": "WAIT_PULLBACK",
-      "entry_reason": "Price 4.4% below EMA21, wait pullback",
-      "ts": "2026-08-10T10:43:06.748361"
+      "entry_reason": "Price 3.3% above EMA21, wait pullback",
+      "ts": "2026-08-10T10:49:47.456750"
     }
   ]
 }

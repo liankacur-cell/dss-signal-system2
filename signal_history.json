@@ -134230,5 +134230,35 @@
     "entry_status": "WAIT_PULLBACK",
     "entry_reason": "Price 4.4% below EMA21, wait pullback",
     "ts": "2026-08-10T10:43:06.748361"
+  },
+  {
+    "pair": "BMTUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 87.25,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 100",
+    "vol_reason": "Volatility: high (exp=6.96)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.03612,
+      "sl": 0.02574571428571429,
+      "tp": 0.05168142857142857,
+      "risk": 0.010374285714285711,
+      "reward": 0.015561428571428573,
+      "rr": 1.5000000000000007,
+      "pos_factor": 0.5,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "entry_status": "WAIT_PULLBACK",
+    "entry_reason": "Price 3.3% above EMA21, wait pullback",
+    "ts": "2026-08-10T10:49:47.456750"
   }
 ]

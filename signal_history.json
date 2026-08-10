@@ -134380,5 +134380,35 @@
     "entry_status": "WAIT_PULLBACK",
     "entry_reason": "Price below EMA21, wait confirmation",
     "ts": "2026-08-10T11:01:15.938732"
+  },
+  {
+    "pair": "UNIUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 88.05,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 79",
+    "vol_reason": "Volatility: high (exp=7.12)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 4.062,
+      "sl": 3.9694285714285718,
+      "tp": 4.200857142857143,
+      "risk": 0.09257142857142853,
+      "reward": 0.1388571428571428,
+      "rr": 1.5,
+      "pos_factor": 0.5,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "entry_status": "GOOD",
+    "entry_reason": "Price 0.3% above EMA21",
+    "ts": "2026-08-10T11:10:23.872460"
   }
 ]

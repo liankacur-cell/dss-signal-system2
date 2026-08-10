@@ -135430,5 +135430,35 @@
     "entry_status": "WAIT_PULLBACK",
     "entry_reason": "Price 4.6% below EMA21, wait pullback",
     "ts": "2026-08-10T18:06:09.761506"
+  },
+  {
+    "pair": "BTCUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 83.63465300548813,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 51",
+    "vol_reason": "Volatility: high (exp=26.30)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: True, Energy: 0.24",
+    "risk": {
+      "entry": 65008.9,
+      "sl": 65550.3142857143,
+      "tp": 64196.77857142857,
+      "risk": 541.4142857142942,
+      "reward": 812.1214285714304,
+      "rr": 1.4999999999999798,
+      "pos_factor": 0.4,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "entry_status": "GOOD",
+    "entry_reason": "Price 0.1% below EMA21",
+    "ts": "2026-08-10T19:06:53.523500"
   }
 ]

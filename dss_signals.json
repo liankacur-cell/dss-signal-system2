@@ -1,36 +1,66 @@
 {
-  "timestamp": "2026-08-11T15:21:17.361705",
-  "total": 1,
+  "timestamp": "2026-08-11T16:22:28.073872",
+  "total": 2,
   "signals": [
     {
       "pair": "ETHUSDT",
       "market": "crypto",
       "dir": "SHORT",
-      "score": 80.1,
+      "score": 90.85,
       "struct": "valid_bearish",
       "struct_reason": "Bearish: LH+LL",
       "trend": "bearish",
-      "trend_reason": "Trend bearish (strength:1.00, aligned:True)",
-      "mom_reason": "Momentum score: 33",
-      "vol_reason": "Volatility: high (exp=8.69)",
+      "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+      "mom_reason": "Momentum score: 93",
+      "vol_reason": "Volatility: high (exp=9.94)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:False, Dist:False",
       "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 1870.35,
-        "sl": 1885.3900499999997,
-        "tp": 1854.1157142857141,
-        "risk": 15.040049999999837,
-        "reward": 16.23428571428576,
-        "rr": 1.0794037063896686,
-        "pos_factor": 0.4,
+        "entry": 1875.63,
+        "sl": 1886.4171428571428,
+        "tp": 1859.449285714286,
+        "risk": 10.787142857142726,
+        "reward": 16.180714285714203,
+        "rr": 1.5000000000000104,
+        "pos_factor": 0.5,
         "sl_reason": "Above liquidity + ATR",
         "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.08"
+        "reason": "RR=1:1.50"
       },
-      "entry_status": "GOOD",
-      "entry_reason": "Price 0.2% below EMA21",
-      "ts": "2026-08-11T15:21:00.657895"
+      "entry_status": "WAIT_PULLBACK",
+      "entry_reason": "Price above EMA21, wait rejection",
+      "ts": "2026-08-11T16:22:09.527458"
+    },
+    {
+      "pair": "BMTUSDT",
+      "market": "crypto",
+      "dir": "SHORT",
+      "score": 72.8,
+      "struct": "valid_bearish",
+      "struct_reason": "Bearish: LH+LL",
+      "trend": "bearish",
+      "trend_reason": "Trend bearish (strength:1.00, aligned:True)",
+      "mom_reason": "Momentum score: 9",
+      "vol_reason": "Volatility: high (exp=9.41)",
+      "liq_reason": "Liquidity resting: inside_range",
+      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+      "sq_reason": "Squeeze: False, Energy: 0.00",
+      "risk": {
+        "entry": 0.0197,
+        "sl": 0.022268571428571426,
+        "tp": 0.015847142857142858,
+        "risk": 0.002568571428571427,
+        "reward": 0.0038528571428571405,
+        "rr": 1.5,
+        "pos_factor": 0.5,
+        "sl_reason": "Above liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50"
+      },
+      "entry_status": "WAIT_PULLBACK",
+      "entry_reason": "Price 4.8% below EMA21, wait pullback",
+      "ts": "2026-08-11T16:22:09.623647"
     }
   ]
 }

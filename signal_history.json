@@ -136870,5 +136870,35 @@
     "entry_status": "GOOD",
     "entry_reason": "Price 1.0% above EMA21",
     "ts": "2026-08-11T13:42:49.406549"
+  },
+  {
+    "pair": "ETHUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 80.1,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:1.00, aligned:True)",
+    "mom_reason": "Momentum score: 33",
+    "vol_reason": "Volatility: high (exp=8.69)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 1870.35,
+      "sl": 1885.3900499999997,
+      "tp": 1854.1157142857141,
+      "risk": 15.040049999999837,
+      "reward": 16.23428571428576,
+      "rr": 1.0794037063896686,
+      "pos_factor": 0.4,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.08"
+    },
+    "entry_status": "GOOD",
+    "entry_reason": "Price 0.2% below EMA21",
+    "ts": "2026-08-11T15:21:00.657895"
   }
 ]

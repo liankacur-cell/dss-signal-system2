@@ -136180,5 +136180,35 @@
     "entry_status": "GOOD",
     "entry_reason": "Price 0.5% below EMA21",
     "ts": "2026-08-11T07:49:22.801427"
+  },
+  {
+    "pair": "BTCUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 82.65,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 52",
+    "vol_reason": "Volatility: high (exp=13.28)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 63965.1,
+      "sl": 64590.14399999999,
+      "tp": 63155.97857142857,
+      "risk": 625.0439999999944,
+      "reward": 809.1214285714304,
+      "rr": 1.2945031526923507,
+      "pos_factor": 0.4,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.29"
+    },
+    "entry_status": "GOOD",
+    "entry_reason": "Price 0.1% below EMA21",
+    "ts": "2026-08-11T08:33:59.848463"
   }
 ]

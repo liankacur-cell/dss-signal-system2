@@ -138190,5 +138190,35 @@
     "entry_status": "GOOD",
     "entry_reason": "Price 2.1% below EMA21",
     "ts": "2026-08-14T04:21:33.741416"
+  },
+  {
+    "pair": "SNXXUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 88.5,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
+    "mom_reason": "Momentum score: 100",
+    "vol_reason": "Volatility: high (exp=23.66)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 14.45,
+      "sl": 13.165714285714285,
+      "tp": 16.37642857142857,
+      "risk": 1.2842857142857138,
+      "reward": 1.9264285714285698,
+      "rr": 1.4999999999999993,
+      "pos_factor": 0.4,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "entry_status": "GOOD",
+    "entry_reason": "Price 2.1% above EMA21",
+    "ts": "2026-08-14T05:22:16.444212"
   }
 ]

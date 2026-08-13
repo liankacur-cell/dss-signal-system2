@@ -1,5 +1,36 @@
 {
-  "timestamp": "2026-08-13T21:49:01.968858",
-  "total": 0,
-  "signals": []
+  "timestamp": "2026-08-13T21:53:53.669041",
+  "total": 1,
+  "signals": [
+    {
+      "pair": "ACUUSDT",
+      "market": "crypto",
+      "dir": "LONG",
+      "score": 96.0,
+      "struct": "valid_bullish",
+      "struct_reason": "Bullish: HH+HL",
+      "trend": "bullish",
+      "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
+      "mom_reason": "Momentum score: 100",
+      "vol_reason": "Volatility: high (exp=6.61)",
+      "liq_reason": "Liquidity resting: inside_range",
+      "mf_reason": "OBV: rising, Acc:True, Dist:False",
+      "sq_reason": "Squeeze: False, Energy: 0.00",
+      "risk": {
+        "entry": 0.12811,
+        "sl": 0.10677571428571428,
+        "tp": 0.16011142857142857,
+        "risk": 0.021334285714285722,
+        "reward": 0.03200142857142857,
+        "rr": 1.4999999999999993,
+        "pos_factor": 0.4,
+        "sl_reason": "Below liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50"
+      },
+      "entry_status": "WAIT_PULLBACK",
+      "entry_reason": "Price 5.0% above EMA21, wait pullback",
+      "ts": "2026-08-13T21:53:36.911829"
+    }
+  ]
 }

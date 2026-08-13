@@ -1,5 +1,36 @@
 {
-  "timestamp": "2026-08-14T02:20:11.091766",
-  "total": 0,
-  "signals": []
+  "timestamp": "2026-08-14T03:20:54.966342",
+  "total": 1,
+  "signals": [
+    {
+      "pair": "CYSUSDT",
+      "market": "crypto",
+      "dir": "SHORT",
+      "score": 77.0,
+      "struct": "valid_bearish",
+      "struct_reason": "Bearish: LH+LL",
+      "trend": "bearish",
+      "trend_reason": "Trend bearish (strength:1.00, aligned:True)",
+      "mom_reason": "Momentum score: 30",
+      "vol_reason": "Volatility: high (exp=16.02)",
+      "liq_reason": "Liquidity resting: inside_range",
+      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+      "sq_reason": "Squeeze: False, Energy: 0.00",
+      "risk": {
+        "entry": 1.1314,
+        "sl": 1.314042857142857,
+        "tp": 0.8574357142857143,
+        "risk": 0.1826428571428571,
+        "reward": 0.27396428571428566,
+        "rr": 1.5,
+        "pos_factor": 0.5,
+        "sl_reason": "Above liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50"
+      },
+      "entry_status": "WAIT_PULLBACK",
+      "entry_reason": "Price 4.4% below EMA21, wait pullback",
+      "ts": "2026-08-14T03:20:48.478511"
+    }
+  ]
 }

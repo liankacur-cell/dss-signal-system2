@@ -138010,5 +138010,35 @@
     "entry_status": "GOOD",
     "entry_reason": "Price 0.6% below EMA21",
     "ts": "2026-08-14T00:51:47.156548"
+  },
+  {
+    "pair": "ZECUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 84.63050636090607,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 51",
+    "vol_reason": "Volatility: high (exp=8.21)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: True, Energy: 0.44",
+    "risk": {
+      "entry": 486.9,
+      "sl": 499.1030999999999,
+      "tp": 473.7728571428571,
+      "risk": 12.20309999999995,
+      "reward": 13.127142857142871,
+      "rr": 1.0757219769683872,
+      "pos_factor": 0.4,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.08"
+    },
+    "entry_status": "GOOD",
+    "entry_reason": "Price 0.6% below EMA21",
+    "ts": "2026-08-14T01:10:16.909777"
   }
 ]

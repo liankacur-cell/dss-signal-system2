@@ -137590,5 +137590,35 @@
     "entry_status": "WEAK",
     "entry_reason": "EMA50 above EMA200",
     "ts": "2026-08-13T22:06:50.279683"
+  },
+  {
+    "pair": "BLESSUSDT",
+    "market": "crypto",
+    "dir": "SHORT",
+    "score": 75.7022122607058,
+    "struct": "valid_bearish",
+    "struct_reason": "Bearish: LH+LL",
+    "trend": "bearish",
+    "trend_reason": "Trend bearish (strength:1.00, aligned:True)",
+    "mom_reason": "Momentum score: 23",
+    "vol_reason": "Volatility: high (exp=6.36)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: True, Energy: 0.52",
+    "risk": {
+      "entry": 0.009456,
+      "sl": 0.010476119999999998,
+      "tp": 0.008316,
+      "risk": 0.0010201199999999976,
+      "reward": 0.0011400000000000004,
+      "rr": 1.1175155864016029,
+      "pos_factor": 0.4,
+      "sl_reason": "Above liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.12"
+    },
+    "entry_status": "WAIT_PULLBACK",
+    "entry_reason": "Price 2.6% below EMA21, wait pullback",
+    "ts": "2026-08-13T22:18:10.814139"
   }
 ]

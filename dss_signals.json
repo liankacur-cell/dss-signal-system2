@@ -1,36 +1,36 @@
 {
-  "timestamp": "2026-08-14T00:20:22.148090",
+  "timestamp": "2026-08-14T00:45:23.715239",
   "total": 1,
   "signals": [
     {
-      "pair": "ZECUSDT",
+      "pair": "ACUUSDT",
       "market": "crypto",
-      "dir": "SHORT",
-      "score": 80.28567858256275,
-      "struct": "valid_bearish",
-      "struct_reason": "Bearish: LH+LL",
-      "trend": "bearish",
-      "trend_reason": "Trend bearish (strength:1.00, aligned:True)",
-      "mom_reason": "Momentum score: 22",
-      "vol_reason": "Volatility: high (exp=5.26)",
+      "dir": "LONG",
+      "score": 89.55,
+      "struct": "valid_bullish",
+      "struct_reason": "Bullish: HH+HL",
+      "trend": "bullish",
+      "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+      "mom_reason": "Momentum score: 99",
+      "vol_reason": "Volatility: high (exp=11.78)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:False, Dist:False",
-      "sq_reason": "Squeeze: True, Energy: 0.48",
+      "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 486.57,
-        "sl": 499.1030999999999,
-        "tp": 473.17285714285714,
-        "risk": 12.533099999999934,
-        "reward": 13.397142857142853,
-        "rr": 1.0689408731393608,
-        "pos_factor": 0.4,
-        "sl_reason": "Above liquidity + ATR",
+        "entry": 0.12486,
+        "sl": 0.10048857142857143,
+        "tp": 0.16141714285714287,
+        "risk": 0.02437142857142857,
+        "reward": 0.03655714285714287,
+        "rr": 1.5000000000000007,
+        "pos_factor": 0.5,
+        "sl_reason": "Below liquidity + ATR",
         "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.07"
+        "reason": "RR=1:1.50"
       },
       "entry_status": "GOOD",
-      "entry_reason": "Price 0.9% below EMA21",
-      "ts": "2026-08-14T00:20:15.437120"
+      "entry_reason": "Price 0.1% above EMA21",
+      "ts": "2026-08-14T00:45:16.976161"
     }
   ]
 }

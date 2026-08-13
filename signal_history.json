@@ -137920,5 +137920,35 @@
     "entry_status": "GOOD",
     "entry_reason": "Price 0.9% below EMA21",
     "ts": "2026-08-14T00:20:15.437120"
+  },
+  {
+    "pair": "ACUUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 89.55,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 99",
+    "vol_reason": "Volatility: high (exp=11.78)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 0.12486,
+      "sl": 0.10048857142857143,
+      "tp": 0.16141714285714287,
+      "risk": 0.02437142857142857,
+      "reward": 0.03655714285714287,
+      "rr": 1.5000000000000007,
+      "pos_factor": 0.5,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.50"
+    },
+    "entry_status": "GOOD",
+    "entry_reason": "Price 0.1% above EMA21",
+    "ts": "2026-08-14T00:45:16.976161"
   }
 ]

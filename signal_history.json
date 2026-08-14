@@ -138550,5 +138550,35 @@
     "entry_status": "WEAK",
     "entry_reason": "EMA50 above EMA200",
     "ts": "2026-08-14T07:50:47.151327"
+  },
+  {
+    "pair": "BTCUSDT",
+    "market": "crypto",
+    "dir": "LONG",
+    "score": 92.25,
+    "struct": "valid_bullish",
+    "struct_reason": "Bullish: HH+HL",
+    "trend": "bullish",
+    "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+    "mom_reason": "Momentum score: 100",
+    "vol_reason": "Volatility: high (exp=14.63)",
+    "liq_reason": "Liquidity resting: inside_range",
+    "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+    "sq_reason": "Squeeze: False, Energy: 0.00",
+    "risk": {
+      "entry": 63493.6,
+      "sl": 62823.305,
+      "tp": 64326.078571428574,
+      "risk": 670.2949999999983,
+      "reward": 832.4785714285754,
+      "rr": 1.2419584980174065,
+      "pos_factor": 0.4,
+      "sl_reason": "Below liquidity + ATR",
+      "tp_reason": "Before liquidity target",
+      "reason": "RR=1:1.24"
+    },
+    "entry_status": "WEAK",
+    "entry_reason": "EMA50 below EMA200",
+    "ts": "2026-08-14T08:46:11.947840"
   }
 ]

@@ -1,36 +1,36 @@
 {
-  "timestamp": "2026-08-20T17:33:18.116539",
+  "timestamp": "2026-08-20T19:21:51.910871",
   "total": 1,
   "signals": [
     {
-      "pair": "UNIUSDT",
+      "pair": "BEATUSDT",
       "market": "crypto",
-      "dir": "LONG",
-      "score": 89.45,
-      "struct": "valid_bullish",
-      "struct_reason": "Bullish: HH+HL",
-      "trend": "bullish",
-      "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
-      "mom_reason": "Momentum score: 86",
-      "vol_reason": "Volatility: high (exp=9.07)",
+      "dir": "SHORT",
+      "score": 84.19999999999999,
+      "struct": "valid_bearish",
+      "struct_reason": "Bearish: LH+LL",
+      "trend": "bearish",
+      "trend_reason": "Trend bearish (strength:1.00, aligned:True)",
+      "mom_reason": "Momentum score: 66",
+      "vol_reason": "Volatility: high (exp=8.86)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:False, Dist:False",
       "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 3.715,
-        "sl": 3.54618,
-        "tp": 3.915142857142857,
-        "risk": 0.16881999999999975,
-        "reward": 0.20014285714285718,
-        "rr": 1.185539966490093,
+        "entry": 0.1329,
+        "sl": 0.1558,
+        "tp": 0.09855,
+        "risk": 0.022900000000000004,
+        "reward": 0.03434999999999999,
+        "rr": 1.4999999999999993,
         "pos_factor": 0.4,
-        "sl_reason": "Below liquidity + ATR",
+        "sl_reason": "Above liquidity + ATR",
         "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.19"
+        "reason": "RR=1:1.50"
       },
-      "entry_status": "GOOD",
-      "entry_reason": "Price 1.4% above EMA21",
-      "ts": "2026-08-20T17:33:12.728322"
+      "entry_status": "WAIT_PULLBACK",
+      "entry_reason": "Price 3.6% below EMA21, wait pullback",
+      "ts": "2026-08-20T19:21:44.743578"
     }
   ]
 }

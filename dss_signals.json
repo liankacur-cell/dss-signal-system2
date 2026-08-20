@@ -1,7 +1,37 @@
 {
-  "timestamp": "2026-08-20T14:22:19.711602",
-  "total": 1,
+  "timestamp": "2026-08-20T14:28:55.102321",
+  "total": 2,
   "signals": [
+    {
+      "pair": "UNIUSDT",
+      "market": "crypto",
+      "dir": "LONG",
+      "score": 88.15,
+      "struct": "valid_bullish",
+      "struct_reason": "Bullish: HH+HL",
+      "trend": "bullish",
+      "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
+      "mom_reason": "Momentum score: 92",
+      "vol_reason": "Volatility: high (exp=10.03)",
+      "liq_reason": "Liquidity resting: inside_range",
+      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
+      "sq_reason": "Squeeze: False, Energy: 0.00",
+      "risk": {
+        "entry": 3.621,
+        "sl": 3.4891428571428573,
+        "tp": 3.8187857142857142,
+        "risk": 0.13185714285714267,
+        "reward": 0.19778571428571423,
+        "rr": 1.5000000000000018,
+        "pos_factor": 0.5,
+        "sl_reason": "Below liquidity + ATR",
+        "tp_reason": "Before liquidity target",
+        "reason": "RR=1:1.50"
+      },
+      "entry_status": "GOOD",
+      "entry_reason": "Price 0.1% above EMA21",
+      "ts": "2026-08-20T14:28:49.490276"
+    },
     {
       "pair": "MAGMAUSDT",
       "market": "crypto",
@@ -12,25 +42,25 @@
       "trend": "bullish",
       "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
       "mom_reason": "Momentum score: 92",
-      "vol_reason": "Volatility: high (exp=10.97)",
+      "vol_reason": "Volatility: high (exp=10.07)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:False, Dist:False",
       "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 0.23333,
-        "sl": 0.20108142857142858,
-        "tp": 0.28170285714285714,
+        "entry": 0.23319,
+        "sl": 0.20094142857142858,
+        "tp": 0.2815628571428571,
         "risk": 0.03224857142857143,
-        "reward": 0.048372857142857134,
-        "rr": 1.4999999999999996,
+        "reward": 0.048372857142857106,
+        "rr": 1.4999999999999987,
         "pos_factor": 0.4,
         "sl_reason": "Below liquidity + ATR",
         "tp_reason": "Before liquidity target",
         "reason": "RR=1:1.50"
       },
       "entry_status": "GOOD",
-      "entry_reason": "Price 1.6% above EMA21",
-      "ts": "2026-08-20T14:22:13.941953"
+      "entry_reason": "Price 1.5% above EMA21",
+      "ts": "2026-08-20T14:28:49.499299"
     }
   ]
 }

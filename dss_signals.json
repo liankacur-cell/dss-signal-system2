@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-08-20T15:07:41.610800",
+  "timestamp": "2026-08-20T15:09:46.246003",
   "total": 1,
   "signals": [
     {
@@ -12,14 +12,14 @@
       "trend": "bullish",
       "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
       "mom_reason": "Momentum score: 86",
-      "vol_reason": "Volatility: high (exp=4.67)",
+      "vol_reason": "Volatility: high (exp=5.07)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:False, Dist:False",
       "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 0.5319,
-        "sl": 0.4866428571428572,
-        "tp": 0.5997857142857144,
+        "entry": 0.5301,
+        "sl": 0.4848428571428572,
+        "tp": 0.5979857142857143,
         "risk": 0.04525714285714283,
         "reward": 0.06788571428571433,
         "rr": 1.5000000000000018,
@@ -29,8 +29,8 @@
         "reason": "RR=1:1.50"
       },
       "entry_status": "GOOD",
-      "entry_reason": "Price 1.2% above EMA21",
-      "ts": "2026-08-20T15:07:25.594658"
+      "entry_reason": "Price 0.9% above EMA21",
+      "ts": "2026-08-20T15:09:40.059545"
     }
   ]
 }

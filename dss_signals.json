@@ -1,6 +1,6 @@
 {
-  "timestamp": "2026-08-20T15:06:14.318881",
-  "total": 2,
+  "timestamp": "2026-08-20T15:07:41.610800",
+  "total": 1,
   "signals": [
     {
       "pair": "REUSDT",
@@ -12,14 +12,14 @@
       "trend": "bullish",
       "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
       "mom_reason": "Momentum score: 86",
-      "vol_reason": "Volatility: high (exp=5.07)",
+      "vol_reason": "Volatility: high (exp=4.67)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:False, Dist:False",
       "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 0.532,
-        "sl": 0.4867428571428572,
-        "tp": 0.5998857142857144,
+        "entry": 0.5319,
+        "sl": 0.4866428571428572,
+        "tp": 0.5997857142857144,
         "risk": 0.04525714285714283,
         "reward": 0.06788571428571433,
         "rr": 1.5000000000000018,
@@ -30,37 +30,7 @@
       },
       "entry_status": "GOOD",
       "entry_reason": "Price 1.2% above EMA21",
-      "ts": "2026-08-20T15:06:08.357395"
-    },
-    {
-      "pair": "UNIUSDT",
-      "market": "crypto",
-      "dir": "LONG",
-      "score": 83.95,
-      "struct": "valid_bullish",
-      "struct_reason": "Bullish: HH+HL",
-      "trend": "bullish",
-      "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
-      "mom_reason": "Momentum score: 71",
-      "vol_reason": "Volatility: high (exp=14.14)",
-      "liq_reason": "Liquidity resting: inside_range",
-      "mf_reason": "OBV: rising, Acc:False, Dist:False",
-      "sq_reason": "Squeeze: False, Energy: 0.00",
-      "risk": {
-        "entry": 3.623,
-        "sl": 3.503857142857143,
-        "tp": 3.801714285714286,
-        "risk": 0.11914285714285722,
-        "reward": 0.17871428571428583,
-        "rr": 1.5,
-        "pos_factor": 0.5,
-        "sl_reason": "Below liquidity + ATR",
-        "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.50"
-      },
-      "entry_status": "GOOD",
-      "entry_reason": "Price 0.1% above EMA21",
-      "ts": "2026-08-20T15:06:08.334109"
+      "ts": "2026-08-20T15:07:25.594658"
     }
   ]
 }

@@ -1,37 +1,7 @@
 {
-  "timestamp": "2026-08-20T14:14:47.075651",
-  "total": 2,
+  "timestamp": "2026-08-20T14:22:19.711602",
+  "total": 1,
   "signals": [
-    {
-      "pair": "SKYAIUSDT",
-      "market": "crypto",
-      "dir": "LONG",
-      "score": 90.48877023983727,
-      "struct": "valid_bullish",
-      "struct_reason": "Bullish: HH+HL",
-      "trend": "bullish",
-      "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
-      "mom_reason": "Momentum score: 99",
-      "vol_reason": "Volatility: high (exp=10.22)",
-      "liq_reason": "Liquidity resting: inside_range",
-      "mf_reason": "OBV: mixed, Acc:False, Dist:False",
-      "sq_reason": "Squeeze: True, Energy: 0.44",
-      "risk": {
-        "entry": 0.07352,
-        "sl": 0.06647142857142857,
-        "tp": 0.08409285714285714,
-        "risk": 0.007048571428571432,
-        "reward": 0.010572857142857134,
-        "rr": 1.499999999999998,
-        "pos_factor": 0.4,
-        "sl_reason": "Below liquidity + ATR",
-        "tp_reason": "Before liquidity target",
-        "reason": "RR=1:1.50"
-      },
-      "entry_status": "GOOD",
-      "entry_reason": "Price 1.6% above EMA21",
-      "ts": "2026-08-20T14:14:11.278998"
-    },
     {
       "pair": "MAGMAUSDT",
       "market": "crypto",
@@ -42,14 +12,14 @@
       "trend": "bullish",
       "trend_reason": "Trend bullish (strength:1.00, aligned:True)",
       "mom_reason": "Momentum score: 92",
-      "vol_reason": "Volatility: high (exp=11.06)",
+      "vol_reason": "Volatility: high (exp=10.97)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:False, Dist:False",
       "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 0.2321,
-        "sl": 0.19985142857142857,
-        "tp": 0.28047285714285713,
+        "entry": 0.23333,
+        "sl": 0.20108142857142858,
+        "tp": 0.28170285714285714,
         "risk": 0.03224857142857143,
         "reward": 0.048372857142857134,
         "rr": 1.4999999999999996,
@@ -59,8 +29,8 @@
         "reason": "RR=1:1.50"
       },
       "entry_status": "GOOD",
-      "entry_reason": "Price 1.1% above EMA21",
-      "ts": "2026-08-20T14:14:11.259432"
+      "entry_reason": "Price 1.6% above EMA21",
+      "ts": "2026-08-20T14:22:13.941953"
     }
   ]
 }

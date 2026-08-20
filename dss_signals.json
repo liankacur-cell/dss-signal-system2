@@ -1,36 +1,36 @@
 {
-  "timestamp": "2026-08-20T15:09:46.246003",
+  "timestamp": "2026-08-20T15:15:23.342309",
   "total": 1,
   "signals": [
     {
       "pair": "REUSDT",
       "market": "crypto",
       "dir": "LONG",
-      "score": 84.45,
+      "score": 87.25,
       "struct": "valid_bullish",
       "struct_reason": "Bullish: HH+HL",
       "trend": "bullish",
       "trend_reason": "Trend bullish (strength:0.75, aligned:True)",
-      "mom_reason": "Momentum score: 86",
-      "vol_reason": "Volatility: high (exp=5.07)",
+      "mom_reason": "Momentum score: 100",
+      "vol_reason": "Volatility: high (exp=6.29)",
       "liq_reason": "Liquidity resting: inside_range",
       "mf_reason": "OBV: mixed, Acc:False, Dist:False",
       "sq_reason": "Squeeze: False, Energy: 0.00",
       "risk": {
-        "entry": 0.5301,
-        "sl": 0.4848428571428572,
-        "tp": 0.5979857142857143,
-        "risk": 0.04525714285714283,
-        "reward": 0.06788571428571433,
-        "rr": 1.5000000000000018,
+        "entry": 0.5357,
+        "sl": 0.4904142857142857,
+        "tp": 0.6036285714285714,
+        "risk": 0.04528571428571426,
+        "reward": 0.06792857142857145,
+        "rr": 1.5000000000000013,
         "pos_factor": 0.5,
         "sl_reason": "Below liquidity + ATR",
         "tp_reason": "Before liquidity target",
         "reason": "RR=1:1.50"
       },
       "entry_status": "GOOD",
-      "entry_reason": "Price 0.9% above EMA21",
-      "ts": "2026-08-20T15:09:40.059545"
+      "entry_reason": "Price 1.7% above EMA21",
+      "ts": "2026-08-20T15:15:18.049687"
     }
   ]
 }
